@@ -31,6 +31,19 @@ public enum FuXiBaGua: Int {
         return NSLocalizedString("fuxibagua\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
     }
     
+    public var opposite: FuXiBaGua {
+        switch self {
+        case .qian: return .kun
+        case .dui: return .gen
+        case .li: return .kan
+        case .zhen: return .xun
+        case .xun: return .zhen
+        case .kan: return .li
+        case .gen: return .dui
+        case .kun: return .qian
+        }
+    }
+    
     func liangYi(forPosition position: Position) -> LiangYi {
         let denominator: Double
         
