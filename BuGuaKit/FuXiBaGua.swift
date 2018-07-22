@@ -12,7 +12,7 @@ enum LiangYi {
     case yang, yin
 }
 
-enum FuXiBaGua: Int {
+public enum FuXiBaGua: Int {
     
     enum Position: CaseIterable {
         case top, middle, bottom
@@ -26,6 +26,10 @@ enum FuXiBaGua: Int {
     case kan
     case gen
     case kun
+    
+    public var character: String {
+        return NSLocalizedString("fuxibagua\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
+    }
     
     func liangYi(forPosition position: Position) -> LiangYi {
         let denominator: Double

@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import BuGuaKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(FuXiBaGua.li.character)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
