@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		343992A8210521E000C64474 /* LiuShiSiGuaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343992A7210521E000C64474 /* LiuShiSiGuaTests.swift */; };
 		345F400E21041033004714DB /* BuGuaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345F400421041033004714DB /* BuGuaKit.framework */; };
-		345F401321041033004714DB /* BuGuaKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F401221041033004714DB /* BuGuaKitTests.swift */; };
 		345F401521041033004714DB /* BuGuaKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F400721041033004714DB /* BuGuaKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		345F40252104106D004714DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F40242104106D004714DB /* AppDelegate.swift */; };
 		345F40272104106D004714DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F40262104106D004714DB /* ViewController.swift */; };
 		345F402A2104106D004714DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345F40282104106D004714DB /* Main.storyboard */; };
 		345F402C2104106F004714DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 345F402B2104106F004714DB /* Assets.xcassets */; };
 		345F402F2104106F004714DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345F402D2104106F004714DB /* LaunchScreen.storyboard */; };
+		345F40432104EA7C004714DB /* FuXiBaGua.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F40422104EA7C004714DB /* FuXiBaGua.swift */; };
+		345F40452104F3DB004714DB /* LiuShiSiGua.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F40442104F3DB004714DB /* LiuShiSiGua.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,11 +30,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		343992A7210521E000C64474 /* LiuShiSiGuaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuShiSiGuaTests.swift; sourceTree = "<group>"; };
 		345F400421041033004714DB /* BuGuaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BuGuaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		345F400721041033004714DB /* BuGuaKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuGuaKit.h; sourceTree = "<group>"; };
 		345F400821041033004714DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		345F400D21041033004714DB /* BuGuaKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuGuaKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		345F401221041033004714DB /* BuGuaKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaKitTests.swift; sourceTree = "<group>"; };
 		345F401421041033004714DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		345F40222104106D004714DB /* BuGuaPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuGuaPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		345F40242104106D004714DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,8 +43,8 @@
 		345F402B2104106F004714DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		345F402E2104106F004714DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		345F40302104106F004714DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		345F40392104106F004714DB /* BuGuaPlaygroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaPlaygroundTests.swift; sourceTree = "<group>"; };
-		345F403B2104106F004714DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		345F40422104EA7C004714DB /* FuXiBaGua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuXiBaGua.swift; sourceTree = "<group>"; };
+		345F40442104F3DB004714DB /* LiuShiSiGua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuShiSiGua.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +79,6 @@
 				345F400621041033004714DB /* BuGuaKit */,
 				345F401121041033004714DB /* BuGuaKitTests */,
 				345F40232104106D004714DB /* BuGuaPlayground */,
-				345F40382104106F004714DB /* BuGuaPlaygroundTests */,
 				345F400521041033004714DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,6 +98,8 @@
 			children = (
 				345F400721041033004714DB /* BuGuaKit.h */,
 				345F400821041033004714DB /* Info.plist */,
+				345F40422104EA7C004714DB /* FuXiBaGua.swift */,
+				345F40442104F3DB004714DB /* LiuShiSiGua.swift */,
 			);
 			path = BuGuaKit;
 			sourceTree = "<group>";
@@ -104,8 +107,8 @@
 		345F401121041033004714DB /* BuGuaKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				345F401221041033004714DB /* BuGuaKitTests.swift */,
 				345F401421041033004714DB /* Info.plist */,
+				343992A7210521E000C64474 /* LiuShiSiGuaTests.swift */,
 			);
 			path = BuGuaKitTests;
 			sourceTree = "<group>";
@@ -121,15 +124,6 @@
 				345F40302104106F004714DB /* Info.plist */,
 			);
 			path = BuGuaPlayground;
-			sourceTree = "<group>";
-		};
-		345F40382104106F004714DB /* BuGuaPlaygroundTests */ = {
-			isa = PBXGroup;
-			children = (
-				345F40392104106F004714DB /* BuGuaPlaygroundTests.swift */,
-				345F403B2104106F004714DB /* Info.plist */,
-			);
-			path = BuGuaPlaygroundTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,9 +205,11 @@
 				TargetAttributes = {
 					345F400321041033004714DB = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					345F400C21041033004714DB = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					345F40212104106D004714DB = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -272,6 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				345F40432104EA7C004714DB /* FuXiBaGua.swift in Sources */,
+				345F40452104F3DB004714DB /* LiuShiSiGua.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				345F401321041033004714DB /* BuGuaKitTests.swift in Sources */,
+				343992A8210521E000C64474 /* LiuShiSiGuaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -431,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -445,6 +443,7 @@
 		345F401921041033004714DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -454,6 +453,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = BuGuaKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,7 +462,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cheeseonhead.BuGuaKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -470,6 +471,7 @@
 		345F401A21041033004714DB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -479,6 +481,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = BuGuaKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,7 +490,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cheeseonhead.BuGuaKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -495,6 +498,8 @@
 		345F401C21041033004714DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77Q2XB2RSV;
 				INFOPLIST_FILE = BuGuaKitTests/Info.plist;
@@ -505,7 +510,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cheeseonhead.BuGuaKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -513,6 +519,8 @@
 		345F401D21041033004714DB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77Q2XB2RSV;
 				INFOPLIST_FILE = BuGuaKitTests/Info.plist;
@@ -523,7 +531,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cheeseonhead.BuGuaKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
