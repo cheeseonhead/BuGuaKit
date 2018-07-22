@@ -10,6 +10,11 @@
 		345F400E21041033004714DB /* BuGuaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345F400421041033004714DB /* BuGuaKit.framework */; };
 		345F401321041033004714DB /* BuGuaKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F401221041033004714DB /* BuGuaKitTests.swift */; };
 		345F401521041033004714DB /* BuGuaKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 345F400721041033004714DB /* BuGuaKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345F40252104106D004714DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F40242104106D004714DB /* AppDelegate.swift */; };
+		345F40272104106D004714DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F40262104106D004714DB /* ViewController.swift */; };
+		345F402A2104106D004714DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345F40282104106D004714DB /* Main.storyboard */; };
+		345F402C2104106F004714DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 345F402B2104106F004714DB /* Assets.xcassets */; };
+		345F402F2104106F004714DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345F402D2104106F004714DB /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,15 @@
 		345F400D21041033004714DB /* BuGuaKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuGuaKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		345F401221041033004714DB /* BuGuaKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaKitTests.swift; sourceTree = "<group>"; };
 		345F401421041033004714DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		345F40222104106D004714DB /* BuGuaPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuGuaPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		345F40242104106D004714DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		345F40262104106D004714DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		345F40292104106D004714DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		345F402B2104106F004714DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		345F402E2104106F004714DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		345F40302104106F004714DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		345F40392104106F004714DB /* BuGuaPlaygroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaPlaygroundTests.swift; sourceTree = "<group>"; };
+		345F403B2104106F004714DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +61,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		345F401F2104106D004714DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +76,8 @@
 			children = (
 				345F400621041033004714DB /* BuGuaKit */,
 				345F401121041033004714DB /* BuGuaKitTests */,
+				345F40232104106D004714DB /* BuGuaPlayground */,
+				345F40382104106F004714DB /* BuGuaPlaygroundTests */,
 				345F400521041033004714DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +87,7 @@
 			children = (
 				345F400421041033004714DB /* BuGuaKit.framework */,
 				345F400D21041033004714DB /* BuGuaKitTests.xctest */,
+				345F40222104106D004714DB /* BuGuaPlayground.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +108,28 @@
 				345F401421041033004714DB /* Info.plist */,
 			);
 			path = BuGuaKitTests;
+			sourceTree = "<group>";
+		};
+		345F40232104106D004714DB /* BuGuaPlayground */ = {
+			isa = PBXGroup;
+			children = (
+				345F40242104106D004714DB /* AppDelegate.swift */,
+				345F40262104106D004714DB /* ViewController.swift */,
+				345F40282104106D004714DB /* Main.storyboard */,
+				345F402B2104106F004714DB /* Assets.xcassets */,
+				345F402D2104106F004714DB /* LaunchScreen.storyboard */,
+				345F40302104106F004714DB /* Info.plist */,
+			);
+			path = BuGuaPlayground;
+			sourceTree = "<group>";
+		};
+		345F40382104106F004714DB /* BuGuaPlaygroundTests */ = {
+			isa = PBXGroup;
+			children = (
+				345F40392104106F004714DB /* BuGuaPlaygroundTests.swift */,
+				345F403B2104106F004714DB /* Info.plist */,
+			);
+			path = BuGuaPlaygroundTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +182,23 @@
 			productReference = 345F400D21041033004714DB /* BuGuaKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		345F40212104106D004714DB /* BuGuaPlayground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 345F403C2104106F004714DB /* Build configuration list for PBXNativeTarget "BuGuaPlayground" */;
+			buildPhases = (
+				345F401E2104106D004714DB /* Sources */,
+				345F401F2104106D004714DB /* Frameworks */,
+				345F40202104106D004714DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BuGuaPlayground;
+			productName = BuGuaPlayground;
+			productReference = 345F40222104106D004714DB /* BuGuaPlayground.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -152,6 +215,9 @@
 					345F400C21041033004714DB = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					345F40212104106D004714DB = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 345F3FFE21041033004714DB /* Build configuration list for PBXProject "BuGuaKit" */;
@@ -160,6 +226,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 345F3FFA21041033004714DB;
 			productRefGroup = 345F400521041033004714DB /* Products */;
@@ -168,6 +235,7 @@
 			targets = (
 				345F400321041033004714DB /* BuGuaKit */,
 				345F400C21041033004714DB /* BuGuaKitTests */,
+				345F40212104106D004714DB /* BuGuaPlayground */,
 			);
 		};
 /* End PBXProject section */
@@ -184,6 +252,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		345F40202104106D004714DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				345F402F2104106F004714DB /* LaunchScreen.storyboard in Resources */,
+				345F402C2104106F004714DB /* Assets.xcassets in Resources */,
+				345F402A2104106D004714DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +283,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		345F401E2104106D004714DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				345F40272104106D004714DB /* ViewController.swift in Sources */,
+				345F40252104106D004714DB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -214,6 +301,25 @@
 			targetProxy = 345F400F21041033004714DB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		345F40282104106D004714DB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				345F40292104106D004714DB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		345F402D2104106F004714DB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				345F402E2104106F004714DB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		345F401621041033004714DB /* Debug */ = {
@@ -422,6 +528,42 @@
 			};
 			name = Release;
 		};
+		345F403D2104106F004714DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 77Q2XB2RSV;
+				INFOPLIST_FILE = BuGuaPlayground/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cheeseonhead.BuGuaPlayground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		345F403E2104106F004714DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 77Q2XB2RSV;
+				INFOPLIST_FILE = BuGuaPlayground/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cheeseonhead.BuGuaPlayground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -448,6 +590,15 @@
 			buildConfigurations = (
 				345F401C21041033004714DB /* Debug */,
 				345F401D21041033004714DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		345F403C2104106F004714DB /* Build configuration list for PBXNativeTarget "BuGuaPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				345F403D2104106F004714DB /* Debug */,
+				345F403E2104106F004714DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
