@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum WuXing {
+public enum WuXing {
     case gold, wood, water, fire, earth
 }

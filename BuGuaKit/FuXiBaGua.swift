@@ -44,6 +44,16 @@ public enum FuXiBaGua: Int {
         }
     }
     
+    public var wuXing: WuXing {
+        switch self {
+        case .qian, .dui: return .gold
+        case .li: return .fire
+        case .zhen, .xun: return .wood
+        case .kan: return .water
+        case .gen, .kun: return .earth
+        }
+    }
+    
     func liangYi(forPosition position: Position) -> LiangYi {
         let denominator: Double
         
