@@ -15,6 +15,7 @@ struct LiuShiSiGua {
     var ying: Int {
         return (shi + 2) % 6 + 1
     }
+    
     var shi: Int {
         switch guaGongType {
         case 1: return 6
@@ -29,6 +30,7 @@ struct LiuShiSiGua {
             fatalError()
         }
     }
+
     var guaGong: FuXiBaGua {
         switch guaGongType {
         case 1...4: return outerGua
@@ -41,7 +43,8 @@ struct LiuShiSiGua {
 }
 
 private extension LiuShiSiGua {
-    
+
+    /// 回傳值是1-8，是按照一本書看來的，並沒有特別的意義
     var guaGongType: Int {
         let positions = differentPositions(aGua: innerGua, bGua: outerGua)
         
