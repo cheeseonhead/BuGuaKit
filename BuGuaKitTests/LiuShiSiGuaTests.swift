@@ -13,6 +13,8 @@ class LiuShiSiGuaTests: XCTestCase {
 
     var sut: LiuShiSiGua!
     
+    // MARK: - ShiYing
+    
     func testCorrectShiYingForAllSame() {
         sut = LiuShiSiGua(innerGua: .li, outerGua: .li)
         
@@ -67,5 +69,61 @@ class LiuShiSiGuaTests: XCTestCase {
         
         XCTAssertEqual(sut.shi, 3)
         XCTAssertEqual(sut.ying, 6)
+    }
+    
+    // MARK: - GuaGong
+    
+    func testGuaGongDuiDui() {
+        sut = LiuShiSiGua(innerGua: .dui, outerGua: .dui)
+        
+        XCTAssertEqual(sut.guaGong, .dui)
+    }
+    
+    func testGuaGongXunQian() {
+        sut = LiuShiSiGua(innerGua: .xun, outerGua: .qian)
+        
+        XCTAssertEqual(sut.guaGong, .qian)
+    }
+    
+    func testGuaGongGenLi() {
+        sut = LiuShiSiGua(innerGua: .gen, outerGua: .li)
+        
+        XCTAssertEqual(sut.guaGong, .li)
+    }
+    
+    func testGuaGongGenQian() {
+        sut = LiuShiSiGua(innerGua: .gen, outerGua: .qian)
+        
+        XCTAssertEqual(sut.guaGong, .qian)
+    }
+    
+    func testGuaGongKunQian() {
+        sut = LiuShiSiGua(innerGua: .kun, outerGua: .qian)
+        
+        XCTAssertEqual(sut.guaGong, .qian)
+    }
+    
+    func testGuaGongKunXun() {
+        sut = LiuShiSiGua(innerGua: .kun, outerGua: .xun)
+        
+        XCTAssertEqual(sut.guaGong, .qian)
+    }
+    
+    func testGuaGongGenKun() {
+        sut = LiuShiSiGua(innerGua: .gen, outerGua: .kun)
+        
+        XCTAssertEqual(sut.guaGong, .dui)
+    }
+    
+    func testGuaGongGenZhen() {
+        sut = LiuShiSiGua(innerGua: .gen, outerGua: .zhen)
+        
+        XCTAssertEqual(sut.guaGong, .dui)
+    }
+    
+    func testGuaGongDuiZhen() {
+        sut = LiuShiSiGua(innerGua: .dui, outerGua: .zhen)
+        
+        XCTAssertEqual(sut.guaGong, .dui)
     }
 }
