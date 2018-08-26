@@ -18,4 +18,18 @@ class FuXiBaGuaTests: XCTestCase {
         
         XCTAssertEqual("離", sut.character)
     }
+
+    // MARK: - Creation
+
+    func testCreateKanFromLiangYi() {
+        sut = FuXiBaGua(top: .yin, middle: .yang, bottom: .yin)
+
+        XCTAssertEqual(sut, .kan)
+    }
+
+    func testCreateZhenFromLiangYi() {
+        sut = FuXiBaGua(top: .yin, middle: .yin, bottom: .yang)
+
+        XCTAssertEqual(sut, .zhen)
+    }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum FuXiBaGua: Int {
+public enum FuXiBaGua: Int, CaseIterable {
 
     enum Position: CaseIterable {
         case top, middle, bottom
@@ -22,7 +22,15 @@ public enum FuXiBaGua: Int {
     case kan
     case gen
     case kun
-    
+
+    init(top: LiangYi, middle: LiangYi, bottom: LiangYi) {
+        self = FuXiBaGua.allCases.first(where: { (baGua) -> Bool in
+            return baGua.yao(at: .top) == top &&
+                baGua.yao(at: .middle) == middle &&
+                baGua.yao(at: .bottom) == bottom
+        })!
+    }
+
     public var character: String {
         return NSLocalizedString("fuxibagua\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
     }
