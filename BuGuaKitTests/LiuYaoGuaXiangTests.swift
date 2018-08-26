@@ -13,6 +13,8 @@ class LiuYaoGuaXiangTests: XCTestCase {
 
     var sut: LiuYaoGuaXiang!
 
+    // MARK: - Creation
+
     func testCreationOne() {
         sut = LiuYaoGuaXiang(liuYao: [.youngYin, .oldYang, .youngYin, .youngYin, .youngYang, .youngYang])
 
@@ -29,5 +31,19 @@ class LiuYaoGuaXiangTests: XCTestCase {
         XCTAssertEqual(sut.originalGua.outerGua, .kan)
         XCTAssertEqual(sut.changedGua.innerGua, .dui)
         XCTAssertEqual(sut.changedGua.outerGua, .kun)
+    }
+
+    // MARK: - 變爻爻支
+
+    func testChangedYaoZhiOne() {
+        sut = LiuYaoGuaXiang(liuYao: [.youngYin, .oldYang, .youngYin, .youngYin, .youngYang, .youngYang])
+
+        XCTAssertEqual(sut.changedYaoZhi, [nil, .si, nil, nil, nil, nil])
+    }
+
+    func testChangedYaoZhiTwo() {
+        sut = LiuYaoGuaXiang(liuYao: [.youngYang, .oldYin, .youngYin, .youngYin, .oldYang, .youngYin])
+
+        XCTAssertEqual(sut.changedYaoZhi, [nil, .mao, nil, nil, .hai, nil])
     }
 }
