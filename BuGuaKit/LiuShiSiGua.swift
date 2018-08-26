@@ -48,6 +48,13 @@ struct LiuShiSiGua {
             fatalError()
         }
     }()
+
+    lazy var yaoZhi: [DiZhi] = {
+        let innerZhi = innerGua.diZhi(forPosition: .inner)
+        let outerZhi = outerGua.diZhi(forPosition: .outer)
+
+        return innerZhi + outerZhi
+    }()
 }
 
 private extension LiuShiSiGua {
