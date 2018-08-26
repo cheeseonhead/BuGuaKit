@@ -86,7 +86,7 @@ extension FuXiBaGua {
 
     func diZhi(forPosition position: LiuShiSiGua.Position) -> [DiZhi] {
         switch position {
-        case .inner: return Array(diZhiOrder.prefix(through: 3))
+        case .inner: return Array(diZhiOrder.prefix(3))
         case .outer: return Array(diZhiOrder.suffix(3))
         }
     }
