@@ -9,7 +9,7 @@
 import Foundation
 
 public enum FuXiBaGua: Int {
-    
+
     enum Position: CaseIterable {
         case top, middle, bottom
     }
@@ -52,12 +52,12 @@ public enum FuXiBaGua: Int {
 
     public var yinYang: LiangYi {
         switch self {
-        case .qian, .dui, .li, .zhen: return .yang
-        case .xun, .kan, .gen, .kun: return .yin
+        case .qian, .zhen, .kan, .gen: return .yang
+        case .dui, .li, .xun, .kun: return .yin
         }
     }
 
-    func yao(forPosition position: Position) -> LiangYi {
+    func yao(at position: Position) -> LiangYi {
         let denominator: Double
         
         switch position {
@@ -77,6 +77,29 @@ public enum FuXiBaGua: Int {
             return .yin
         default:
             return .yang
+        }
+    }
+}
+
+// MARK: - 裝爻支
+extension FuXiBaGua {
+
+    func diZhi(forPosition position: LiuShiSiGua.Position) -> [DiZhi] {
+        switch position {
+        case .inner: return Array(diZhiOrder.prefix(through: 3))
+        case .outer: return Array(diZhiOrder.suffix(3))
+        }
+    }
+
+    private var diZhiOrder: [DiZhi] {
+        switch self {
+        case .qian, .zhen: return [.zi, .yin, .chen, .wu, .shen, .xu]
+        case .kan: return [.yin, .chen, .wu, .shen, .xu, .zi]
+        case .gen: return [.chen, .wu, .shen, .xu, .zi, .yin]
+        case .dui: return [.si, .mao, .chou, .hai, .you, .hai]
+        case .li: return [.mao, .chou, .hai, .you, .hai, .you]
+        case .xun: return [.chou, .hai, .you, .hai, .you, .wei]
+        case .kun: return [.wei, .si, .mao, .chou, .hai, .you]
         }
     }
 }

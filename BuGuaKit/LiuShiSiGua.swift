@@ -9,6 +9,11 @@
 import Foundation
 
 struct LiuShiSiGua {
+
+    enum Position {
+        case inner, outer
+    }
+
     let innerGua: FuXiBaGua
     let outerGua: FuXiBaGua
 
@@ -84,7 +89,7 @@ private extension LiuShiSiGua {
     }
     
     func differentPositions(aGua: FuXiBaGua, bGua: FuXiBaGua) -> [FuXiBaGua.Position] {
-        return FuXiBaGua.Position.allCases.filter { aGua.yao(forPosition: $0) != bGua.yao(forPosition: $0) }
+        return FuXiBaGua.Position.allCases.filter { aGua.yao(at: $0) != bGua.yao(at: $0) }
     }
 }
 
