@@ -10,4 +10,6 @@ import Foundation
 
 public enum DiZhi {
     case zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai
+
+    
 }

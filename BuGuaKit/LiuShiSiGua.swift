@@ -11,12 +11,15 @@ import Foundation
 struct LiuShiSiGua {
     let innerGua: FuXiBaGua
     let outerGua: FuXiBaGua
-    
-    var ying: Int {
-        return (shi + 2) % 6 + 1
+
+    init(innerGua: FuXiBaGua, outerGua: FuXiBaGua) {
+        self.innerGua = innerGua
+        self.outerGua = outerGua
     }
+
+    lazy var ying: Int = (shi + 2) % 6 + 1
     
-    var shi: Int {
+    lazy var shi: Int = {
         switch guaGongType {
         case 1: return 6
         case 2: return 1
@@ -29,9 +32,9 @@ struct LiuShiSiGua {
         default:
             fatalError()
         }
-    }
+    }()
 
-    var guaGong: FuXiBaGua {
+    lazy var guaGong: FuXiBaGua = {
         switch guaGongType {
         case 1...4: return outerGua
         case 5...7: return innerGua.opposite
@@ -39,7 +42,7 @@ struct LiuShiSiGua {
         default:
             fatalError()
         }
-    }
+    }()
 }
 
 private extension LiuShiSiGua {
