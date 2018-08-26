@@ -55,6 +55,8 @@ struct LiuShiSiGua {
 
         return innerZhi + outerZhi
     }()
+
+    lazy var myXing: WuXing = guaGong.wuXing
 }
 
 private extension LiuShiSiGua {

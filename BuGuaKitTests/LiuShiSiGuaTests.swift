@@ -128,4 +128,12 @@ class LiuShiSiGuaTests: XCTestCase {
 
         XCTAssertEqual(sut.yaoZhi, [.zi, .yin, .chen, .shen, .xu, .zi])
     }
+
+    // MARK: - 六親之我
+
+    func testMyXing() {
+        sut = LiuShiSiGua(innerGua: .zhen, outerGua: .kan)
+
+        XCTAssertEqual(sut.myXing, .water)
+    }
 }
