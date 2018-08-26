@@ -50,14 +50,14 @@ public enum FuXiBaGua: Int {
         }
     }
 
-    public var liangYi: LiangYi {
+    public var yinYang: LiangYi {
         switch self {
         case .qian, .dui, .li, .zhen: return .yang
         case .xun, .kan, .gen, .kun: return .yin
         }
     }
 
-    func liangYi(forPosition position: Position) -> LiangYi {
+    func yao(forPosition position: Position) -> LiangYi {
         let denominator: Double
         
         switch position {
