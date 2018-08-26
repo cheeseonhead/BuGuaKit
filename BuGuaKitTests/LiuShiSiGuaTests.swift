@@ -122,4 +122,10 @@ class LiuShiSiGuaTests: XCTestCase {
 
         XCTAssertEqual(sut.yaoZhi, [.wei, .si, .mao, .shen, .xu, .zi])
     }
+
+    func testBasicYaoZhiTwo() {
+        sut = LiuShiSiGua(innerGua: .zhen, outerGua: .kan)
+
+        XCTAssertEqual(sut.yaoZhi, [.zi, .yin, .chen, .shen, .xu, .zi])
+    }
 }

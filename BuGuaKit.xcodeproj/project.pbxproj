@@ -125,8 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				345F401421041033004714DB /* Info.plist */,
-				343992A7210521E000C64474 /* LiuShiSiGuaTests.swift */,
 				343992AE21052B7500C64474 /* FuXiBaGuaTests.swift */,
+				343992A7210521E000C64474 /* LiuShiSiGuaTests.swift */,
 				9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */,
 			);
 			path = BuGuaKitTests;
