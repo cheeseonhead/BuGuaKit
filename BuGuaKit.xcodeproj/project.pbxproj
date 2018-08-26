@@ -21,6 +21,7 @@
 		345F40432104EA7C004714DB /* FuXiBaGua.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F40422104EA7C004714DB /* FuXiBaGua.swift */; };
 		345F40452104F3DB004714DB /* LiuShiSiGua.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F40442104F3DB004714DB /* LiuShiSiGua.swift */; };
 		9B16525721323C02001991DB /* DiZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16525621323C02001991DB /* DiZhi.swift */; };
+		9B16525921323F9B001991DB /* LiangYi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16525821323F9B001991DB /* LiangYi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		345F40422104EA7C004714DB /* FuXiBaGua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuXiBaGua.swift; sourceTree = "<group>"; };
 		345F40442104F3DB004714DB /* LiuShiSiGua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuShiSiGua.swift; sourceTree = "<group>"; };
 		9B16525621323C02001991DB /* DiZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiZhi.swift; sourceTree = "<group>"; };
+		9B16525821323F9B001991DB /* LiangYi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiangYi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +106,10 @@
 		345F400621041033004714DB /* BuGuaKit */ = {
 			isa = PBXGroup;
 			children = (
+				9B16525A21323FAA001991DB /* Enums */,
+				9B16525D21323FEB001991DB /* Structs */,
 				345F400721041033004714DB /* BuGuaKit.h */,
 				345F400821041033004714DB /* Info.plist */,
-				345F40422104EA7C004714DB /* FuXiBaGua.swift */,
-				345F40442104F3DB004714DB /* LiuShiSiGua.swift */,
-				342096B921053EA70093C9A2 /* WuXing.swift */,
-				9B16525621323C02001991DB /* DiZhi.swift */,
 				343992AD21052A4700C64474 /* Localizable.strings */,
 			);
 			path = BuGuaKit;
@@ -136,6 +136,25 @@
 				345F40302104106F004714DB /* Info.plist */,
 			);
 			path = BuGuaPlayground;
+			sourceTree = "<group>";
+		};
+		9B16525A21323FAA001991DB /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				9B16525821323F9B001991DB /* LiangYi.swift */,
+				345F40422104EA7C004714DB /* FuXiBaGua.swift */,
+				342096B921053EA70093C9A2 /* WuXing.swift */,
+				9B16525621323C02001991DB /* DiZhi.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
+		9B16525D21323FEB001991DB /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				345F40442104F3DB004714DB /* LiuShiSiGua.swift */,
+			);
+			name = Structs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				342096BA21053EA70093C9A2 /* WuXing.swift in Sources */,
+				9B16525921323F9B001991DB /* LiangYi.swift in Sources */,
 				345F40432104EA7C004714DB /* FuXiBaGua.swift in Sources */,
 				9B16525721323C02001991DB /* DiZhi.swift in Sources */,
 				345F40452104F3DB004714DB /* LiuShiSiGua.swift in Sources */,
