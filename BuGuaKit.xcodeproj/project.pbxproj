@@ -23,6 +23,7 @@
 		9B16525721323C02001991DB /* DiZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16525621323C02001991DB /* DiZhi.swift */; };
 		9B16525921323F9B001991DB /* LiangYi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16525821323F9B001991DB /* LiangYi.swift */; };
 		9B16525F21324C31001991DB /* LiuYaoGuaXiang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */; };
+		9B165263213253B3001991DB /* LiuYaoGuaXiangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		9B16525621323C02001991DB /* DiZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiZhi.swift; sourceTree = "<group>"; };
 		9B16525821323F9B001991DB /* LiangYi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiangYi.swift; sourceTree = "<group>"; };
 		9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuYaoGuaXiang.swift; sourceTree = "<group>"; };
+		9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuYaoGuaXiangTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				345F401421041033004714DB /* Info.plist */,
 				343992A7210521E000C64474 /* LiuShiSiGuaTests.swift */,
 				343992AE21052B7500C64474 /* FuXiBaGuaTests.swift */,
+				9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */,
 			);
 			path = BuGuaKitTests;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B165263213253B3001991DB /* LiuYaoGuaXiangTests.swift in Sources */,
 				343992AF21052B7500C64474 /* FuXiBaGuaTests.swift in Sources */,
 				343992A8210521E000C64474 /* LiuShiSiGuaTests.swift in Sources */,
 			);
