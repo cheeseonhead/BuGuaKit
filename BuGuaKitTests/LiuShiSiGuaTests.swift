@@ -136,4 +136,12 @@ class LiuShiSiGuaTests: XCTestCase {
 
         XCTAssertEqual(sut.myXing, .water)
     }
+
+    // MARK: - 六親
+
+    func testLiuQin() {
+        sut = LiuShiSiGua(innerGua: .li, outerGua: .qian)
+
+        XCTAssertEqual(sut.liuQin, [.parent, .descendant, .superior, .sibling, .wealth, .descendant])
+    }
 }
