@@ -25,6 +25,7 @@
 		9B16525F21324C31001991DB /* LiuYaoGuaXiang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */; };
 		9B165263213253B3001991DB /* LiuYaoGuaXiangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */; };
 		9B16526521325519001991DB /* YaoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16526421325519001991DB /* YaoType.swift */; };
+		9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1F83221345B410048B4CB /* LiuQin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuYaoGuaXiang.swift; sourceTree = "<group>"; };
 		9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuYaoGuaXiangTests.swift; sourceTree = "<group>"; };
 		9B16526421325519001991DB /* YaoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YaoType.swift; sourceTree = "<group>"; };
+		9BA1F83221345B410048B4CB /* LiuQin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuQin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				342096B921053EA70093C9A2 /* WuXing.swift */,
 				9B16525621323C02001991DB /* DiZhi.swift */,
 				9B16526421325519001991DB /* YaoType.swift */,
+				9BA1F83221345B410048B4CB /* LiuQin.swift */,
 			);
 			name = Enums;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B16525F21324C31001991DB /* LiuYaoGuaXiang.swift in Sources */,
+				9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */,
 				9B16526521325519001991DB /* YaoType.swift in Sources */,
 				342096BA21053EA70093C9A2 /* WuXing.swift in Sources */,
 				9B16525921323F9B001991DB /* LiangYi.swift in Sources */,
