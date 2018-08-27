@@ -57,6 +57,10 @@ struct LiuShiSiGua {
     }()
 
     lazy var myXing: WuXing = guaGong.wuXing
+
+    lazy var liuQin: [LiuQin] = yaoZhi.map { (diZhi) -> LiuQin in
+        LiuQin(from: myXing.relationShip(to: diZhi.wuXing))
+    }
 }
 
 private extension LiuShiSiGua {

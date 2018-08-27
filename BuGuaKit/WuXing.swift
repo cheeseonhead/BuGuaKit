@@ -9,6 +9,11 @@
 import Foundation
 
 public enum WuXing: CaseIterable {
+
+    enum Relationship {
+        case generates, generatedBy, same, overcomes, overcomedBy
+    }
+
     case gold, wood, water, fire, earth
 
     var generates: WuXing {
@@ -37,5 +42,21 @@ public enum WuXing: CaseIterable {
 
     var overcomedBy: WuXing {
         return WuXing.allCases.first(where: { $0.overcomes == self })!
+    }
+
+    func relationShip(to wuXing: WuXing) -> Relationship {
+        if generates == wuXing {
+            return .generates
+        } else if generatedBy == wuXing {
+            return .generatedBy
+        } else if wuXing == self {
+            return .same
+        } else if overcomes == wuXing {
+            return .overcomes
+        } else if overcomedBy == wuXing {
+            return .overcomedBy
+        }
+
+        fatalError("\(self) and \(wuXing) don't have a defined relationship.")
     }
 }
