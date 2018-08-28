@@ -14,7 +14,7 @@ public struct LiuYaoGuaXiang {
     let innerYao: [YaoType]
     let outerYao: [YaoType]
 
-    init(liuYao: [YaoType]) {
+    public init(liuYao: [YaoType]) {
         assert(liuYao.count == 6, "Cannot create GuaXiang without exactly 6 yao")
 
         self.liuYao = liuYao
@@ -22,21 +22,21 @@ public struct LiuYaoGuaXiang {
         outerYao = Array(liuYao.suffix(3))
     }
 
-    lazy var originalGua: LiuShiSiGua = {
+    public lazy var originalGua: LiuShiSiGua = {
         let innerGua = originalBaGua(from: innerYao)
         let outerGua = originalBaGua(from: outerYao)
 
         return LiuShiSiGua(innerGua: innerGua, outerGua: outerGua)
     }()
 
-    lazy var changedGua: LiuShiSiGua = {
+    public lazy var changedGua: LiuShiSiGua = {
         let innerGua = changedBaGua(from: innerYao)
         let outerGua = changedBaGua(from: outerYao)
 
         return LiuShiSiGua(innerGua: innerGua, outerGua: outerGua)
     }()
 
-    lazy var changedYaoZhi: [DiZhi?] = {
+    public lazy var changedYaoZhi: [DiZhi?] = {
         return zip(liuYao, changedGua.yaoZhi).map({ (yaoType, zhi) in
             if !yaoType.isStable {
                 return zhi

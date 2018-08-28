@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum LiuQin {
+public enum LiuQin {
     case parent, descendant, wealth, sibling, superior
 
     init(from relationship: WuXing.Relationship) {

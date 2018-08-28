@@ -8,23 +8,23 @@
 
 import Foundation
 
-struct LiuShiSiGua {
+public struct LiuShiSiGua {
 
     enum Position {
         case inner, outer
     }
 
-    let innerGua: FuXiBaGua
-    let outerGua: FuXiBaGua
+    public let innerGua: FuXiBaGua
+    public let outerGua: FuXiBaGua
 
     init(innerGua: FuXiBaGua, outerGua: FuXiBaGua) {
         self.innerGua = innerGua
         self.outerGua = outerGua
     }
 
-    lazy var ying: Int = (shi + 2) % 6 + 1
+    public lazy var ying: Int = (shi + 2) % 6 + 1
     
-    lazy var shi: Int = {
+    public lazy var shi: Int = {
         switch guaGongType {
         case 1: return 6
         case 2: return 1
@@ -39,7 +39,7 @@ struct LiuShiSiGua {
         }
     }()
 
-    lazy var guaGong: FuXiBaGua = {
+    public lazy var guaGong: FuXiBaGua = {
         switch guaGongType {
         case 1...4: return outerGua
         case 5...7: return innerGua.opposite
@@ -49,16 +49,16 @@ struct LiuShiSiGua {
         }
     }()
 
-    lazy var yaoZhi: [DiZhi] = {
+    public lazy var yaoZhi: [DiZhi] = {
         let innerZhi = innerGua.diZhi(forPosition: .inner)
         let outerZhi = outerGua.diZhi(forPosition: .outer)
 
         return innerZhi + outerZhi
     }()
 
-    lazy var myXing: WuXing = guaGong.wuXing
+    public lazy var myXing: WuXing = guaGong.wuXing
 
-    lazy var liuQin: [LiuQin] = yaoZhi.map { (diZhi) -> LiuQin in
+    public lazy var liuQin: [LiuQin] = yaoZhi.map { (diZhi) -> LiuQin in
         LiuQin(from: myXing.relationShip(to: diZhi.wuXing))
     }
 }

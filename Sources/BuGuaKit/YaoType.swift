@@ -8,24 +8,24 @@
 
 import Foundation
 
-enum YaoType {
+public enum YaoType {
     case oldYang, oldYin, youngYang, youngYin
 
-    var originalYi: LiangYi {
+    public var originalYi: LiangYi {
         switch self {
         case .oldYang, .youngYang: return .yang
         case .oldYin, .youngYin: return .yin
         }
     }
 
-    var changedYi: LiangYi {
+    public var changedYi: LiangYi {
         switch self {
         case .oldYin, .youngYang: return .yang
         case .oldYang, .youngYin: return .yin
         }
     }
 
-    var isStable: Bool {
+    public var isStable: Bool {
         switch self {
         case .oldYin, .oldYang: return false
         case .youngYin, .youngYang: return true

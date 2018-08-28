@@ -11,7 +11,7 @@ import Foundation
 public enum DiZhi {
     case zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai
 
-    var wuXing: WuXing {
+    public var wuXing: WuXing {
         switch self {
         case .chou, .chen, .wei, .xu: return .earth
         case .hai, .zi: return .water

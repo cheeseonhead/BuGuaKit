@@ -10,7 +10,7 @@ import Foundation
 
 public enum FuXiBaGua: Int, CaseIterable {
 
-    enum Position: CaseIterable {
+    public enum Position: CaseIterable {
         case top, middle, bottom
     }
     
@@ -23,7 +23,7 @@ public enum FuXiBaGua: Int, CaseIterable {
     case gen
     case kun
 
-    init(top: LiangYi, middle: LiangYi, bottom: LiangYi) {
+    public init(top: LiangYi, middle: LiangYi, bottom: LiangYi) {
         self = FuXiBaGua.allCases.first(where: { (baGua) -> Bool in
             return baGua.yao(at: .top) == top &&
                 baGua.yao(at: .middle) == middle &&
@@ -67,7 +67,7 @@ public enum FuXiBaGua: Int, CaseIterable {
         }
     }
 
-    func yao(at position: Position) -> LiangYi {
+    public func yao(at position: Position) -> LiangYi {
         let denominator: Double
         
         switch position {

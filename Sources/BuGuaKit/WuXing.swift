@@ -10,13 +10,13 @@ import Foundation
 
 public enum WuXing: CaseIterable {
 
-    enum Relationship {
+    public enum Relationship {
         case generates, generatedBy, same, overcomes, overcomedBy
     }
 
     case gold, wood, water, fire, earth
 
-    var generates: WuXing {
+    public var generates: WuXing {
         switch self {
         case .gold: return .water
         case .water: return .wood
@@ -26,11 +26,11 @@ public enum WuXing: CaseIterable {
         }
     }
 
-    var generatedBy: WuXing {
+    public var generatedBy: WuXing {
         return WuXing.allCases.first(where: { $0.generates == self })!
     }
 
-    var overcomes: WuXing {
+    public var overcomes: WuXing {
         switch self {
         case .gold: return .wood
         case .wood: return .earth
@@ -40,11 +40,11 @@ public enum WuXing: CaseIterable {
         }
     }
 
-    var overcomedBy: WuXing {
+    public var overcomedBy: WuXing {
         return WuXing.allCases.first(where: { $0.overcomes == self })!
     }
 
-    func relationShip(to wuXing: WuXing) -> Relationship {
+    public func relationShip(to wuXing: WuXing) -> Relationship {
         if generates == wuXing {
             return .generates
         } else if generatedBy == wuXing {
