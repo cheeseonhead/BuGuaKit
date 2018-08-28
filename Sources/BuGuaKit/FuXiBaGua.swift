@@ -32,7 +32,9 @@ public enum FuXiBaGua: Int, CaseIterable {
     }
 
     public var character: String {
-        return NSLocalizedString("fuxibagua\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
+        // SPM doesn't support resource files yet
+//        return NSLocalizedString("fuxibagua\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
+        return FuXiBaGuaText["fuxibagua\(self)"]!
     }
     
     public var opposite: FuXiBaGua {
