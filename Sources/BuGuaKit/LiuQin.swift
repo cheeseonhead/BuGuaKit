@@ -20,4 +20,8 @@ public enum LiuQin {
         case .overcomedBy: self = .superior
         }
     }
+
+    public var character: String {
+        return NSLocalizedString("liuqin\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
+    }
 }

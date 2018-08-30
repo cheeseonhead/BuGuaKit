@@ -32,3 +32,9 @@
 "wuxingwater" = "水";
 "wuxingfire" = "火";
 "wuxingearth" = "土";
+
+"liuqinparent" = "父母";
+"liuqinsibling" = "兄弟";
+"liuqinwealth" = "妻財";
+"liuqindescendant" = "子孫";
+"liuqinsuperior" = "官鬼";
