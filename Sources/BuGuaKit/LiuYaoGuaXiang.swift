@@ -22,21 +22,21 @@ public struct LiuYaoGuaXiang {
         outerYao = Array(liuYao.suffix(3))
     }
 
-    public lazy var originalGua: LiuShiSiGua = {
+    public var originalGua: LiuShiSiGua {
         let innerGua = originalBaGua(from: innerYao)
         let outerGua = originalBaGua(from: outerYao)
 
         return LiuShiSiGua(innerGua: innerGua, outerGua: outerGua)
-    }()
+    }
 
-    public lazy var changedGua: LiuShiSiGua = {
+    public var changedGua: LiuShiSiGua {
         let innerGua = changedBaGua(from: innerYao)
         let outerGua = changedBaGua(from: outerYao)
 
         return LiuShiSiGua(innerGua: innerGua, outerGua: outerGua)
-    }()
+    }
 
-    public lazy var changedYaoZhi: [DiZhi?] = {
+    public var changedYaoZhi: [DiZhi?] {
         return zip(liuYao, changedGua.yaoZhi).map({ (yaoType, zhi) in
             if !yaoType.isStable {
                 return zhi
@@ -44,7 +44,7 @@ public struct LiuYaoGuaXiang {
                 return nil
             }
         })
-    }()
+    }
 }
 
 private extension LiuYaoGuaXiang {

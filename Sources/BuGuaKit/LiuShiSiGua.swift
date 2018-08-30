@@ -22,9 +22,11 @@ public struct LiuShiSiGua {
         self.outerGua = outerGua
     }
 
-    public lazy var ying: Int = (shi + 2) % 6 + 1
+    public var ying: Int {
+        return (shi + 2) % 6 + 1
+    }
     
-    public lazy var shi: Int = {
+    public var shi: Int {
         switch guaGongType {
         case 1: return 6
         case 2: return 1
@@ -37,9 +39,9 @@ public struct LiuShiSiGua {
         default:
             fatalError()
         }
-    }()
+    }
 
-    public lazy var guaGong: FuXiBaGua = {
+    public var guaGong: FuXiBaGua {
         switch guaGongType {
         case 1...4: return outerGua
         case 5...7: return innerGua.opposite
@@ -47,19 +49,21 @@ public struct LiuShiSiGua {
         default:
             fatalError()
         }
-    }()
+    }
 
-    public lazy var yaoZhi: [DiZhi] = {
+    public var yaoZhi: [DiZhi] {
         let innerZhi = innerGua.diZhi(forPosition: .inner)
         let outerZhi = outerGua.diZhi(forPosition: .outer)
 
         return innerZhi + outerZhi
-    }()
+    }
 
-    public lazy var myXing: WuXing = guaGong.wuXing
+    public var myXing: WuXing { return guaGong.wuXing }
 
-    public lazy var liuQin: [LiuQin] = yaoZhi.map { (diZhi) -> LiuQin in
-        LiuQin(from: myXing.relationShip(to: diZhi.wuXing))
+    public var liuQin: [LiuQin] {
+        return yaoZhi.map { (diZhi) -> LiuQin in
+            LiuQin(from: myXing.relationShip(to: diZhi.wuXing))
+        }
     }
 }
 

@@ -16,6 +16,10 @@ public enum WuXing: CaseIterable {
 
     case gold, wood, water, fire, earth
 
+    public var character: String {
+        return NSLocalizedString("wuxing\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
+    }
+
     public var generates: WuXing {
         switch self {
         case .gold: return .water

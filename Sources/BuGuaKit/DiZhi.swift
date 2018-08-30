@@ -11,6 +11,10 @@ import Foundation
 public enum DiZhi {
     case zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai
 
+    public var character: String {
+        return NSLocalizedString("dizhi\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
+    }
+
     public var wuXing: WuXing {
         switch self {
         case .chou, .chen, .wei, .xu: return .earth
