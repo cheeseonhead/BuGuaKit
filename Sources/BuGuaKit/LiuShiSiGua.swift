@@ -58,12 +58,24 @@ public struct LiuShiSiGua {
         return innerZhi + outerZhi
     }
 
+    public func yaoZhi(at position: Int) -> DiZhi {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+
+        return yaoZhi[position - 1]
+    }
+
     public var myXing: WuXing { return guaGong.wuXing }
 
     public var liuQin: [LiuQin] {
         return yaoZhi.map { (diZhi) -> LiuQin in
             LiuQin(from: myXing.relationShip(to: diZhi.wuXing))
         }
+    }
+
+    public func liuQin(at position: Int) -> LiuQin {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+
+        return liuQin[position - 1]
     }
 }
 

@@ -45,6 +45,12 @@ public struct LiuYaoGuaXiang {
             }
         })
     }
+
+    public func yao(at position: Int) -> YaoType {
+        assert(position >= 1 && position <= 6, "position out of range")
+
+        return liuYao[position - 1]
+    }
 }
 
 private extension LiuYaoGuaXiang {
