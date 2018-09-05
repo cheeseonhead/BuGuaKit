@@ -20,6 +20,13 @@
 		345F402F2104106F004714DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345F402D2104106F004714DB /* LaunchScreen.storyboard */; };
 		345F40432104EA7C004714DB /* FuXiBaGua.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F40422104EA7C004714DB /* FuXiBaGua.swift */; };
 		345F40452104F3DB004714DB /* LiuShiSiGua.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F40442104F3DB004714DB /* LiuShiSiGua.swift */; };
+		9B16525721323C02001991DB /* DiZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16525621323C02001991DB /* DiZhi.swift */; };
+		9B16525921323F9B001991DB /* LiangYi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16525821323F9B001991DB /* LiangYi.swift */; };
+		9B16525F21324C31001991DB /* LiuYaoGuaXiang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */; };
+		9B165263213253B3001991DB /* LiuYaoGuaXiangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */; };
+		9B16526521325519001991DB /* YaoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16526421325519001991DB /* YaoType.swift */; };
+		9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1F83221345B410048B4CB /* LiuQin.swift */; };
+		9BA1F8362134D7FD0048B4CB /* FuXiBaGuaText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1F8352134D7FD0048B4CB /* FuXiBaGuaText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,13 @@
 		345F40302104106F004714DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		345F40422104EA7C004714DB /* FuXiBaGua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuXiBaGua.swift; sourceTree = "<group>"; };
 		345F40442104F3DB004714DB /* LiuShiSiGua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuShiSiGua.swift; sourceTree = "<group>"; };
+		9B16525621323C02001991DB /* DiZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiZhi.swift; sourceTree = "<group>"; };
+		9B16525821323F9B001991DB /* LiangYi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiangYi.swift; sourceTree = "<group>"; };
+		9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuYaoGuaXiang.swift; sourceTree = "<group>"; };
+		9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuYaoGuaXiangTests.swift; sourceTree = "<group>"; };
+		9B16526421325519001991DB /* YaoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YaoType.swift; sourceTree = "<group>"; };
+		9BA1F83221345B410048B4CB /* LiuQin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuQin.swift; sourceTree = "<group>"; };
+		9BA1F8352134D7FD0048B4CB /* FuXiBaGuaText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuXiBaGuaText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,24 +116,27 @@
 		345F400621041033004714DB /* BuGuaKit */ = {
 			isa = PBXGroup;
 			children = (
+				9B16525A21323FAA001991DB /* Enums */,
+				9B16525D21323FEB001991DB /* Structs */,
+				9BA1F8342134D7E20048B4CB /* Resources */,
 				345F400721041033004714DB /* BuGuaKit.h */,
 				345F400821041033004714DB /* Info.plist */,
-				345F40422104EA7C004714DB /* FuXiBaGua.swift */,
-				345F40442104F3DB004714DB /* LiuShiSiGua.swift */,
-				342096B921053EA70093C9A2 /* WuXing.swift */,
 				343992AD21052A4700C64474 /* Localizable.strings */,
 			);
-			path = BuGuaKit;
+			name = BuGuaKit;
+			path = Sources/BuGuaKit;
 			sourceTree = "<group>";
 		};
 		345F401121041033004714DB /* BuGuaKitTests */ = {
 			isa = PBXGroup;
 			children = (
 				345F401421041033004714DB /* Info.plist */,
-				343992A7210521E000C64474 /* LiuShiSiGuaTests.swift */,
 				343992AE21052B7500C64474 /* FuXiBaGuaTests.swift */,
+				343992A7210521E000C64474 /* LiuShiSiGuaTests.swift */,
+				9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */,
 			);
-			path = BuGuaKitTests;
+			name = BuGuaKitTests;
+			path = Tests/BuGuaKitTests;
 			sourceTree = "<group>";
 		};
 		345F40232104106D004714DB /* BuGuaPlayground */ = {
@@ -133,6 +150,36 @@
 				345F40302104106F004714DB /* Info.plist */,
 			);
 			path = BuGuaPlayground;
+			sourceTree = "<group>";
+		};
+		9B16525A21323FAA001991DB /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				9B16525821323F9B001991DB /* LiangYi.swift */,
+				345F40422104EA7C004714DB /* FuXiBaGua.swift */,
+				342096B921053EA70093C9A2 /* WuXing.swift */,
+				9B16525621323C02001991DB /* DiZhi.swift */,
+				9B16526421325519001991DB /* YaoType.swift */,
+				9BA1F83221345B410048B4CB /* LiuQin.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
+		9B16525D21323FEB001991DB /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				345F40442104F3DB004714DB /* LiuShiSiGua.swift */,
+				9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */,
+			);
+			name = Structs;
+			sourceTree = "<group>";
+		};
+		9BA1F8342134D7E20048B4CB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9BA1F8352134D7FD0048B4CB /* FuXiBaGuaText.swift */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,8 +325,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B16525F21324C31001991DB /* LiuYaoGuaXiang.swift in Sources */,
+				9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */,
+				9BA1F8362134D7FD0048B4CB /* FuXiBaGuaText.swift in Sources */,
+				9B16526521325519001991DB /* YaoType.swift in Sources */,
 				342096BA21053EA70093C9A2 /* WuXing.swift in Sources */,
+				9B16525921323F9B001991DB /* LiangYi.swift in Sources */,
 				345F40432104EA7C004714DB /* FuXiBaGua.swift in Sources */,
+				9B16525721323C02001991DB /* DiZhi.swift in Sources */,
 				345F40452104F3DB004714DB /* LiuShiSiGua.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B165263213253B3001991DB /* LiuYaoGuaXiangTests.swift in Sources */,
 				343992AF21052B7500C64474 /* FuXiBaGuaTests.swift in Sources */,
 				343992A8210521E000C64474 /* LiuShiSiGuaTests.swift in Sources */,
 			);
@@ -392,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -449,7 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -471,9 +525,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = BuGuaKit/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/BuGuaKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,9 +553,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = BuGuaKit/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/BuGuaKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,7 +576,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77Q2XB2RSV;
-				INFOPLIST_FILE = BuGuaKitTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/BuGuaKitTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -543,7 +597,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77Q2XB2RSV;
-				INFOPLIST_FILE = BuGuaKitTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/BuGuaKitTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

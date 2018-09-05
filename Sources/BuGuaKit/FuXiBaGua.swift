@@ -8,13 +8,9 @@
 
 import Foundation
 
-enum LiangYi {
-    case yang, yin
-}
+public enum FuXiBaGua: Int, CaseIterable {
 
-public enum FuXiBaGua: Int {
-    
-    enum Position: CaseIterable {
+    public enum Position: CaseIterable {
         case top, middle, bottom
     }
     
@@ -26,7 +22,15 @@ public enum FuXiBaGua: Int {
     case kan
     case gen
     case kun
-    
+
+    public init(top: LiangYi, middle: LiangYi, bottom: LiangYi) {
+        self = FuXiBaGua.allCases.first(where: { (baGua) -> Bool in
+            return baGua.yao(at: .top) == top &&
+                baGua.yao(at: .middle) == middle &&
+                baGua.yao(at: .bottom) == bottom
+        })!
+    }
+
     public var character: String {
         return NSLocalizedString("fuxibagua\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
     }
@@ -53,8 +57,15 @@ public enum FuXiBaGua: Int {
         case .gen, .kun: return .earth
         }
     }
-    
-    func liangYi(forPosition position: Position) -> LiangYi {
+
+    public var yinYang: LiangYi {
+        switch self {
+        case .qian, .zhen, .kan, .gen: return .yang
+        case .dui, .li, .xun, .kun: return .yin
+        }
+    }
+
+    public func yao(at position: Position) -> LiangYi {
         let denominator: Double
         
         switch position {
@@ -74,6 +85,29 @@ public enum FuXiBaGua: Int {
             return .yin
         default:
             return .yang
+        }
+    }
+}
+
+// MARK: - 裝爻支
+extension FuXiBaGua {
+
+    func diZhi(forPosition position: LiuShiSiGua.Position) -> [DiZhi] {
+        switch position {
+        case .inner: return Array(diZhiOrder.prefix(3))
+        case .outer: return Array(diZhiOrder.suffix(3))
+        }
+    }
+
+    private var diZhiOrder: [DiZhi] {
+        switch self {
+        case .qian, .zhen: return [.zi, .yin, .chen, .wu, .shen, .xu]
+        case .kan: return [.yin, .chen, .wu, .shen, .xu, .zi]
+        case .gen: return [.chen, .wu, .shen, .xu, .zi, .yin]
+        case .dui: return [.si, .mao, .chou, .hai, .you, .hai]
+        case .li: return [.mao, .chou, .hai, .you, .hai, .you]
+        case .xun: return [.chou, .hai, .you, .hai, .you, .wei]
+        case .kun: return [.wei, .si, .mao, .chou, .hai, .you]
         }
     }
 }

@@ -8,14 +8,25 @@
 
 import Foundation
 
-struct LiuShiSiGua {
-    let innerGua: FuXiBaGua
-    let outerGua: FuXiBaGua
-    
-    var ying: Int {
+public struct LiuShiSiGua {
+
+    enum Position {
+        case inner, outer
+    }
+
+    public let innerGua: FuXiBaGua
+    public let outerGua: FuXiBaGua
+
+    init(innerGua: FuXiBaGua, outerGua: FuXiBaGua) {
+        self.innerGua = innerGua
+        self.outerGua = outerGua
+    }
+
+    public var ying: Int {
         return (shi + 2) % 6 + 1
     }
-    var shi: Int {
+    
+    public var shi: Int {
         switch guaGongType {
         case 1: return 6
         case 2: return 1
@@ -29,7 +40,8 @@ struct LiuShiSiGua {
             fatalError()
         }
     }
-    var guaGong: FuXiBaGua {
+
+    public var guaGong: FuXiBaGua {
         switch guaGongType {
         case 1...4: return outerGua
         case 5...7: return innerGua.opposite
@@ -38,10 +50,38 @@ struct LiuShiSiGua {
             fatalError()
         }
     }
+
+    public var yaoZhi: [DiZhi] {
+        let innerZhi = innerGua.diZhi(forPosition: .inner)
+        let outerZhi = outerGua.diZhi(forPosition: .outer)
+
+        return innerZhi + outerZhi
+    }
+
+    public func yaoZhi(at position: Int) -> DiZhi {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+
+        return yaoZhi[position - 1]
+    }
+
+    public var myXing: WuXing { return guaGong.wuXing }
+
+    public var liuQin: [LiuQin] {
+        return yaoZhi.map { (diZhi) -> LiuQin in
+            LiuQin(from: myXing.relationShip(to: diZhi.wuXing))
+        }
+    }
+
+    public func liuQin(at position: Int) -> LiuQin {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+
+        return liuQin[position - 1]
+    }
 }
 
 private extension LiuShiSiGua {
-    
+
+    /// 回傳值是1-8，是按照一本書看來的，並沒有特別的意義
     var guaGongType: Int {
         let positions = differentPositions(aGua: innerGua, bGua: outerGua)
         
@@ -78,7 +118,7 @@ private extension LiuShiSiGua {
     }
     
     func differentPositions(aGua: FuXiBaGua, bGua: FuXiBaGua) -> [FuXiBaGua.Position] {
-        return FuXiBaGua.Position.allCases.filter { aGua.liangYi(forPosition: $0) != bGua.liangYi(forPosition: $0) }
+        return FuXiBaGua.Position.allCases.filter { aGua.yao(at: $0) != bGua.yao(at: $0) }
     }
 }
 

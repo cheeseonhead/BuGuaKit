@@ -1,0 +1,40 @@
+/* 
+  GuaName.strings
+  BuGuaKit
+
+  Created by Cheese Onhead on 2018-07-22.
+  Copyright © 2018 cheeseonhead. All rights reserved.
+*/
+"fuxibaguaqian" = "乾";
+"fuxibaguadui" = "兌";
+"fuxibaguali" = "離";
+"fuxibaguazhen" = "震";
+"fuxibaguaxun" = "巽";
+"fuxibaguakan" = "坎";
+"fuxibaguagen" = "艮";
+"fuxibaguakun" = "坤";
+
+"dizhizi" = "子";
+"dizhichou" = "丑";
+"dizhiyin" = "寅";
+"dizhimao" = "卯";
+"dizhichen" = "辰";
+"dizhisi" = "巳";
+"dizhiwu" = "午";
+"dizhiwei" = "未";
+"dizhishen" = "申";
+"dizhiyou" = "酉";
+"dizhixu" = "戌";
+"dizhihai" = "亥";
+
+"wuxinggold" = "金";
+"wuxingwood" = "木";
+"wuxingwater" = "水";
+"wuxingfire" = "火";
+"wuxingearth" = "土";
+
+"liuqinparent" = "父母";
+"liuqinsibling" = "兄弟";
+"liuqinwealth" = "妻財";
+"liuqindescendant" = "子孫";
+"liuqinsuperior" = "官鬼";
