@@ -10,6 +10,8 @@ import Foundation
 
 public struct LiuYaoGuaXiang {
 
+    public static let `default` = LiuYaoGuaXiang(liuYao: [.youngYang, .youngYang, .youngYang, .youngYang, .youngYang, .youngYang, ])
+
     let liuYao: [YaoType]
     let innerYao: [YaoType]
     let outerYao: [YaoType]
