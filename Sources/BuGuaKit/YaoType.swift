@@ -24,6 +24,15 @@ public enum YaoType: CaseIterable {
         case .oldYang, .youngYin: return .yin
         }
     }
+    
+    public var toggledStability: YaoType {
+        switch self {
+        case .oldYang: return .youngYang
+        case .oldYin: return .youngYin
+        case .youngYang: return .oldYang
+        case .youngYin: return .oldYin
+        }
+    }
 
     public var isStable: Bool {
         switch self {

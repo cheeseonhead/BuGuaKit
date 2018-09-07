@@ -10,4 +10,11 @@ import Foundation
 
 public enum LiangYi {
     case yang, yin
+    
+    public var yaoType: YaoType {
+        switch self {
+        case .yang: return .youngYang
+        case .yin: return .youngYin
+        }
+    }
 }

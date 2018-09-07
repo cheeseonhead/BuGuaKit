@@ -31,6 +31,16 @@ public enum FuXiBaGua: Int, CaseIterable {
         })!
     }
 
+    public init(integer: Int) {
+        let remainder = integer % 8
+        
+        switch remainder {
+        case 0: self = .kun
+        case 1...7: self.init(rawValue: remainder)!
+        default: fatalError()
+        }
+    }
+    
     public var character: String {
         return NSLocalizedString("fuxibagua\(self)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
     }
@@ -65,6 +75,14 @@ public enum FuXiBaGua: Int, CaseIterable {
         }
     }
 
+    public var allYaos: [LiangYi] {
+        return [
+            yao(at: .bottom),
+            yao(at: .middle),
+            yao(at: .top)
+        ]
+    }
+    
     public func yao(at position: Position) -> LiangYi {
         let denominator: Double
         
@@ -104,9 +122,9 @@ extension FuXiBaGua {
         case .qian, .zhen: return [.zi, .yin, .chen, .wu, .shen, .xu]
         case .kan: return [.yin, .chen, .wu, .shen, .xu, .zi]
         case .gen: return [.chen, .wu, .shen, .xu, .zi, .yin]
-        case .dui: return [.si, .mao, .chou, .hai, .you, .hai]
-        case .li: return [.mao, .chou, .hai, .you, .hai, .you]
-        case .xun: return [.chou, .hai, .you, .hai, .you, .wei]
+        case .dui: return [.si, .mao, .chou, .hai, .you, .wei]
+        case .li: return [.mao, .chou, .hai, .you, .wei, .si]
+        case .xun: return [.chou, .hai, .you, .wei, .si, .mao]
         case .kun: return [.wei, .si, .mao, .chou, .hai, .you]
         }
     }
