@@ -117,6 +117,26 @@ extension FuXiBaGua {
         }
     }
 
+    func tianGan(forPosition position: LiuShiSiGua.Position) -> TianGan {
+        switch position {
+        case .inner: return tianGanPosition[0]
+        case .outer: return tianGanPosition[1]
+        }
+    }
+    
+    private var tianGanPosition: [TianGan] {
+        switch self {
+        case .qian: return [.jia, .ren]
+        case .kan: return [.wu, .wu]
+        case .gen: return [.bing, .bing]
+        case .zhen: return [.geng, .geng]
+        case .xun: return [.xin, .xin]
+        case .li: return [.ji, .ji]
+        case .kun: return [.yi, .gui]
+        case .dui: return [.ding, .ding]
+        }
+    }
+    
     private var diZhiOrder: [DiZhi] {
         switch self {
         case .qian, .zhen: return [.zi, .yin, .chen, .wu, .shen, .xu]

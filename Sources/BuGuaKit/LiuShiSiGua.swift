@@ -51,6 +51,13 @@ public struct LiuShiSiGua {
         }
     }
 
+    public var tianGan: [TianGan] {
+        let innerZhi = Array(repeating: innerGua.tianGan(forPosition: .inner), count: 3)
+        let outerZhi = Array(repeating: outerGua.tianGan(forPosition: .outer), count: 3)
+        
+        return innerZhi + outerZhi
+    }
+    
     public var yaoZhi: [DiZhi] {
         let innerZhi = innerGua.diZhi(forPosition: .inner)
         let outerZhi = outerGua.diZhi(forPosition: .outer)
