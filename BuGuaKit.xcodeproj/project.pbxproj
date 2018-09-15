@@ -29,7 +29,7 @@
 		9B16526521325519001991DB /* YaoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16526421325519001991DB /* YaoType.swift */; };
 		9B3C163C214C68CE00DF4C6A /* SolarTermCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C163B214C68CE00DF4C6A /* SolarTermCalculator.swift */; };
 		9B3C163F214C696900DF4C6A /* SolarTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C163E214C696900DF4C6A /* SolarTerm.swift */; };
-		9B3C1643214C755300DF4C6A /* ChineseHolidayControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1642214C755300DF4C6A /* ChineseHolidayControllerTests.swift */; };
+		9B3C1643214C755300DF4C6A /* SolarTermCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1642214C755300DF4C6A /* SolarTermCalculatorTests.swift */; };
 		9B3C1645214D908000DF4C6A /* TianGanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1644214D908000DF4C6A /* TianGanTests.swift */; };
 		9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1F83221345B410048B4CB /* LiuQin.swift */; };
 /* End PBXBuildFile section */
@@ -72,7 +72,7 @@
 		9B16526421325519001991DB /* YaoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YaoType.swift; sourceTree = "<group>"; };
 		9B3C163B214C68CE00DF4C6A /* SolarTermCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermCalculator.swift; sourceTree = "<group>"; };
 		9B3C163E214C696900DF4C6A /* SolarTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTerm.swift; sourceTree = "<group>"; };
-		9B3C1642214C755300DF4C6A /* ChineseHolidayControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseHolidayControllerTests.swift; sourceTree = "<group>"; };
+		9B3C1642214C755300DF4C6A /* SolarTermCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermCalculatorTests.swift; sourceTree = "<group>"; };
 		9B3C1644214D908000DF4C6A /* TianGanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TianGanTests.swift; sourceTree = "<group>"; };
 		9BA1F83221345B410048B4CB /* LiuQin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuQin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,7 +145,7 @@
 				343992AE21052B7500C64474 /* FuXiBaGuaTests.swift */,
 				343992A7210521E000C64474 /* LiuShiSiGuaTests.swift */,
 				9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */,
-				9B3C1642214C755300DF4C6A /* ChineseHolidayControllerTests.swift */,
+				9B3C1642214C755300DF4C6A /* SolarTermCalculatorTests.swift */,
 				9B3C1644214D908000DF4C6A /* TianGanTests.swift */,
 			);
 			name = BuGuaKitTests;
@@ -370,7 +370,7 @@
 				9B165263213253B3001991DB /* LiuYaoGuaXiangTests.swift in Sources */,
 				343992AF21052B7500C64474 /* FuXiBaGuaTests.swift in Sources */,
 				9B3C1645214D908000DF4C6A /* TianGanTests.swift in Sources */,
-				9B3C1643214C755300DF4C6A /* ChineseHolidayControllerTests.swift in Sources */,
+				9B3C1643214C755300DF4C6A /* SolarTermCalculatorTests.swift in Sources */,
 				343992A8210521E000C64474 /* LiuShiSiGuaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

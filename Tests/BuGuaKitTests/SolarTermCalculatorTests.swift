@@ -1,5 +1,5 @@
 //
-//  ChineseHolidayControllerTests.swift
+// SolarTermCalculatorTests.swift
 //  BuGuaKitTests
 //
 //  Created by Jeffrey Wu on 2018-09-14.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import BuGuaKit
 
-class ChineseHolidayControllerTests: XCTestCase {
+class SolarTermCalculatorTests: XCTestCase {
 
     var sut: SolarTermCalculator!
 
@@ -242,7 +242,7 @@ class ChineseHolidayControllerTests: XCTestCase {
 }
 
 // MARK: - Getting the right holiday
-extension ChineseHolidayControllerTests {
+extension SolarTermCalculatorTests {
     func testCanadaTime20840319Night() {
         let dateComponents = DateComponents(timeZone: TimeZone(identifier: "America/Toronto")!, year: 2084, month: 3, day: 19, hour: 23, minute: 00)
         let testDate = Calendar.current.date(from: dateComponents)!
