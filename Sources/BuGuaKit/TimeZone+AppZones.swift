@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+extension TimeZone {
+    static var taipei: TimeZone {
+        return TimeZone(identifier: "Asia/Taipei")!
+    }
+}
