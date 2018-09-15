@@ -31,6 +31,9 @@
 		9B3C163F214C696900DF4C6A /* SolarTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C163E214C696900DF4C6A /* SolarTerm.swift */; };
 		9B3C1643214C755300DF4C6A /* SolarTermCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1642214C755300DF4C6A /* SolarTermCalculatorTests.swift */; };
 		9B3C1645214D908000DF4C6A /* TianGanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1644214D908000DF4C6A /* TianGanTests.swift */; };
+		9B3C1647214DBA0E00DF4C6A /* SolarTermDateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1646214DBA0E00DF4C6A /* SolarTermDateComponent.swift */; };
+		9B3C1649214DBADC00DF4C6A /* TimeZone+AppZones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1648214DBADC00DF4C6A /* TimeZone+AppZones.swift */; };
+		9B3C164B214DBCDA00DF4C6A /* SolarTermDateComponents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C164A214DBCDA00DF4C6A /* SolarTermDateComponents.plist */; };
 		9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1F83221345B410048B4CB /* LiuQin.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +77,9 @@
 		9B3C163E214C696900DF4C6A /* SolarTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTerm.swift; sourceTree = "<group>"; };
 		9B3C1642214C755300DF4C6A /* SolarTermCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermCalculatorTests.swift; sourceTree = "<group>"; };
 		9B3C1644214D908000DF4C6A /* TianGanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TianGanTests.swift; sourceTree = "<group>"; };
+		9B3C1646214DBA0E00DF4C6A /* SolarTermDateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermDateComponent.swift; sourceTree = "<group>"; };
+		9B3C1648214DBADC00DF4C6A /* TimeZone+AppZones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+AppZones.swift"; sourceTree = "<group>"; };
+		9B3C164A214DBCDA00DF4C6A /* SolarTermDateComponents.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SolarTermDateComponents.plist; sourceTree = "<group>"; };
 		9BA1F83221345B410048B4CB /* LiuQin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuQin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +139,7 @@
 				345F400721041033004714DB /* BuGuaKit.h */,
 				345F400821041033004714DB /* Info.plist */,
 				343992AD21052A4700C64474 /* Localizable.strings */,
+				9B3C164A214DBCDA00DF4C6A /* SolarTermDateComponents.plist */,
 			);
 			name = BuGuaKit;
 			path = Sources/BuGuaKit;
@@ -201,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				9B3C163E214C696900DF4C6A /* SolarTerm.swift */,
+				9B3C1646214DBA0E00DF4C6A /* SolarTermDateComponent.swift */,
+				9B3C1648214DBADC00DF4C6A /* TimeZone+AppZones.swift */,
 			);
 			name = ChineseCalendar;
 			sourceTree = "<group>";
@@ -320,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3C164B214DBCDA00DF4C6A /* SolarTermDateComponents.plist in Resources */,
 				343992AB21052A4700C64474 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,10 +359,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B3C163F214C696900DF4C6A /* SolarTerm.swift in Sources */,
+				9B3C1647214DBA0E00DF4C6A /* SolarTermDateComponent.swift in Sources */,
 				34F14EC7214A034E00274F90 /* FuShenController.swift in Sources */,
 				9B16525F21324C31001991DB /* LiuYaoGuaXiang.swift in Sources */,
 				9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */,
 				9B16526521325519001991DB /* YaoType.swift in Sources */,
+				9B3C1649214DBADC00DF4C6A /* TimeZone+AppZones.swift in Sources */,
 				346334512148C2EB001D462B /* TianGan.swift in Sources */,
 				342096BA21053EA70093C9A2 /* WuXing.swift in Sources */,
 				9B16525921323F9B001991DB /* LiangYi.swift in Sources */,
