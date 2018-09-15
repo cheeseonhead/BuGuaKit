@@ -33,6 +33,10 @@ public class SolarTermCalculator {
     func sameGanZhiHoliday(for date: Date) throws -> SolarTerm.Date {
         let year = Calendar.current.dateComponents(in: referenceTimeZone, from: date).year!
 
+        guard year >= minYear + 1 && year <= maxYear else {
+            throw Error.yearOutOfRange(year: year, minYear + 1, maxYear)
+        }
+
         let possibleHolidays = try holidays(forYears: [year - 1, year]).sorted(by: { $0.date < $1.date })
 
         var finalHoliday: SolarTerm.Date!

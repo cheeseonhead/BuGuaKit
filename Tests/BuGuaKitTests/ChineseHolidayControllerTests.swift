@@ -260,4 +260,27 @@ extension ChineseHolidayControllerTests {
 
         XCTAssertEqual(holiday.type, .jingZhe)
     }
+
+    func testSameHoliday20000101() {
+        let dateComponents = DateComponents(timeZone: TimeZone(identifier: "Asia/Taipei")!, year: 2000, month: 1, day: 1, hour: 5, minute: 00)
+        let testDate = Calendar.current.date(from: dateComponents)!
+
+        XCTAssertThrowsError(try sut.sameGanZhiHoliday(for: testDate))
+    }
+
+    func testSameHoliday20991231() {
+        let dateComponents = DateComponents(timeZone: TimeZone(identifier: "Asia/Taipei")!, year: 2099, month: 12, day: 31, hour: 23, minute: 59)
+        let testDate = Calendar.current.date(from: dateComponents)!
+
+        let holiday = try! sut.sameGanZhiHoliday(for: testDate)
+
+        XCTAssertEqual(holiday.type, .dongZhi)
+    }
+
+    func testSameHolidayCanada20991231() {
+        let dateComponents = DateComponents(timeZone: TimeZone(identifier: "America/Toronto")!, year: 2099, month: 12, day: 31, hour: 23, minute: 59)
+        let testDate = Calendar.current.date(from: dateComponents)!
+
+        XCTAssertThrowsError(try sut.sameGanZhiHoliday(for: testDate))
+    }
 }
