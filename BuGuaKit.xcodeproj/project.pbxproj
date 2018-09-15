@@ -27,6 +27,9 @@
 		9B16525F21324C31001991DB /* LiuYaoGuaXiang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */; };
 		9B165263213253B3001991DB /* LiuYaoGuaXiangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */; };
 		9B16526521325519001991DB /* YaoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16526421325519001991DB /* YaoType.swift */; };
+		9B3C163C214C68CE00DF4C6A /* ChineseHolidayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C163B214C68CE00DF4C6A /* ChineseHolidayController.swift */; };
+		9B3C163F214C696900DF4C6A /* ChineseHoliday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C163E214C696900DF4C6A /* ChineseHoliday.swift */; };
+		9B3C1643214C755300DF4C6A /* ChineseHolidayControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1642214C755300DF4C6A /* ChineseHolidayControllerTests.swift */; };
 		9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1F83221345B410048B4CB /* LiuQin.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +69,9 @@
 		9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuYaoGuaXiang.swift; sourceTree = "<group>"; };
 		9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuYaoGuaXiangTests.swift; sourceTree = "<group>"; };
 		9B16526421325519001991DB /* YaoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YaoType.swift; sourceTree = "<group>"; };
+		9B3C163B214C68CE00DF4C6A /* ChineseHolidayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseHolidayController.swift; sourceTree = "<group>"; };
+		9B3C163E214C696900DF4C6A /* ChineseHoliday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseHoliday.swift; sourceTree = "<group>"; };
+		9B3C1642214C755300DF4C6A /* ChineseHolidayControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseHolidayControllerTests.swift; sourceTree = "<group>"; };
 		9BA1F83221345B410048B4CB /* LiuQin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuQin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +124,7 @@
 		345F400621041033004714DB /* BuGuaKit */ = {
 			isa = PBXGroup;
 			children = (
+				9B3C163D214C695A00DF4C6A /* ChineseCalendar */,
 				9B16525A21323FAA001991DB /* Enums */,
 				9B16525D21323FEB001991DB /* Structs */,
 				34F14EC5214A030300274F90 /* Controllers */,
@@ -136,6 +143,7 @@
 				343992AE21052B7500C64474 /* FuXiBaGuaTests.swift */,
 				343992A7210521E000C64474 /* LiuShiSiGuaTests.swift */,
 				9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */,
+				9B3C1642214C755300DF4C6A /* ChineseHolidayControllerTests.swift */,
 			);
 			name = BuGuaKitTests;
 			path = Tests/BuGuaKitTests;
@@ -158,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				34F14EC6214A034E00274F90 /* FuShenController.swift */,
+				9B3C163B214C68CE00DF4C6A /* ChineseHolidayController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -183,6 +192,14 @@
 				9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */,
 			);
 			name = Structs;
+			sourceTree = "<group>";
+		};
+		9B3C163D214C695A00DF4C6A /* ChineseCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				9B3C163E214C696900DF4C6A /* ChineseHoliday.swift */,
+			);
+			name = ChineseCalendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3C163F214C696900DF4C6A /* ChineseHoliday.swift in Sources */,
 				34F14EC7214A034E00274F90 /* FuShenController.swift in Sources */,
 				9B16525F21324C31001991DB /* LiuYaoGuaXiang.swift in Sources */,
 				9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */,
@@ -335,6 +353,7 @@
 				346334512148C2EB001D462B /* TianGan.swift in Sources */,
 				342096BA21053EA70093C9A2 /* WuXing.swift in Sources */,
 				9B16525921323F9B001991DB /* LiangYi.swift in Sources */,
+				9B3C163C214C68CE00DF4C6A /* ChineseHolidayController.swift in Sources */,
 				345F40432104EA7C004714DB /* FuXiBaGua.swift in Sources */,
 				9B16525721323C02001991DB /* DiZhi.swift in Sources */,
 				345F40452104F3DB004714DB /* LiuShiSiGua.swift in Sources */,
@@ -347,6 +366,7 @@
 			files = (
 				9B165263213253B3001991DB /* LiuYaoGuaXiangTests.swift in Sources */,
 				343992AF21052B7500C64474 /* FuXiBaGuaTests.swift in Sources */,
+				9B3C1643214C755300DF4C6A /* ChineseHolidayControllerTests.swift in Sources */,
 				343992A8210521E000C64474 /* LiuShiSiGuaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
