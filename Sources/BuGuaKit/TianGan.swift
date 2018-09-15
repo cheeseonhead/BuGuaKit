@@ -16,10 +16,14 @@ public enum TianGan: CaseIterable {
     }
 
     func tianGan(after count: Int) -> TianGan {
-        let selfIndex = index()
-        let addedModded = (selfIndex + count) % TianGan.allCases.count
+        let totalCount = TianGan.allCases.count
 
-        return TianGan.allCases[addedModded]
+        let selfIndex = index()
+        let remainder = (selfIndex + count) % totalCount
+
+        let positiveRemainder = (totalCount + remainder) % totalCount
+
+        return TianGan.allCases[positiveRemainder]
     }
 }
 
