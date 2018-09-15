@@ -9,13 +9,13 @@
 import XCTest
 @testable import BuGuaKit
 
-class SolarTermDateComponentTests: XCTestCase {
+class SolarTermDateComponentsFetcherTests: XCTestCase {
 
-    var sut: SolarTermDateComponent!
+    var sut: SolarTermDateComponentFetcher!
 
     override func setUp() {
         let fakeDataLoader = MockDataLoader()
-        sut = SolarTermDateComponent(dataLoader: fakeDataLoader)
+        sut = SolarTermDateComponentFetcher(dataLoader: fakeDataLoader)
     }
 
     func testExample() {

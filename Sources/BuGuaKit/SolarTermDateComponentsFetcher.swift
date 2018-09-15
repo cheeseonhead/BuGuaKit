@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SolarTermDateComponent {
+class SolarTermDateComponentsFetcher {
 
     enum Error: LocalizedError {
         case yearOutOfRange(Int, Int, Int)
