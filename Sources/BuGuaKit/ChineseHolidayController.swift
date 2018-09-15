@@ -23,16 +23,25 @@ public class ChineseHolidayController {
     // MARK: - Private Constant
     private let minYear = 2000
     private let maxYear = 2099
+    private let referenceTimeZone = TimeZone(identifier: "Asia/Taipei")!
+    private var referenceCalendar = Calendar(identifier: .gregorian)
+
+    init() {
+        referenceCalendar.timeZone = referenceTimeZone
+    }
+
+    func ganZhi(for date: Date) -> (gan: TianGan, zhi: DiZhi) {
+
+
+
+        return (.jia, .zi)
+    }
 
 //    func holidays(for year: Int) throws -> [ChineseHoliday: Date] {
-//        guard year >= 2000 && year <= 2099 else {
-//            throw Error.yearOutOfRange(year: year, 2000, 2099)
-//        }
-//
 //
 //    }
 
-    func gregorianDate(for holiday: ChineseHoliday, of year: Int) throws -> DateComponents {
+    func date(for holiday: ChineseHoliday, of year: Int) throws -> Date {
         guard year >= minYear && year <= maxYear else {
             throw Error.yearOutOfRange(year: year, minYear, maxYear)
         }
@@ -40,16 +49,16 @@ public class ChineseHolidayController {
         let month = ChineseHolidayController.gregorianMonth(for: holiday)
         let day = ChineseHolidayController.gregorianDay(for: holiday, year: year)
 
-        let dateComponents = DateComponents(calendar: Calendar(identifier: .gregorian), timeZone: TimeZone(identifier: "Asia/Taipei"), year: year, month: month, day: day)
+        let dateComponents = DateComponents(timeZone: referenceTimeZone, year: year, month: month, day: day)
 
-        return dateComponents
+        return Calendar.current.date(from: dateComponents)!
     }
 }
 
 private extension ChineseHolidayController {
 
     static func gregorianDay(for holiday: ChineseHoliday, year: Int) -> Int {
-        let adjustedYearEnd = Double(adjustYear(for: holiday, year: year) % 100)
+        let adjustedYearEnd = Double(adjustYearEnd(for: holiday, year: year))
         let d = 0.2422
         let c = constant(for: holiday)
 
@@ -63,11 +72,12 @@ private extension ChineseHolidayController {
     }
 
     // For leap years, we have to subtract 1 from the year count
-    static func adjustYear(for holiday: ChineseHoliday, year: Int) -> Int {
+    static func adjustYearEnd(for holiday: ChineseHoliday, year: Int) -> Int {
+        let y = year % 100
         if isLeapYear(year: year) && gregorianMonth(for: holiday) <= 2 {
-            return year - 1
+            return y - 1
         } else {
-            return year
+            return y
         }
     }
 
