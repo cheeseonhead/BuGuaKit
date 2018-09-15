@@ -181,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				34F14EC6214A034E00274F90 /* FuShenController.swift */,
-				9B3C163B214C68CE00DF4C6A /* SolarTermCalculator.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -216,6 +215,7 @@
 				9B3C1646214DBA0E00DF4C6A /* SolarTermDateComponent.swift */,
 				9B3C1648214DBADC00DF4C6A /* TimeZone+AppZones.swift */,
 				9B3C164C214DC1FF00DF4C6A /* SolarTermDataLoader.swift */,
+				9B3C163B214C68CE00DF4C6A /* SolarTermCalculator.swift */,
 			);
 			name = ChineseCalendar;
 			sourceTree = "<group>";
