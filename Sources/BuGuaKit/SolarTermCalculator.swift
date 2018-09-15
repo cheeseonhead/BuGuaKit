@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ChineseHolidayController {
+public class SolarTermCalculator {
 
     enum Error: LocalizedError {
         case yearOutOfRange(year: Int, Int, Int)
@@ -18,11 +18,6 @@ public class ChineseHolidayController {
             case let .yearOutOfRange(year, minYear, maxYear): return "\(year)不在\(minYear)到\(maxYear)之間"
             }
         }
-    }
-
-    struct Holiday {
-        let date: Date
-        let type: ChineseHoliday
     }
 
     // MARK: - Private Constant
@@ -35,12 +30,12 @@ public class ChineseHolidayController {
         referenceCalendar.timeZone = referenceTimeZone
     }
 
-    func sameGanZhiHoliday(for date: Date) throws -> Holiday {
+    func sameGanZhiHoliday(for date: Date) throws -> SolarTerm.Date {
         let year = Calendar.current.dateComponents(in: referenceTimeZone, from: date).year!
 
         let possibleHolidays = try holidays(forYears: [year - 1, year]).sorted(by: { $0.date < $1.date })
 
-        var finalHoliday: Holiday!
+        var finalHoliday: SolarTerm.Date!
         for holiday in possibleHolidays {
             guard holiday.date < date else { break }
 
@@ -54,35 +49,35 @@ public class ChineseHolidayController {
 //
 //    }
 
-    func date(for holiday: ChineseHoliday, ofYear year: Int) throws -> Holiday {
+    func date(for holiday: SolarTerm, ofYear year: Int) throws -> SolarTerm.Date {
         guard year >= minYear && year <= maxYear else {
             throw Error.yearOutOfRange(year: year, minYear, maxYear)
         }
 
-        let month = ChineseHolidayController.gregorianMonth(for: holiday)
-        let day = ChineseHolidayController.gregorianDay(for: holiday, year: year)
+        let month = SolarTermCalculator.gregorianMonth(for: holiday)
+        let day = SolarTermCalculator.gregorianDay(for: holiday, year: year)
 
         let dateComponents = DateComponents(timeZone: referenceTimeZone, year: year, month: month, day: day)
 
-        return Holiday(date: Calendar.current.date(from: dateComponents)!, type: holiday)
+        return SolarTerm.Date(date: Calendar.current.date(from: dateComponents)!, type: holiday)
     }
 }
 
-private extension ChineseHolidayController {
+private extension SolarTermCalculator {
 
-    func holidays(forYears years: [Int]) throws -> [Holiday] {
+    func holidays(forYears years: [Int]) throws -> [SolarTerm.Date] {
         return try years.flatMap {
             try holidays(forYear: $0)
         }
     }
 
-    func holidays(forYear year: Int) throws -> [Holiday] {
-        return try ChineseHoliday.allCases.map {
+    func holidays(forYear year: Int) throws -> [SolarTerm.Date] {
+        return try SolarTerm.allCases.map {
             try date(for: $0, ofYear: year)
         }
     }
 
-    static func gregorianDay(for holiday: ChineseHoliday, year: Int) -> Int {
+    static func gregorianDay(for holiday: SolarTerm, year: Int) -> Int {
         let adjustedYearEnd = Double(adjustYearEnd(for: holiday, year: year))
         let d = 0.2422
         let c = constant(for: holiday)
@@ -97,7 +92,7 @@ private extension ChineseHolidayController {
     }
 
     // For leap years, we have to subtract 1 from the year count
-    static func adjustYearEnd(for holiday: ChineseHoliday, year: Int) -> Int {
+    static func adjustYearEnd(for holiday: SolarTerm, year: Int) -> Int {
         let y = year % 100
         if isLeapYear(year: year) && gregorianMonth(for: holiday) <= 2 {
             return y - 1
@@ -110,11 +105,11 @@ private extension ChineseHolidayController {
         return year % 4 == 0 && year % 100 != 0 || year % 400 == 0
     }
 
-    static func gregorianMonth(for holiday: ChineseHoliday) -> Int {
+    static func gregorianMonth(for holiday: SolarTerm) -> Int {
         switch holiday {
         case .liChun: return 2
         case .yuShui: return 2
-        case .jingZhi: return 3
+        case .jingZhe: return 3
         case .chunFen: return 3
         case .qingMing: return 4
         case .guYu: return 4
@@ -139,7 +134,7 @@ private extension ChineseHolidayController {
         }
     }
 
-    static func offset(for holiday: ChineseHoliday, year: Int) -> Int {
+    static func offset(for holiday: SolarTerm, year: Int) -> Int {
         switch holiday {
             // This is wrong for some reason
         case .chunFen: return year == 2084 ? 1 : 0
@@ -156,11 +151,11 @@ private extension ChineseHolidayController {
     }
 
     /// This constant is only for 21 century because others make it too complicated
-    static func constant(for holiday: ChineseHoliday) -> Double {
+    static func constant(for holiday: SolarTerm) -> Double {
         switch holiday {
         case .liChun: return 3.87
         case .yuShui: return 18.73
-        case .jingZhi: return 5.63
+        case .jingZhe: return 5.63
         case .chunFen: return 20.646
         case .qingMing: return 4.81
         case .guYu: return 20.1

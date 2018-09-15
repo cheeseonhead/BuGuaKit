@@ -1,5 +1,5 @@
 //
-//  ChineseHoliday.swift
+//  SolarTerm.swift
 //  BuGuaKit
 //
 //  Created by Jeffrey Wu on 2018-09-14.
@@ -8,10 +8,16 @@
 
 import Foundation
 
-enum ChineseHoliday: CaseIterable {
+enum SolarTerm: CaseIterable {
+
+    struct Date {
+        let date: Foundation.Date
+        let type: SolarTerm
+    }
+
     case liChun
     case yuShui
-    case jingZhi
+    case jingZhe
     case chunFen
     case qingMing
     case guYu
@@ -40,7 +46,7 @@ enum ChineseHoliday: CaseIterable {
         case .daHan: return 1
         case .liChun: return 2
         case .yuShui: return 3
-        case .jingZhi: return 4
+        case .jingZhe: return 4
         case .chunFen: return 5
         case .qingMing: return 6
         case .guYu: return 7

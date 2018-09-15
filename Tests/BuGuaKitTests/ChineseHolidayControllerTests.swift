@@ -11,10 +11,10 @@ import XCTest
 
 class ChineseHolidayControllerTests: XCTestCase {
 
-    var sut: ChineseHolidayController!
+    var sut: SolarTermCalculator!
 
     override func setUp() {
-        sut = ChineseHolidayController()
+        sut = SolarTermCalculator()
     }
 
     func testOutOfRange() {
@@ -40,14 +40,14 @@ class ChineseHolidayControllerTests: XCTestCase {
         assertDate(holiday.date, month: 2, day: 19)
     }
 
-    func testJingZhi() {
-        let holiday = try! sut.date(for: .jingZhi, ofYear: 2088)
+    func testJingZhe() {
+        let holiday = try! sut.date(for: .jingZhe, ofYear: 2088)
 
         assertDate(holiday.date, month: 3, day: 4)
     }
 
-    func testJingZhi2084() {
-        let holiday = try! sut.date(for: .jingZhi, ofYear: 2084)
+    func testJingZhe2084() {
+        let holiday = try! sut.date(for: .jingZhe, ofYear: 2084)
 
         assertDate(holiday.date, month: 3, day: 4)
     }
@@ -258,6 +258,6 @@ extension ChineseHolidayControllerTests {
 
         let holiday = try! sut.sameGanZhiHoliday(for: testDate)
 
-        XCTAssertEqual(holiday.type, .jingZhi)
+        XCTAssertEqual(holiday.type, .jingZhe)
     }
 }
