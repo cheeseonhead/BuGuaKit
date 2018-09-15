@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+class SolarTermDataLoader {
+
+    let url: URL
+
+    init() {
+        url = Bundle(for: SolarTermCalculator.self).url(forResource: "SolarTermDateComponents", withExtension: "plist")!
+    }
+
+    func loadData() throws -> [[Int]] {
+        let dateData = try Data(contentsOf: url)
+        let array = try PropertyListSerialization.propertyList(from: dateData, options: .mutableContainers, format: nil) as! [[Int]]
+
+        return array
+    }
+}
