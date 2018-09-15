@@ -247,7 +247,7 @@ extension ChineseHolidayControllerTests {
         let dateComponents = DateComponents(timeZone: TimeZone(identifier: "America/Toronto")!, year: 2084, month: 3, day: 19, hour: 23, minute: 00)
         let testDate = Calendar.current.date(from: dateComponents)!
 
-        let holiday = try! sut.sameGanZhiHoliday(for: testDate)
+        let holiday = try! sut.sameGanZhiTerm(for: testDate)
 
         XCTAssertEqual(holiday.type, .chunFen)
     }
@@ -256,7 +256,7 @@ extension ChineseHolidayControllerTests {
         let dateComponents = DateComponents(timeZone: TimeZone(identifier: "America/Toronto")!, year: 2084, month: 3, day: 19, hour: 5, minute: 00)
         let testDate = Calendar.current.date(from: dateComponents)!
 
-        let holiday = try! sut.sameGanZhiHoliday(for: testDate)
+        let holiday = try! sut.sameGanZhiTerm(for: testDate)
 
         XCTAssertEqual(holiday.type, .jingZhe)
     }
@@ -265,14 +265,14 @@ extension ChineseHolidayControllerTests {
         let dateComponents = DateComponents(timeZone: TimeZone(identifier: "Asia/Taipei")!, year: 2000, month: 1, day: 1, hour: 5, minute: 00)
         let testDate = Calendar.current.date(from: dateComponents)!
 
-        XCTAssertThrowsError(try sut.sameGanZhiHoliday(for: testDate))
+        XCTAssertThrowsError(try sut.sameGanZhiTerm(for: testDate))
     }
 
     func testSameHoliday20991231() {
         let dateComponents = DateComponents(timeZone: TimeZone(identifier: "Asia/Taipei")!, year: 2099, month: 12, day: 31, hour: 23, minute: 59)
         let testDate = Calendar.current.date(from: dateComponents)!
 
-        let holiday = try! sut.sameGanZhiHoliday(for: testDate)
+        let holiday = try! sut.sameGanZhiTerm(for: testDate)
 
         XCTAssertEqual(holiday.type, .dongZhi)
     }
@@ -281,6 +281,6 @@ extension ChineseHolidayControllerTests {
         let dateComponents = DateComponents(timeZone: TimeZone(identifier: "America/Toronto")!, year: 2099, month: 12, day: 31, hour: 23, minute: 59)
         let testDate = Calendar.current.date(from: dateComponents)!
 
-        XCTAssertThrowsError(try sut.sameGanZhiHoliday(for: testDate))
+        XCTAssertThrowsError(try sut.sameGanZhiTerm(for: testDate))
     }
 }

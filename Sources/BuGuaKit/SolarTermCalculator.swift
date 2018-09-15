@@ -1,5 +1,5 @@
 //
-//  ChineseHolidayController.swift
+//  SolarTermCalculator.swift
 //  BuGuaKit
 //
 //  Created by Jeffrey Wu on 2018-09-14.
@@ -24,67 +24,58 @@ public class SolarTermCalculator {
     private let minYear = 2000
     private let maxYear = 2099
     private let referenceTimeZone = TimeZone(identifier: "Asia/Taipei")!
-    private var referenceCalendar = Calendar(identifier: .gregorian)
 
-    init() {
-        referenceCalendar.timeZone = referenceTimeZone
-    }
-
-    func sameGanZhiHoliday(for date: Date) throws -> SolarTerm.Date {
+    func sameGanZhiTerm(for date: Date) throws -> SolarTerm.Date {
         let year = Calendar.current.dateComponents(in: referenceTimeZone, from: date).year!
 
         guard year >= minYear + 1 && year <= maxYear else {
             throw Error.yearOutOfRange(year: year, minYear + 1, maxYear)
         }
 
-        let possibleHolidays = try holidays(forYears: [year - 1, year]).sorted(by: { $0.date < $1.date })
+        let possibleTerms = try terms(forYears: [year - 1, year]).sorted(by: { $0.date < $1.date })
 
-        var finalHoliday: SolarTerm.Date!
-        for holiday in possibleHolidays {
-            guard holiday.date < date else { break }
+        var finalTerm: SolarTerm.Date!
+        for term in possibleTerms {
+            guard term.date < date else { break }
 
-            finalHoliday = holiday
+            finalTerm = term
         }
 
-        return finalHoliday
+        return finalTerm
     }
 
-//    func holidays(for year: Int) throws -> [ChineseHoliday: Date] {
-//
-//    }
-
-    func date(for holiday: SolarTerm, ofYear year: Int) throws -> SolarTerm.Date {
+    func date(for term: SolarTerm, ofYear year: Int) throws -> SolarTerm.Date {
         guard year >= minYear && year <= maxYear else {
             throw Error.yearOutOfRange(year: year, minYear, maxYear)
         }
 
-        let month = SolarTermCalculator.gregorianMonth(for: holiday)
-        let day = SolarTermCalculator.gregorianDay(for: holiday, year: year)
+        let month = SolarTermCalculator.gregorianMonth(for: term)
+        let day = SolarTermCalculator.gregorianDay(for: term, year: year)
 
         let dateComponents = DateComponents(timeZone: referenceTimeZone, year: year, month: month, day: day)
 
-        return SolarTerm.Date(date: Calendar.current.date(from: dateComponents)!, type: holiday)
+        return SolarTerm.Date(date: Calendar.current.date(from: dateComponents)!, type: term)
     }
 }
 
 private extension SolarTermCalculator {
 
-    func holidays(forYears years: [Int]) throws -> [SolarTerm.Date] {
+    func terms(forYears years: [Int]) throws -> [SolarTerm.Date] {
         return try years.flatMap {
-            try holidays(forYear: $0)
+            try terms(forYear: $0)
         }
     }
 
-    func holidays(forYear year: Int) throws -> [SolarTerm.Date] {
+    func terms(forYear year: Int) throws -> [SolarTerm.Date] {
         return try SolarTerm.allCases.map {
             try date(for: $0, ofYear: year)
         }
     }
 
-    static func gregorianDay(for holiday: SolarTerm, year: Int) -> Int {
-        let adjustedYearEnd = Double(adjustYearEnd(for: holiday, year: year))
+    static func gregorianDay(for term: SolarTerm, year: Int) -> Int {
+        let adjustedYearEnd = Double(adjustYearEnd(for: term, year: year))
         let d = 0.2422
-        let c = constant(for: holiday)
+        let c = constant(for: term)
 
         let leapCount = adjustedYearEnd / 4
 
@@ -92,13 +83,13 @@ private extension SolarTermCalculator {
 
         let result = term1.rounded(.down) - leapCount.rounded(.down)
 
-        return Int(result) + offset(for: holiday, year: year)
+        return Int(result) + offset(for: term, year: year)
     }
 
     // For leap years, we have to subtract 1 from the year count
-    static func adjustYearEnd(for holiday: SolarTerm, year: Int) -> Int {
+    static func adjustYearEnd(for term: SolarTerm, year: Int) -> Int {
         let y = year % 100
-        if isLeapYear(year: year) && gregorianMonth(for: holiday) <= 2 {
+        if isLeapYear(year: year) && gregorianMonth(for: term) <= 2 {
             return y - 1
         } else {
             return y
@@ -109,8 +100,8 @@ private extension SolarTermCalculator {
         return year % 4 == 0 && year % 100 != 0 || year % 400 == 0
     }
 
-    static func gregorianMonth(for holiday: SolarTerm) -> Int {
-        switch holiday {
+    static func gregorianMonth(for term: SolarTerm) -> Int {
+        switch term {
         case .liChun: return 2
         case .yuShui: return 2
         case .jingZhe: return 3
@@ -138,8 +129,8 @@ private extension SolarTermCalculator {
         }
     }
 
-    static func offset(for holiday: SolarTerm, year: Int) -> Int {
-        switch holiday {
+    static func offset(for term: SolarTerm, year: Int) -> Int {
+        switch term {
             // This is wrong for some reason
         case .chunFen: return year == 2084 ? 1 : 0
         case .xiaoMan: return year == 2008 ? 1 : 0
@@ -155,8 +146,8 @@ private extension SolarTermCalculator {
     }
 
     /// This constant is only for 21 century because others make it too complicated
-    static func constant(for holiday: SolarTerm) -> Double {
-        switch holiday {
+    static func constant(for term: SolarTerm) -> Double {
+        switch term {
         case .liChun: return 3.87
         case .yuShui: return 18.73
         case .jingZhe: return 5.63
