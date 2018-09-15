@@ -20,6 +20,11 @@ public class ChineseHolidayController {
         }
     }
 
+    struct Holiday {
+        let date: Date
+        let type: ChineseHoliday
+    }
+
     // MARK: - Private Constant
     private let minYear = 2000
     private let maxYear = 2099
@@ -31,6 +36,8 @@ public class ChineseHolidayController {
     }
 
     func ganZhi(for date: Date) -> (gan: TianGan, zhi: DiZhi) {
+        let year = Calendar.current.dateComponents(in: referenceTimeZone, from: date).year!
+
 
 
 
@@ -41,7 +48,7 @@ public class ChineseHolidayController {
 //
 //    }
 
-    func date(for holiday: ChineseHoliday, of year: Int) throws -> Date {
+    func date(for holiday: ChineseHoliday, of year: Int) throws -> Holiday {
         guard year >= minYear && year <= maxYear else {
             throw Error.yearOutOfRange(year: year, minYear, maxYear)
         }
@@ -51,7 +58,7 @@ public class ChineseHolidayController {
 
         let dateComponents = DateComponents(timeZone: referenceTimeZone, year: year, month: month, day: day)
 
-        return Calendar.current.date(from: dateComponents)!
+        return Holiday(date: Calendar.current.date(from: dateComponents)!, type: holiday)
     }
 }
 
