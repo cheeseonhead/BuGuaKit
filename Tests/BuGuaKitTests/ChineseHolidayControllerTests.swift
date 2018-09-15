@@ -17,6 +17,11 @@ class ChineseHolidayControllerTests: XCTestCase {
         sut = ChineseHolidayController()
     }
 
+    func testOutOfRange() {
+        XCTAssertThrowsError(try sut.gregorianDate(for: .liChun, of: 1988))
+        XCTAssertThrowsError(try sut.gregorianDate(for: .liChun, of: 2109))
+    }
+
     func testLiChun() {
         let date = try! sut.gregorianDate(for: .liChun, of: 2058)
 
