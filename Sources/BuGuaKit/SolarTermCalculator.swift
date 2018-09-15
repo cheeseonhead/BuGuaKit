@@ -10,6 +10,8 @@ import Foundation
 
 public class SolarTermCalculator {
 
+    public typealias GanZhi = (tianGan: TianGan, diZhi: DiZhi)
+
     enum Error: LocalizedError {
         case yearOutOfRange(year: Int, Int, Int)
 
@@ -24,6 +26,13 @@ public class SolarTermCalculator {
     private let minYear = 2000
     private let maxYear = 2099
     private let referenceTimeZone = TimeZone(identifier: "Asia/Taipei")!
+
+    public func monthGanZhi(for date: Date) throws -> GanZhi {
+        let term = try sameGanZhiTerm(for: date)
+        let ganZhiForTerm = ganZhi(for: term)
+
+        return ganZhiForTerm
+    }
 
     func sameGanZhiTerm(for date: Date) throws -> SolarTerm.Date {
         let year = Calendar.current.dateComponents(in: referenceTimeZone, from: date).year!
@@ -58,6 +67,55 @@ public class SolarTermCalculator {
     }
 }
 
+// MARK: - Gan Zhi
+extension SolarTermCalculator {
+
+    private var xiaoHan2000TianGan: TianGan { return .ding }
+    private var xiaoHanReferenceYear: Int { return 2000 }
+
+    func ganZhi(for termDate: SolarTerm.Date) -> GanZhi {
+        let tianGan = self.tianGan(for: termDate)
+        let diZhi = SolarTermCalculator.diZhi(for: termDate.type)
+
+        return (tianGan, diZhi)
+    }
+
+    func tianGan(for termDate: SolarTerm.Date) -> TianGan {
+        let monthOffsetFromXiaoHan = termDate.type.index / 2
+        return xiaoHanTianGan(forYear: termDate.year(in: referenceTimeZone))
+            .tianGan(after: monthOffsetFromXiaoHan)
+    }
+
+    func xiaoHanTianGan(forYear year: Int) -> TianGan {
+        let monthsPassed = (year - xiaoHanReferenceYear) * 12
+        let tianGanThisYear = xiaoHan2000TianGan.tianGan(after: monthsPassed)
+
+        return tianGanThisYear
+    }
+}
+
+// MARK: - Gan Zhi Helpers
+private extension SolarTermCalculator {
+    static func diZhi(for term: SolarTerm) -> DiZhi {
+        switch gregorianMonth(for: term) {
+        case 1: return .chou
+        case 2: return .yin
+        case 3: return .mao
+        case 4: return .chen
+        case 5: return .si
+        case 6: return .wu
+        case 7: return .wei
+        case 8: return .shen
+        case 9: return .you
+        case 10: return .xu
+        case 11: return .hai
+        case 12: return .zi
+        default: fatalError()
+        }
+    }
+}
+
+// MARK: - Term Date
 private extension SolarTermCalculator {
 
     func terms(forYears years: [Int]) throws -> [SolarTerm.Date] {

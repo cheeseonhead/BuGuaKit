@@ -241,6 +241,49 @@ class SolarTermCalculatorTests: XCTestCase {
     }
 }
 
+// MARK: - Gan Zhi for Date
+extension SolarTermCalculatorTests {
+    func testGanZhi20840319Toronto() {
+        let components = DateComponents(timeZone: TimeZone(identifier: "America/Toronto")!, year: 2084, month: 3, day: 19, hour: 12, minute: 00)
+
+        let date = Calendar.current.date(from: components)!
+
+        let result = try! sut.monthGanZhi(for: date)
+        result.tianGan.equal(.ding)
+        result.diZhi.equal(.mao)
+    }
+
+    func testGanZhi20840318Toronto() {
+        let components = DateComponents(timeZone: TimeZone(identifier: "America/Toronto")!, year: 2084, month: 3, day: 18, hour: 12, minute: 00)
+
+        let date = Calendar.current.date(from: components)!
+
+        let result = try! sut.monthGanZhi(for: date)
+        result.tianGan.equal(.ding)
+        result.diZhi.equal(.mao)
+    }
+
+    func testGanZhi20840304Toronto() {
+        let components = DateComponents(timeZone: TimeZone(identifier: "America/Toronto")!, year: 2084, month: 3, day: 4, hour: 12, minute: 00)
+
+        let date = Calendar.current.date(from: components)!
+
+        let result = try! sut.monthGanZhi(for: date)
+        result.tianGan.equal(.ding)
+        result.diZhi.equal(.mao)
+    }
+
+    func testGanZhi20840303Toronto() {
+        let components = DateComponents(timeZone: TimeZone(identifier: "America/Toronto")!, year: 2084, month: 3, day: 03, hour: 0, minute: 00)
+
+        let date = Calendar.current.date(from: components)!
+
+        let result = try! sut.monthGanZhi(for: date)
+        result.tianGan.equal(.bing)
+        result.diZhi.equal(.yin)
+    }
+}
+
 // MARK: - Getting the right holiday
 extension SolarTermCalculatorTests {
     func testCanadaTime20840319Night() {
@@ -282,5 +325,70 @@ extension SolarTermCalculatorTests {
         let testDate = Calendar.current.date(from: dateComponents)!
 
         XCTAssertThrowsError(try sut.sameGanZhiTerm(for: testDate))
+    }
+}
+
+// MARK: - Xiao Han Tian Gan
+extension SolarTermCalculatorTests {
+    func testTianGanXiaoHan2000() {
+        let tianGan = sut.xiaoHanTianGan(forYear: 2000)
+
+        tianGan.equal(.ding)
+    }
+
+    func testTianGanXiaoHan2084() {
+        sut.xiaoHanTianGan(forYear: 2084).equal(.yi)
+    }
+
+    func testTianGanXiaoHan1985() {
+        sut.xiaoHanTianGan(forYear: 1985).equal(.ding)
+    }
+}
+
+// MARK: - Gan Zhi For Term Date
+extension SolarTermCalculatorTests {
+    func testGanZhi2084ChunFenAsia() {
+        let components = DateComponents(timeZone: TimeZone(identifier: "Asia/Taipei")!, year: 2084, month: 3, day: 20, hour: 12, minute: 00)
+
+        let date = Calendar.current.date(from: components)!
+        let termDate = SolarTerm.Date(date: date, type: .chunFen)
+
+        let result = sut.ganZhi(for: termDate)
+        result.tianGan.equal(.ding)
+        result.diZhi.equal(.mao)
+    }
+
+    func testGanZhi2084ChunFenToronto() {
+        let components = DateComponents(timeZone: TimeZone(identifier: "America/Toronto")!, year: 2084, month: 3, day: 19, hour: 12, minute: 00)
+
+        let date = Calendar.current.date(from: components)!
+        let termDate = SolarTerm.Date(date: date, type: .chunFen)
+
+        let result = sut.ganZhi(for: termDate)
+        result.tianGan.equal(.ding)
+        result.diZhi.equal(.mao)
+    }
+
+    func testGanZhi2084MangZhongAsia() {
+        let components = DateComponents(timeZone: TimeZone(identifier: "Asia/Taipei")!, year: 2084, month: 6, day: 5, hour: 12, minute: 00)
+
+        let date = Calendar.current.date(from: components)!
+        let termDate = SolarTerm.Date(date: date, type: .mangZhong)
+
+        let result = sut.ganZhi(for: termDate)
+        result.tianGan.equal(.geng)
+        result.diZhi.equal(.wu)
+    }
+}
+
+private extension TianGan {
+    func equal(_ other: TianGan, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertEqual(self, other, file: file, line: line)
+    }
+}
+
+private extension DiZhi {
+    func equal(_ other: DiZhi, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertEqual(self, other, file: file, line: line)
     }
 }
