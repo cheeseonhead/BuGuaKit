@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ChineseHoliday {
+enum ChineseHoliday: CaseIterable {
     case liChun
     case yuShui
     case jingZhi

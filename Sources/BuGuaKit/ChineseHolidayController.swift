@@ -35,20 +35,26 @@ public class ChineseHolidayController {
         referenceCalendar.timeZone = referenceTimeZone
     }
 
-    func ganZhi(for date: Date) -> (gan: TianGan, zhi: DiZhi) {
+    func sameGanZhiHoliday(for date: Date) throws -> Holiday {
         let year = Calendar.current.dateComponents(in: referenceTimeZone, from: date).year!
 
+        let possibleHolidays = try holidays(forYears: [year - 1, year]).sorted(by: { $0.date < $1.date })
 
+        var finalHoliday: Holiday!
+        for holiday in possibleHolidays {
+            guard holiday.date < date else { break }
 
+            finalHoliday = holiday
+        }
 
-        return (.jia, .zi)
+        return finalHoliday
     }
 
 //    func holidays(for year: Int) throws -> [ChineseHoliday: Date] {
 //
 //    }
 
-    func date(for holiday: ChineseHoliday, of year: Int) throws -> Holiday {
+    func date(for holiday: ChineseHoliday, ofYear year: Int) throws -> Holiday {
         guard year >= minYear && year <= maxYear else {
             throw Error.yearOutOfRange(year: year, minYear, maxYear)
         }
@@ -63,6 +69,18 @@ public class ChineseHolidayController {
 }
 
 private extension ChineseHolidayController {
+
+    func holidays(forYears years: [Int]) throws -> [Holiday] {
+        return try years.flatMap {
+            try holidays(forYear: $0)
+        }
+    }
+
+    func holidays(forYear year: Int) throws -> [Holiday] {
+        return try ChineseHoliday.allCases.map {
+            try date(for: $0, ofYear: year)
+        }
+    }
 
     static func gregorianDay(for holiday: ChineseHoliday, year: Int) -> Int {
         let adjustedYearEnd = Double(adjustYearEnd(for: holiday, year: year))
