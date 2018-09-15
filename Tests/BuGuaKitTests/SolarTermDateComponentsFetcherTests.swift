@@ -11,11 +11,11 @@ import XCTest
 
 class SolarTermDateComponentsFetcherTests: XCTestCase {
 
-    var sut: SolarTermDateComponentFetcher!
+    var sut: SolarTermDateComponentsFetcher!
 
     override func setUp() {
         let fakeDataLoader = MockDataLoader()
-        sut = SolarTermDateComponentFetcher(dataLoader: fakeDataLoader)
+        sut = SolarTermDateComponentsFetcher(dataLoader: fakeDataLoader)
     }
 
     func testExample() {
