@@ -13,6 +13,10 @@ enum SolarTerm: CaseIterable {
     struct Date {
         let date: Foundation.Date
         let type: SolarTerm
+
+        func year(in timeZone: TimeZone) -> Int {
+            return Calendar.current.dateComponents(in: timeZone, from: date).year!
+        }
     }
 
     case liChun
