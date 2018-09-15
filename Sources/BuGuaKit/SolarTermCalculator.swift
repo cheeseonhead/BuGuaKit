@@ -25,7 +25,7 @@ public class SolarTermCalculator {
     // MARK: - Private Constant
     private let minYear = 2000
     private let maxYear = 2099
-    private let referenceTimeZone = TimeZone(identifier: "Asia/Taipei")!
+    public let referenceTimeZone = TimeZone(identifier: "Asia/Taipei")!
 
     public func monthGanZhi(for date: Date) throws -> GanZhi {
         let term = try sameGanZhiTerm(for: date)
