@@ -61,7 +61,7 @@ class ChineseHolidayControllerTests: XCTestCase {
     func testChunFenException() {
         let date = try! sut.gregorianDate(for: .chunFen, of: 2084)
 
-        assertDate(date, month: 3, day: 19)
+        assertDate(date, month: 3, day: 20)
     }
 
     func testQingMing() {

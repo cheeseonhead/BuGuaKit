@@ -40,7 +40,7 @@ public class ChineseHolidayController {
         let month = ChineseHolidayController.gregorianMonth(for: holiday)
         let day = ChineseHolidayController.gregorianDay(for: holiday, year: year)
 
-        let dateComponents = DateComponents(calendar: Calendar(identifier: .gregorian), year: year, month: month, day: day)
+        let dateComponents = DateComponents(calendar: Calendar(identifier: .gregorian), timeZone: TimeZone(identifier: "Asia/Taipei"), year: year, month: month, day: day)
 
         return dateComponents
     }
@@ -55,7 +55,9 @@ private extension ChineseHolidayController {
 
         let leapCount = adjustedYearEnd / 4
 
-        let result = (adjustedYearEnd * d + c).rounded(.down) - leapCount.rounded(.down)
+        let term1 = (adjustedYearEnd * d + c)
+
+        let result = term1.rounded(.down) - leapCount.rounded(.down)
 
         return Int(result) + offset(for: holiday, year: year)
     }
@@ -105,7 +107,7 @@ private extension ChineseHolidayController {
     static func offset(for holiday: ChineseHoliday, year: Int) -> Int {
         switch holiday {
             // This is wrong for some reason
-//        case .chunFen: return year == 2084 ? 1 : 0
+        case .chunFen: return year == 2084 ? 1 : 0
         case .xiaoMan: return year == 2008 ? 1 : 0
         case .xiaoShu: return year == 2016 ? 1 : 0
         case .liQiu: return year == 2002 ? 1 : 0
