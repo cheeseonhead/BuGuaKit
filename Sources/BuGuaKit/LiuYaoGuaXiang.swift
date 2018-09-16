@@ -8,18 +8,38 @@
 
 import Foundation
 
+public struct LiuYaoGuaXiangBuilder {
+    private var liuYao: [YaoType]
+    private var dateGanZhi: DateGanZhi?
+
+    init(from guaXiang: LiuYaoGuaXiang) {
+        liuYao = guaXiang.liuYao
+        dateGanZhi = guaXiang.dateGanZhi
+    }
+
+    mutating func withDateGanZhi(_ ganZhi: DateGanZhi?) {
+        dateGanZhi = ganZhi
+    }
+
+    func build() -> LiuYaoGuaXiang {
+        return LiuYaoGuaXiang(liuYao: liuYao, dateGanZhi: dateGanZhi)
+    }
+}
+
 public struct LiuYaoGuaXiang {
 
-    public static let `default` = LiuYaoGuaXiang(liuYao: [.youngYang, .youngYang, .youngYang, .youngYang, .youngYang, .youngYang, ])
+    public static let `default` = LiuYaoGuaXiang(liuYao: [.youngYang, .youngYang, .youngYang, .youngYang, .youngYang, .youngYang])
 
     let liuYao: [YaoType]
     let innerYao: [YaoType]
     let outerYao: [YaoType]
+    let dateGanZhi: DateGanZhi?
 
-    public init(liuYao: [YaoType]) {
+    init(liuYao: [YaoType], dateGanZhi: DateGanZhi? = nil) {
         assert(liuYao.count == 6, "Cannot create GuaXiang without exactly 6 yao")
 
         self.liuYao = liuYao
+        self.dateGanZhi = dateGanZhi
         innerYao = Array(liuYao.prefix(3))
         outerYao = Array(liuYao.suffix(3))
     }
