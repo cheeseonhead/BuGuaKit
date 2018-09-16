@@ -10,12 +10,6 @@ import Foundation
 
 public class SolarTermCalculator {
 
-    public struct DateGanZhi {
-        let year: GanZhi
-        let month: GanZhi
-        let day: GanZhi
-    }
-
     enum Error: LocalizedError {
         case yearOutOfRange(year: Int, Int, Int)
 

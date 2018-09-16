@@ -38,6 +38,7 @@
 		9B3C1651214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1650214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift */; };
 		9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1F83221345B410048B4CB /* LiuQin.swift */; };
 		9BCE885D214E07910024FEF7 /* GanZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE885C214E07910024FEF7 /* GanZhi.swift */; };
+		9BCE885F214E155A0024FEF7 /* DateGanZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE885E214E155A0024FEF7 /* DateGanZhi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		9B3C1650214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermDateComponentsFetcherTests.swift; sourceTree = "<group>"; };
 		9BA1F83221345B410048B4CB /* LiuQin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuQin.swift; sourceTree = "<group>"; };
 		9BCE885C214E07910024FEF7 /* GanZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanZhi.swift; sourceTree = "<group>"; };
+		9BCE885E214E155A0024FEF7 /* DateGanZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				9B3C1648214DBADC00DF4C6A /* TimeZone+AppZones.swift */,
 				9B3C164C214DC1FF00DF4C6A /* SolarTermDataLoader.swift */,
 				9B3C163B214C68CE00DF4C6A /* SolarTermCalculator.swift */,
+				9BCE885E214E155A0024FEF7 /* DateGanZhi.swift */,
 			);
 			name = ChineseCalendar;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				346334512148C2EB001D462B /* TianGan.swift in Sources */,
 				342096BA21053EA70093C9A2 /* WuXing.swift in Sources */,
 				9B16525921323F9B001991DB /* LiangYi.swift in Sources */,
+				9BCE885F214E155A0024FEF7 /* DateGanZhi.swift in Sources */,
 				9B3C163C214C68CE00DF4C6A /* SolarTermCalculator.swift in Sources */,
 				345F40432104EA7C004714DB /* FuXiBaGua.swift in Sources */,
 				9B16525721323C02001991DB /* DiZhi.swift in Sources */,
