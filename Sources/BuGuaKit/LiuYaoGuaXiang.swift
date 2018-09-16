@@ -12,11 +12,13 @@ public class LiuYaoGuaXiangBuilder {
     private var liuYao: [YaoType]!
     private var dateGanZhi: DateGanZhi!
 
-    public init() {}
-
     public init(from guaXiang: LiuYaoGuaXiang) {
         liuYao = guaXiang.liuYao
         dateGanZhi = guaXiang.dateGanZhi
+    }
+
+    convenience public init() {
+        self.init(from: .default)
     }
 
     @discardableResult
