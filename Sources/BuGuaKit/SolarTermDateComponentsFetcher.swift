@@ -11,12 +11,12 @@ import Foundation
 class SolarTermDateComponentsFetcher {
 
     enum Error: LocalizedError {
-        case yearOutOfRange(Int, Int, Int)
+        case yearTooOld, yearTooNew
 
         var errorDescription: String? {
             switch self {
-            case let .yearOutOfRange(year, min, max):
-                return "\(year)不介於\(min)與\(max)之間"
+            case .yearTooOld: return "年份太小"
+            case .yearTooNew: return "年份太大"
             }
         }
     }
@@ -31,8 +31,12 @@ class SolarTermDateComponentsFetcher {
     }
 
     func dateComponent(for term: SolarTerm, year: Int) throws -> DateComponents {
-        guard year >= 2000 && year <= 2099 else {
-            throw Error.yearOutOfRange(year, minYear, maxYear)
+        guard year >= 2000 else {
+            throw Error.yearTooOld
+        }
+
+        guard year <= 2099 else {
+            throw Error.yearTooNew
         }
 
         let startOfYearIndex = (year - minYear) * 24
