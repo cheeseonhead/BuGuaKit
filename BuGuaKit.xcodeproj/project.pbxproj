@@ -27,7 +27,17 @@
 		9B16525F21324C31001991DB /* LiuYaoGuaXiang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */; };
 		9B165263213253B3001991DB /* LiuYaoGuaXiangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */; };
 		9B16526521325519001991DB /* YaoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16526421325519001991DB /* YaoType.swift */; };
+		9B3C163C214C68CE00DF4C6A /* SolarTermCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C163B214C68CE00DF4C6A /* SolarTermCalculator.swift */; };
+		9B3C163F214C696900DF4C6A /* SolarTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C163E214C696900DF4C6A /* SolarTerm.swift */; };
+		9B3C1643214C755300DF4C6A /* SolarTermCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1642214C755300DF4C6A /* SolarTermCalculatorTests.swift */; };
+		9B3C1645214D908000DF4C6A /* TianGanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1644214D908000DF4C6A /* TianGanTests.swift */; };
+		9B3C1647214DBA0E00DF4C6A /* SolarTermDateComponentsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1646214DBA0E00DF4C6A /* SolarTermDateComponentsFetcher.swift */; };
+		9B3C1649214DBADC00DF4C6A /* TimeZone+AppZones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1648214DBADC00DF4C6A /* TimeZone+AppZones.swift */; };
+		9B3C164B214DBCDA00DF4C6A /* SolarTermDateComponents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C164A214DBCDA00DF4C6A /* SolarTermDateComponents.plist */; };
+		9B3C164D214DC1FF00DF4C6A /* SolarTermDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C164C214DC1FF00DF4C6A /* SolarTermDataLoader.swift */; };
+		9B3C1651214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1650214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift */; };
 		9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1F83221345B410048B4CB /* LiuQin.swift */; };
+		9BCE885D214E07910024FEF7 /* GanZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE885C214E07910024FEF7 /* GanZhi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +76,17 @@
 		9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuYaoGuaXiang.swift; sourceTree = "<group>"; };
 		9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuYaoGuaXiangTests.swift; sourceTree = "<group>"; };
 		9B16526421325519001991DB /* YaoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YaoType.swift; sourceTree = "<group>"; };
+		9B3C163B214C68CE00DF4C6A /* SolarTermCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermCalculator.swift; sourceTree = "<group>"; };
+		9B3C163E214C696900DF4C6A /* SolarTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTerm.swift; sourceTree = "<group>"; };
+		9B3C1642214C755300DF4C6A /* SolarTermCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermCalculatorTests.swift; sourceTree = "<group>"; };
+		9B3C1644214D908000DF4C6A /* TianGanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TianGanTests.swift; sourceTree = "<group>"; };
+		9B3C1646214DBA0E00DF4C6A /* SolarTermDateComponentsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermDateComponentsFetcher.swift; sourceTree = "<group>"; };
+		9B3C1648214DBADC00DF4C6A /* TimeZone+AppZones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+AppZones.swift"; sourceTree = "<group>"; };
+		9B3C164A214DBCDA00DF4C6A /* SolarTermDateComponents.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SolarTermDateComponents.plist; sourceTree = "<group>"; };
+		9B3C164C214DC1FF00DF4C6A /* SolarTermDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermDataLoader.swift; sourceTree = "<group>"; };
+		9B3C1650214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermDateComponentsFetcherTests.swift; sourceTree = "<group>"; };
 		9BA1F83221345B410048B4CB /* LiuQin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuQin.swift; sourceTree = "<group>"; };
+		9BCE885C214E07910024FEF7 /* GanZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanZhi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,12 +138,14 @@
 		345F400621041033004714DB /* BuGuaKit */ = {
 			isa = PBXGroup;
 			children = (
+				9B3C163D214C695A00DF4C6A /* ChineseCalendar */,
 				9B16525A21323FAA001991DB /* Enums */,
 				9B16525D21323FEB001991DB /* Structs */,
 				34F14EC5214A030300274F90 /* Controllers */,
 				345F400721041033004714DB /* BuGuaKit.h */,
 				345F400821041033004714DB /* Info.plist */,
 				343992AD21052A4700C64474 /* Localizable.strings */,
+				9B3C164A214DBCDA00DF4C6A /* SolarTermDateComponents.plist */,
 			);
 			name = BuGuaKit;
 			path = Sources/BuGuaKit;
@@ -136,6 +158,9 @@
 				343992AE21052B7500C64474 /* FuXiBaGuaTests.swift */,
 				343992A7210521E000C64474 /* LiuShiSiGuaTests.swift */,
 				9B165262213253B3001991DB /* LiuYaoGuaXiangTests.swift */,
+				9B3C1642214C755300DF4C6A /* SolarTermCalculatorTests.swift */,
+				9B3C1644214D908000DF4C6A /* TianGanTests.swift */,
+				9B3C1650214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift */,
 			);
 			name = BuGuaKitTests;
 			path = Tests/BuGuaKitTests;
@@ -181,8 +206,21 @@
 			children = (
 				345F40442104F3DB004714DB /* LiuShiSiGua.swift */,
 				9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */,
+				9BCE885C214E07910024FEF7 /* GanZhi.swift */,
 			);
 			name = Structs;
+			sourceTree = "<group>";
+		};
+		9B3C163D214C695A00DF4C6A /* ChineseCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				9B3C163E214C696900DF4C6A /* SolarTerm.swift */,
+				9B3C1646214DBA0E00DF4C6A /* SolarTermDateComponentsFetcher.swift */,
+				9B3C1648214DBADC00DF4C6A /* TimeZone+AppZones.swift */,
+				9B3C164C214DC1FF00DF4C6A /* SolarTermDataLoader.swift */,
+				9B3C163B214C68CE00DF4C6A /* SolarTermCalculator.swift */,
+			);
+			name = ChineseCalendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3C164B214DBCDA00DF4C6A /* SolarTermDateComponents.plist in Resources */,
 				343992AB21052A4700C64474 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,13 +367,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3C163F214C696900DF4C6A /* SolarTerm.swift in Sources */,
+				9B3C1647214DBA0E00DF4C6A /* SolarTermDateComponentsFetcher.swift in Sources */,
 				34F14EC7214A034E00274F90 /* FuShenController.swift in Sources */,
 				9B16525F21324C31001991DB /* LiuYaoGuaXiang.swift in Sources */,
 				9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */,
 				9B16526521325519001991DB /* YaoType.swift in Sources */,
+				9B3C164D214DC1FF00DF4C6A /* SolarTermDataLoader.swift in Sources */,
+				9B3C1649214DBADC00DF4C6A /* TimeZone+AppZones.swift in Sources */,
+				9BCE885D214E07910024FEF7 /* GanZhi.swift in Sources */,
 				346334512148C2EB001D462B /* TianGan.swift in Sources */,
 				342096BA21053EA70093C9A2 /* WuXing.swift in Sources */,
 				9B16525921323F9B001991DB /* LiangYi.swift in Sources */,
+				9B3C163C214C68CE00DF4C6A /* SolarTermCalculator.swift in Sources */,
 				345F40432104EA7C004714DB /* FuXiBaGua.swift in Sources */,
 				9B16525721323C02001991DB /* DiZhi.swift in Sources */,
 				345F40452104F3DB004714DB /* LiuShiSiGua.swift in Sources */,
@@ -346,7 +391,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B165263213253B3001991DB /* LiuYaoGuaXiangTests.swift in Sources */,
+				9B3C1651214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift in Sources */,
 				343992AF21052B7500C64474 /* FuXiBaGuaTests.swift in Sources */,
+				9B3C1645214D908000DF4C6A /* TianGanTests.swift in Sources */,
+				9B3C1643214C755300DF4C6A /* SolarTermCalculatorTests.swift in Sources */,
 				343992A8210521E000C64474 /* LiuShiSiGuaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

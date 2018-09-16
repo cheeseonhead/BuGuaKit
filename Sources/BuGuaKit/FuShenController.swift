@@ -35,7 +35,7 @@ public class FuShenController {
     }
     
     public func hiddenDiZhi() -> [DiZhi?] {
-        let pureDiZhi = pureLiuShiSiGua.yaoZhi
+        let pureDiZhi = pureLiuShiSiGua.diZhi
         
         return zip(fuShen(), pureDiZhi).map { shen, zhi in
             return shen != nil ? zhi : nil

@@ -117,16 +117,16 @@ class LiuShiSiGuaTests: XCTestCase {
 
     // MARK: - 爻支
 
-    func testBasicYaoZhi() {
+    func testBasicDiZhi() {
         sut = LiuShiSiGua(innerGua: .kun, outerGua: .kan)
 
-        XCTAssertEqual(sut.yaoZhi, [.wei, .si, .mao, .shen, .xu, .zi])
+        XCTAssertEqual(sut.diZhi, [.wei, .si, .mao, .shen, .xu, .zi])
     }
 
-    func testBasicYaoZhiTwo() {
+    func testBasicDiZhiTwo() {
         sut = LiuShiSiGua(innerGua: .zhen, outerGua: .kan)
 
-        XCTAssertEqual(sut.yaoZhi, [.zi, .yin, .chen, .shen, .xu, .zi])
+        XCTAssertEqual(sut.diZhi, [.zi, .yin, .chen, .shen, .xu, .zi])
     }
 
     // MARK: - 六親之我

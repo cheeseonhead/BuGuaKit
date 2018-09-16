@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum DiZhi {
+public enum DiZhi: CaseIterable {
     case zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai
 
     public var character: String {
@@ -23,5 +23,22 @@ public enum DiZhi {
         case .si, .wu: return .fire
         case .shen, .you: return .gold
         }
+    }
+
+    func diZhi(after count: Int) -> DiZhi {
+        let totalCount = DiZhi.allCases.count
+
+        let selfIndex = index()
+        let remainder = (selfIndex + count) % totalCount
+
+        let positiveRemainder = (totalCount + remainder) % totalCount
+
+        return DiZhi.allCases[positiveRemainder]
+    }
+}
+
+private extension DiZhi {
+    func index() -> Int {
+        return DiZhi.allCases.firstIndex(of: self)!
     }
 }
