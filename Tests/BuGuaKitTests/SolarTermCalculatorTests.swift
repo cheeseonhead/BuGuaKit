@@ -240,7 +240,46 @@ class SolarTermCalculatorTests: XCTestCase {
     }
 }
 
-// MARK: - Gan Zhi for Date
+// MARK: - Year Gan Zhi for Date
+extension SolarTermCalculatorTests {
+    func testYearGanZhi20000101() {
+        XCTAssertThrowsError(try sut.yearGanZhi(for: SolarTerm.DateComponents(year: 2000, month: 1, day: 1)))
+    }
+
+    func testYearGanZhi21000604() {
+        XCTAssertThrowsError(try sut.yearGanZhi(for: SolarTerm.DateComponents(year: 2100, month: 6, day: 4)))
+    }
+
+    func testYearGanZhi20010101() {
+        let ganZhi = try! sut.yearGanZhi(for: SolarTerm.DateComponents(year: 2001, month: 01, day: 1))
+
+        XCTAssertEqual(ganZhi.tianGan, .geng)
+        XCTAssertEqual(ganZhi.diZhi, .chen)
+    }
+
+    func testYearGanZhi20010204() {
+        let ganZhi = try! sut.yearGanZhi(for: SolarTerm.DateComponents(year: 2001, month: 2, day: 4))
+
+        XCTAssertEqual(ganZhi.tianGan, .xin)
+        XCTAssertEqual(ganZhi.diZhi, .si)
+    }
+
+    func testYearGanZhi20230205() {
+        let ganZhi = try! sut.yearGanZhi(for: SolarTerm.DateComponents(year: 2023, month: 2, day: 5))
+
+        XCTAssertEqual(ganZhi.tianGan, .gui)
+        XCTAssertEqual(ganZhi.diZhi, .mao)
+    }
+
+    func testYearGanZhi20280204() {
+        let ganZhi = try! sut.yearGanZhi(for: SolarTerm.DateComponents(year: 2028, month: 2, day: 4))
+
+        XCTAssertEqual(ganZhi.tianGan, .wu)
+        XCTAssertEqual(ganZhi.diZhi, .shen)
+    }
+}
+
+// MARK: - Month Gan Zhi for Date
 extension SolarTermCalculatorTests {
     func testGanZhi20840319Toronto() {
         let components = SolarTerm.DateComponents(year: 2084, month: 3, day: 19)
@@ -275,7 +314,7 @@ extension SolarTermCalculatorTests {
     }
 }
 
-// MARK: - Getting the right term
+// MARK: - Getting the right month term
 extension SolarTermCalculatorTests {
     func testCanadaTime20840319Night() {
         let dateComponents = SolarTerm.DateComponents(year: 2084, month: 3, day: 19)
@@ -315,7 +354,7 @@ extension SolarTermCalculatorTests {
     }
 }
 
-// MARK: - Xiao Han Tian Gan
+// MARK: - Xiao Han Month Tian Gan
 extension SolarTermCalculatorTests {
     func testTianGanXiaoHan2000() {
         let tianGan = sut.xiaoHanMonthTianGan(forYear: 2000)
@@ -332,7 +371,7 @@ extension SolarTermCalculatorTests {
     }
 }
 
-// MARK: - Gan Zhi For Term Date
+// MARK: - Month Gan Zhi For Term Date
 extension SolarTermCalculatorTests {
     func testGanZhi2084ChunFenAsia() {
         let components = SolarTerm.DateComponents(year: 2084, month: 3, day: 20)
