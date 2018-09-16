@@ -38,14 +38,24 @@ public struct LiuYaoGuaXiang {
         return LiuShiSiGua(innerGua: innerGua, outerGua: outerGua)
     }
 
+    public var changeTianGan: [TianGan?] {
+        return zip(liuYao, changedGua.tianGan).map { yaoType, gan in
+            if !yaoType.isStable {
+                return gan
+            } else {
+                return nil
+            }
+        }
+    }
+
     public var changedDiZhi: [DiZhi?] {
-        return zip(liuYao, changedGua.diZhi).map({ (yaoType, zhi) in
+        return zip(liuYao, changedGua.diZhi).map { (yaoType, zhi) in
             if !yaoType.isStable {
                 return zhi
             } else {
                 return nil
             }
-        })
+        }
     }
 
     public func yao(at position: Int) -> YaoType {

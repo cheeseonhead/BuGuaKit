@@ -51,6 +51,12 @@ public struct LiuShiSiGua {
         }
     }
 
+    public var ganZhi: [GanZhi] {
+        return zip(tianGan, diZhi).map {
+            GanZhi($0, $1)
+        }
+    }
+
     public var tianGan: [TianGan] {
         let innerZhi = Array(repeating: innerGua.tianGan(forPosition: .inner), count: 3)
         let outerZhi = Array(repeating: outerGua.tianGan(forPosition: .outer), count: 3)
