@@ -9,16 +9,26 @@
 import Foundation
 
 public struct LiuYaoGuaXiangBuilder {
-    private var liuYao: [YaoType]
-    private var dateGanZhi: DateGanZhi?
+    private var liuYao: [YaoType]!
+    private var dateGanZhi: DateGanZhi!
+
+    init() {}
 
     init(from guaXiang: LiuYaoGuaXiang) {
         liuYao = guaXiang.liuYao
         dateGanZhi = guaXiang.dateGanZhi
     }
 
-    mutating func withDateGanZhi(_ ganZhi: DateGanZhi?) {
+    @discardableResult
+    mutating func setLiuYao(_ liuYao: [YaoType]) -> LiuYaoGuaXiangBuilder {
+        self.liuYao = liuYao
+        return self
+    }
+
+    @discardableResult
+    mutating func withDateGanZhi(_ ganZhi: DateGanZhi?) -> LiuYaoGuaXiangBuilder {
         dateGanZhi = ganZhi
+        return self
     }
 
     func build() -> LiuYaoGuaXiang {
@@ -28,14 +38,15 @@ public struct LiuYaoGuaXiangBuilder {
 
 public struct LiuYaoGuaXiang {
 
-    public static let `default` = LiuYaoGuaXiang(liuYao: [.youngYang, .youngYang, .youngYang, .youngYang, .youngYang, .youngYang])
+    public static let `default` = LiuYaoGuaXiang(liuYao: [.youngYang, .youngYang, .youngYang, .youngYang, .youngYang, .youngYang],
+                                                 dateGanZhi: .default)
 
     let liuYao: [YaoType]
     let innerYao: [YaoType]
     let outerYao: [YaoType]
-    let dateGanZhi: DateGanZhi?
+    let dateGanZhi: DateGanZhi
 
-    init(liuYao: [YaoType], dateGanZhi: DateGanZhi? = nil) {
+    init(liuYao: [YaoType], dateGanZhi: DateGanZhi) {
         assert(liuYao.count == 6, "Cannot create GuaXiang without exactly 6 yao")
 
         self.liuYao = liuYao
@@ -58,7 +69,7 @@ public struct LiuYaoGuaXiang {
         return LiuShiSiGua(innerGua: innerGua, outerGua: outerGua)
     }
 
-    public var changeTianGan: [TianGan?] {
+    public var changedTianGan: [TianGan?] {
         return zip(liuYao, changedGua.tianGan).map { yaoType, gan in
             if !yaoType.isStable {
                 return gan

@@ -12,4 +12,8 @@ public struct DateGanZhi {
     let year: GanZhi
     let month: GanZhi
     let day: GanZhi
+
+    static let `default` = DateGanZhi(year: GanZhi(.jia, .zi),
+                                      month: GanZhi(.jia, .zi),
+                                      day: GanZhi(.jia, .zi))
 }

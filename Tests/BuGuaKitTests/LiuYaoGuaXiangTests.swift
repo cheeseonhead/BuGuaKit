@@ -11,12 +11,18 @@ import XCTest
 
 class LiuYaoGuaXiangTests: XCTestCase {
 
+    var builder: LiuYaoGuaXiangBuilder!
     var sut: LiuYaoGuaXiang!
+
+    override func setUp() {
+        builder = LiuYaoGuaXiangBuilder(from: .default)
+    }
 
     // MARK: - Creation
 
     func testCreationOne() {
-        sut = LiuYaoGuaXiang(liuYao: [.youngYin, .oldYang, .youngYin, .youngYin, .youngYang, .youngYang])
+        builder.setLiuYao([.youngYin, .oldYang, .youngYin, .youngYin, .youngYang, .youngYang])
+        sut = builder.build()
 
         XCTAssertEqual(sut.originalGua.innerGua, .kan)
         XCTAssertEqual(sut.originalGua.outerGua, .xun)
@@ -25,7 +31,8 @@ class LiuYaoGuaXiangTests: XCTestCase {
     }
 
     func testCreationTwo() {
-        sut = LiuYaoGuaXiang(liuYao: [.youngYang, .oldYin, .youngYin, .youngYin, .oldYang, .youngYin])
+        builder.setLiuYao([.youngYang, .oldYin, .youngYin, .youngYin, .oldYang, .youngYin])
+        sut = builder.build()
 
         XCTAssertEqual(sut.originalGua.innerGua, .zhen)
         XCTAssertEqual(sut.originalGua.outerGua, .kan)
@@ -36,13 +43,15 @@ class LiuYaoGuaXiangTests: XCTestCase {
     // MARK: - 變爻爻支
 
     func testChangedDiZhiOne() {
-        sut = LiuYaoGuaXiang(liuYao: [.youngYin, .oldYang, .youngYin, .youngYin, .youngYang, .youngYang])
+        builder.setLiuYao([.youngYin, .oldYang, .youngYin, .youngYin, .youngYang, .youngYang])
+        sut = builder.build()
 
         XCTAssertEqual(sut.changedDiZhi, [nil, .si, nil, nil, nil, nil])
     }
 
     func testChangedDiZhiTwo() {
-        sut = LiuYaoGuaXiang(liuYao: [.youngYang, .oldYin, .youngYin, .youngYin, .oldYang, .youngYin])
+        builder.setLiuYao([.youngYang, .oldYin, .youngYin, .youngYin, .oldYang, .youngYin])
+        sut = builder.build()
 
         XCTAssertEqual(sut.changedDiZhi, [nil, .mao, nil, nil, .hai, nil])
     }
