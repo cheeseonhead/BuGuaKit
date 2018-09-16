@@ -15,6 +15,10 @@ public enum SolarTerm: CaseIterable {
         let month: Int
         let day: Int
 
+        func makeComponent() -> Foundation.DateComponents {
+            return Foundation.DateComponents(year: year, month: month, day: day)
+        }
+
         public static func < (lhs: SolarTerm.DateComponents, rhs: SolarTerm.DateComponents) -> Bool {
             if lhs.year != rhs.year {
                 return lhs.year < rhs.year
@@ -25,6 +29,15 @@ public enum SolarTerm: CaseIterable {
             }
 
             return false
+        }
+
+        func days(from otherComponents: DateComponents) -> Int {
+            let selfCompo = makeComponent()
+            let otherCompo = otherComponents.makeComponent()
+
+            let days = Calendar.current.dateComponents([.day], from: selfCompo, to: otherCompo).day!
+
+            return days
         }
     }
 
