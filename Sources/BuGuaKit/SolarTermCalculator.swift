@@ -33,7 +33,51 @@ public class SolarTermCalculator {
         self.componentFetcher = dateComponentFetcher
     }
 
-    public func monthGanZhi(for dateComponents: SolarTerm.DateComponents) throws -> GanZhi {
+
+
+    func termDate(for term: SolarTerm, ofYear year: Int) throws -> SolarTerm.Date {
+        let dateComponents = try componentFetcher.dateComponent(for: term, year: year)
+
+        let termComponents = SolarTerm.DateComponents(year: dateComponents.year!, month: dateComponents.month!, day: dateComponents.day!)
+
+        return SolarTerm.Date(components: termComponents, type: term)
+    }
+}
+
+// MARK: - Year Gan Zhi
+extension SolarTermCalculator {
+
+    private var liChun2000YearGanZhi: GanZhi { return (.geng, .chen) }
+    private var liChunReferenceYear: Int { return 2000 }
+
+    public func yearGanZhi(for dateComponents: SolarTerm.DateComponents) throws -> GanZhi {
+        let possibleLiChuns = [
+            try termDate(for: .liChun, ofYear: dateComponents.year - 1),
+            try termDate(for: .liChun, ofYear: dateComponents.year)
+        ]
+
+        let sameYearLiChun = possibleLiChuns[1].components <= dateComponents ? possibleLiChuns[1] : possibleLiChuns[0]
+
+        return liChunYearGanZhi(forYear: sameYearLiChun.components.year)
+    }
+
+    func liChunYearGanZhi(forYear year: Int) -> GanZhi {
+        let yearsPassed = year - liChunReferenceYear
+
+        let tianGan = liChun2000YearGanZhi.tianGan.tianGan(after: yearsPassed)
+        let diZhi = liChun2000YearGanZhi.diZhi.diZhi(after: yearsPassed)
+
+        return (tianGan, diZhi)
+    }
+}
+
+// MARK: - Month Gan Zhi
+extension SolarTermCalculator {
+
+    private var xiaoHan2000TianGan: TianGan { return .ding }
+    private var xiaoHanReferenceYear: Int { return 2000 }
+
+    func monthGanZhi(for dateComponents: SolarTerm.DateComponents) throws -> GanZhi {
         let term = try sameMonthGanZhiTerm(for: dateComponents)
         let ganZhiForTerm = monthGanZhi(for: term)
 
@@ -42,10 +86,6 @@ public class SolarTermCalculator {
 
     func sameMonthGanZhiTerm(for dateComponents: SolarTerm.DateComponents) throws -> SolarTerm.Date {
         let year = dateComponents.year
-
-        guard year >= minYear + 1 && year <= maxYear else {
-            throw Error.yearOutOfRange(year: year, minYear + 1, maxYear)
-        }
 
         let possibleTermDates = try terms(forYears: [year - 1, year]).sorted(by: { $0.components < $1.components })
 
@@ -58,21 +98,6 @@ public class SolarTermCalculator {
 
         return finalTermDate
     }
-
-    func termDate(for term: SolarTerm, ofYear year: Int) throws -> SolarTerm.Date {
-        let dateComponents = try componentFetcher.dateComponent(for: term, year: year)
-
-        let termComponents = SolarTerm.DateComponents(year: dateComponents.year!, month: dateComponents.month!, day: dateComponents.day!)
-
-        return SolarTerm.Date(components: termComponents, type: term)
-    }
-}
-
-// MARK: - Gan Zhi
-extension SolarTermCalculator {
-
-    private var xiaoHan2000TianGan: TianGan { return .ding }
-    private var xiaoHanReferenceYear: Int { return 2000 }
 
     func monthGanZhi(for termDate: SolarTerm.Date) -> GanZhi {
         let tianGan = self.monthTianGan(for: termDate)
