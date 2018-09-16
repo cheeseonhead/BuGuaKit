@@ -37,6 +37,7 @@
 		9B3C164D214DC1FF00DF4C6A /* SolarTermDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C164C214DC1FF00DF4C6A /* SolarTermDataLoader.swift */; };
 		9B3C1651214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1650214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift */; };
 		9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1F83221345B410048B4CB /* LiuQin.swift */; };
+		9BCE885D214E07910024FEF7 /* GanZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE885C214E07910024FEF7 /* GanZhi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		9B3C164C214DC1FF00DF4C6A /* SolarTermDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermDataLoader.swift; sourceTree = "<group>"; };
 		9B3C1650214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermDateComponentsFetcherTests.swift; sourceTree = "<group>"; };
 		9BA1F83221345B410048B4CB /* LiuQin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuQin.swift; sourceTree = "<group>"; };
+		9BCE885C214E07910024FEF7 /* GanZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanZhi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			children = (
 				345F40442104F3DB004714DB /* LiuShiSiGua.swift */,
 				9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */,
+				9BCE885C214E07910024FEF7 /* GanZhi.swift */,
 			);
 			name = Structs;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				9B16526521325519001991DB /* YaoType.swift in Sources */,
 				9B3C164D214DC1FF00DF4C6A /* SolarTermDataLoader.swift in Sources */,
 				9B3C1649214DBADC00DF4C6A /* TimeZone+AppZones.swift in Sources */,
+				9BCE885D214E07910024FEF7 /* GanZhi.swift in Sources */,
 				346334512148C2EB001D462B /* TianGan.swift in Sources */,
 				342096BA21053EA70093C9A2 /* WuXing.swift in Sources */,
 				9B16525921323F9B001991DB /* LiangYi.swift in Sources */,

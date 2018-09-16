@@ -258,7 +258,7 @@ extension SolarTermCalculatorTests {
         assertGanZhi(ganZhi.day, .ren, .yin)
     }
 
-    func assertGanZhi(_ ganZhi: SolarTermCalculator.GanZhi, _ gan: TianGan, _ zhi: DiZhi, file: StaticString = #file, line: UInt = #line) {
+    func assertGanZhi(_ ganZhi: GanZhi, _ gan: TianGan, _ zhi: DiZhi, file: StaticString = #file, line: UInt = #line) {
         XCTAssertEqual(ganZhi.tianGan, gan, file: file, line: line)
         XCTAssertEqual(ganZhi.diZhi, zhi, file: file, line: line)
     }

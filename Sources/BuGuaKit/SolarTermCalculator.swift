@@ -10,8 +10,6 @@ import Foundation
 
 public class SolarTermCalculator {
 
-    public typealias GanZhi = (tianGan: TianGan, diZhi: DiZhi)
-
     public struct DateGanZhi {
         let year: GanZhi
         let month: GanZhi
@@ -58,7 +56,7 @@ public class SolarTermCalculator {
 
 // MARK: - Day Gan Zhi
 extension SolarTermCalculator {
-    private var referenceDateGanZhi: GanZhi { return (.wu, .wu) }
+    private var referenceDateGanZhi: GanZhi { return GanZhi(.wu, .wu) }
     private var referenceDateComponents: SolarTerm.DateComponents { return SolarTerm.DateComponents(year: 2000, month: 1, day: 1) }
 
     public func dayGanZhi(for dateComponents: SolarTerm.DateComponents) -> GanZhi {
@@ -67,14 +65,14 @@ extension SolarTermCalculator {
         let tianGan = referenceDateGanZhi.tianGan.tianGan(after: daysPassed)
         let diZhi  = referenceDateGanZhi.diZhi.diZhi(after: daysPassed)
 
-        return (tianGan, diZhi)
+        return GanZhi(tianGan, diZhi)
     }
 }
 
 // MARK: - Year Gan Zhi
 extension SolarTermCalculator {
 
-    private var liChun2000YearGanZhi: GanZhi { return (.geng, .chen) }
+    private var liChun2000YearGanZhi: GanZhi { return GanZhi(.geng, .chen) }
     private var liChunReferenceYear: Int { return 2000 }
 
     public func yearGanZhi(for dateComponents: SolarTerm.DateComponents) throws -> GanZhi {
@@ -94,7 +92,7 @@ extension SolarTermCalculator {
         let tianGan = liChun2000YearGanZhi.tianGan.tianGan(after: yearsPassed)
         let diZhi = liChun2000YearGanZhi.diZhi.diZhi(after: yearsPassed)
 
-        return (tianGan, diZhi)
+        return GanZhi(tianGan, diZhi)
     }
 }
 
@@ -130,7 +128,7 @@ extension SolarTermCalculator {
         let tianGan = self.monthTianGan(for: termDate)
         let diZhi = SolarTermCalculator.diZhi(for: termDate)
 
-        return (tianGan, diZhi)
+        return GanZhi(tianGan, diZhi)
     }
 
     func monthTianGan(for termDate: SolarTerm.Date) -> TianGan {
