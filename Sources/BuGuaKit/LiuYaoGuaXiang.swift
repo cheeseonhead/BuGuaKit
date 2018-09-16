@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct LiuYaoGuaXiangBuilder {
+public class LiuYaoGuaXiangBuilder {
     private var liuYao: [YaoType]!
     private var dateGanZhi: DateGanZhi!
 
@@ -20,13 +20,13 @@ public struct LiuYaoGuaXiangBuilder {
     }
 
     @discardableResult
-    mutating func setLiuYao(_ liuYao: [YaoType]) -> LiuYaoGuaXiangBuilder {
+    func setLiuYao(_ liuYao: [YaoType]) -> LiuYaoGuaXiangBuilder {
         self.liuYao = liuYao
         return self
     }
 
     @discardableResult
-    mutating func withDateGanZhi(_ ganZhi: DateGanZhi?) -> LiuYaoGuaXiangBuilder {
+    func withDateGanZhi(_ ganZhi: DateGanZhi?) -> LiuYaoGuaXiangBuilder {
         dateGanZhi = ganZhi
         return self
     }
