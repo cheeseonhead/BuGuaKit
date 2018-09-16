@@ -27,43 +27,45 @@ public class SolarTermCalculator {
     private let maxYear = 2099
     public let referenceTimeZone = TimeZone(identifier: "Asia/Taipei")!
 
-    public func monthGanZhi(for date: Date) throws -> GanZhi {
-        let term = try sameGanZhiTerm(for: date)
+    // MARK: - Private Properties
+    private let componentFetcher: SolarTermDateComponentsFetcher
+
+    init(dateComponentFetcher: SolarTermDateComponentsFetcher) {
+        self.componentFetcher = dateComponentFetcher
+    }
+
+    public func monthGanZhi(for dateComponents: SolarTerm.DateComponents) throws -> GanZhi {
+        let term = try sameGanZhiTerm(for: dateComponents)
         let ganZhiForTerm = ganZhi(for: term)
 
         return ganZhiForTerm
     }
 
-    func sameGanZhiTerm(for date: Date) throws -> SolarTerm.Date {
-        let year = Calendar.current.dateComponents(in: referenceTimeZone, from: date).year!
+    func sameGanZhiTerm(for dateComponents: SolarTerm.DateComponents) throws -> SolarTerm.Date {
+        let year = dateComponents.year
 
         guard year >= minYear + 1 && year <= maxYear else {
             throw Error.yearOutOfRange(year: year, minYear + 1, maxYear)
         }
 
-        let possibleTerms = try terms(forYears: [year - 1, year]).sorted(by: { $0.date < $1.date })
+        let possibleTermDates = try terms(forYears: [year - 1, year]).sorted(by: { $0.components < $1.components })
 
-        var finalTerm: SolarTerm.Date!
-        for term in possibleTerms {
-            guard term.date < date else { break }
+        var finalTermDate: SolarTerm.Date!
+        for termDate in possibleTermDates {
+            guard termDate.components <= dateComponents else { break }
 
-            finalTerm = term
+            finalTermDate = termDate
         }
 
-        return finalTerm
+        return finalTermDate
     }
 
-    func date(for term: SolarTerm, ofYear year: Int) throws -> SolarTerm.Date {
-        guard year >= minYear && year <= maxYear else {
-            throw Error.yearOutOfRange(year: year, minYear, maxYear)
-        }
+    func termDate(for term: SolarTerm, ofYear year: Int) throws -> SolarTerm.Date {
+        let dateComponents = try componentFetcher.dateComponent(for: term, year: year)
 
-        let month = SolarTermCalculator.gregorianMonth(for: term)
-        let day = SolarTermCalculator.gregorianDay(for: term, year: year)
+        let termComponents = SolarTerm.DateComponents(year: dateComponents.year!, month: dateComponents.month!, day: dateComponents.day!)
 
-        let dateComponents = DateComponents(timeZone: referenceTimeZone, year: year, month: month, day: day)
-
-        return SolarTerm.Date(date: Calendar.current.date(from: dateComponents)!, type: term)
+        return SolarTerm.Date(components: termComponents, type: term)
     }
 }
 
@@ -82,7 +84,7 @@ extension SolarTermCalculator {
 
     func tianGan(for termDate: SolarTerm.Date) -> TianGan {
         let monthOffsetFromXiaoHan = termDate.type.index / 2
-        return xiaoHanTianGan(forYear: termDate.year(in: referenceTimeZone))
+        return xiaoHanTianGan(forYear: termDate.components.year)
             .tianGan(after: monthOffsetFromXiaoHan)
     }
 
@@ -126,7 +128,7 @@ private extension SolarTermCalculator {
 
     func terms(forYear year: Int) throws -> [SolarTerm.Date] {
         return try SolarTerm.allCases.map {
-            try date(for: $0, ofYear: year)
+            try termDate(for: $0, ofYear: year)
         }
     }
 

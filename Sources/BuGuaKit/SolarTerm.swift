@@ -8,15 +8,29 @@
 
 import Foundation
 
-enum SolarTerm: CaseIterable {
+public enum SolarTerm: CaseIterable {
+
+    public struct DateComponents: Comparable {
+        let year: Int
+        let month: Int
+        let day: Int
+
+        public static func < (lhs: SolarTerm.DateComponents, rhs: SolarTerm.DateComponents) -> Bool {
+            if lhs.year != rhs.year {
+                return lhs.year < rhs.year
+            } else if lhs.month != rhs.month {
+                return lhs.month < rhs.month
+            } else if lhs.day != rhs.day {
+                return lhs.day < rhs.day
+            }
+
+            return false
+        }
+    }
 
     struct Date {
-        let date: Foundation.Date
+        let components: DateComponents
         let type: SolarTerm
-
-        func year(in timeZone: TimeZone) -> Int {
-            return Calendar.current.dateComponents(in: timeZone, from: date).year!
-        }
     }
 
     case liChun
