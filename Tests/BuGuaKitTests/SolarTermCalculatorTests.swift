@@ -280,7 +280,7 @@ extension SolarTermCalculatorTests {
     func testCanadaTime20840319Night() {
         let dateComponents = SolarTerm.DateComponents(year: 2084, month: 3, day: 19)
 
-        let holiday = try! sut.sameGanZhiTerm(for: dateComponents)
+        let holiday = try! sut.sameMonthGanZhiTerm(for: dateComponents)
 
         XCTAssertEqual(holiday.type, .chunFen)
     }
@@ -288,7 +288,7 @@ extension SolarTermCalculatorTests {
     func testCanadaTime20840319Noon() {
         let dateComponents = SolarTerm.DateComponents(year: 2084, month: 3, day: 19)
 
-        let holiday = try! sut.sameGanZhiTerm(for: dateComponents)
+        let holiday = try! sut.sameMonthGanZhiTerm(for: dateComponents)
 
         XCTAssertEqual(holiday.components, SolarTerm.DateComponents(year: 2084, month: 3, day: 19))
         XCTAssertEqual(holiday.type, .chunFen)
@@ -297,7 +297,7 @@ extension SolarTermCalculatorTests {
     func testCanadaTime20840319Morning() {
         let dateComponents = SolarTerm.DateComponents(year: 2084, month: 3, day: 19)
 
-        let holiday = try! sut.sameGanZhiTerm(for: dateComponents)
+        let holiday = try! sut.sameMonthGanZhiTerm(for: dateComponents)
 
         XCTAssertEqual(holiday.type, .chunFen)
     }
@@ -305,30 +305,30 @@ extension SolarTermCalculatorTests {
     func testSameHoliday20000101() {
         let dateComponents = SolarTerm.DateComponents(year: 2000, month: 1, day: 1)
 
-        XCTAssertThrowsError(try sut.sameGanZhiTerm(for: dateComponents))
+        XCTAssertThrowsError(try sut.sameMonthGanZhiTerm(for: dateComponents))
     }
 
     func testSameHoliday20991231() {
         let dateComponents = SolarTerm.DateComponents(year: 2099, month: 12, day: 31)
 
-        XCTAssertEqual(try! sut.sameGanZhiTerm(for: dateComponents).type, .dongZhi)
+        XCTAssertEqual(try! sut.sameMonthGanZhiTerm(for: dateComponents).type, .dongZhi)
     }
 }
 
 // MARK: - Xiao Han Tian Gan
 extension SolarTermCalculatorTests {
     func testTianGanXiaoHan2000() {
-        let tianGan = sut.xiaoHanTianGan(forYear: 2000)
+        let tianGan = sut.xiaoHanMonthTianGan(forYear: 2000)
 
         tianGan.equal(.ding)
     }
 
     func testTianGanXiaoHan2084() {
-        sut.xiaoHanTianGan(forYear: 2084).equal(.yi)
+        sut.xiaoHanMonthTianGan(forYear: 2084).equal(.yi)
     }
 
     func testTianGanXiaoHan1985() {
-        sut.xiaoHanTianGan(forYear: 1985).equal(.ding)
+        sut.xiaoHanMonthTianGan(forYear: 1985).equal(.ding)
     }
 }
 
@@ -337,7 +337,7 @@ extension SolarTermCalculatorTests {
     func testGanZhi2084ChunFenAsia() {
         let components = SolarTerm.DateComponents(year: 2084, month: 3, day: 20)
 
-        let result = sut.ganZhi(for: SolarTerm.Date(components: components, type: .chunFen))
+        let result = sut.monthGanZhi(for: SolarTerm.Date(components: components, type: .chunFen))
         result.tianGan.equal(.ding)
         result.diZhi.equal(.mao)
     }
@@ -345,7 +345,7 @@ extension SolarTermCalculatorTests {
     func testGanZhi2084ChunFenToronto() {
         let components = SolarTerm.DateComponents(year: 2084, month: 3, day: 19)
 
-        let result = sut.ganZhi(for: SolarTerm.Date(components: components, type: .chunFen))
+        let result = sut.monthGanZhi(for: SolarTerm.Date(components: components, type: .chunFen))
         result.tianGan.equal(.ding)
         result.diZhi.equal(.mao)
     }
@@ -353,7 +353,7 @@ extension SolarTermCalculatorTests {
     func testGanZhi2084MangZhongAsia() {
         let components = SolarTerm.DateComponents(year: 2084, month: 6, day: 5)
 
-        let result = sut.ganZhi(for: SolarTerm.Date(components: components, type: .mangZhong))
+        let result = sut.monthGanZhi(for: SolarTerm.Date(components: components, type: .mangZhong))
         result.tianGan.equal(.geng)
         result.diZhi.equal(.wu)
     }

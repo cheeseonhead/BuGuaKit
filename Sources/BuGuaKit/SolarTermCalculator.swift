@@ -34,13 +34,13 @@ public class SolarTermCalculator {
     }
 
     public func monthGanZhi(for dateComponents: SolarTerm.DateComponents) throws -> GanZhi {
-        let term = try sameGanZhiTerm(for: dateComponents)
-        let ganZhiForTerm = ganZhi(for: term)
+        let term = try sameMonthGanZhiTerm(for: dateComponents)
+        let ganZhiForTerm = monthGanZhi(for: term)
 
         return ganZhiForTerm
     }
 
-    func sameGanZhiTerm(for dateComponents: SolarTerm.DateComponents) throws -> SolarTerm.Date {
+    func sameMonthGanZhiTerm(for dateComponents: SolarTerm.DateComponents) throws -> SolarTerm.Date {
         let year = dateComponents.year
 
         guard year >= minYear + 1 && year <= maxYear else {
@@ -74,20 +74,20 @@ extension SolarTermCalculator {
     private var xiaoHan2000TianGan: TianGan { return .ding }
     private var xiaoHanReferenceYear: Int { return 2000 }
 
-    func ganZhi(for termDate: SolarTerm.Date) -> GanZhi {
-        let tianGan = self.tianGan(for: termDate)
+    func monthGanZhi(for termDate: SolarTerm.Date) -> GanZhi {
+        let tianGan = self.monthTianGan(for: termDate)
         let diZhi = SolarTermCalculator.diZhi(for: termDate)
 
         return (tianGan, diZhi)
     }
 
-    func tianGan(for termDate: SolarTerm.Date) -> TianGan {
+    func monthTianGan(for termDate: SolarTerm.Date) -> TianGan {
         let monthOffsetFromXiaoHan = termDate.type.index / 2
-        return xiaoHanTianGan(forYear: termDate.components.year)
+        return xiaoHanMonthTianGan(forYear: termDate.components.year)
             .tianGan(after: monthOffsetFromXiaoHan)
     }
 
-    func xiaoHanTianGan(forYear year: Int) -> TianGan {
+    func xiaoHanMonthTianGan(forYear year: Int) -> TianGan {
         let monthsPassed = (year - xiaoHanReferenceYear) * 12
         let tianGanThisYear = xiaoHan2000TianGan.tianGan(after: monthsPassed)
 
