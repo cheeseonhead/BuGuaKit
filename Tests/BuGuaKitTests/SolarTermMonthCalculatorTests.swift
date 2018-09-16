@@ -9,14 +9,14 @@
 import XCTest
 @testable import BuGuaKit
 
-class SolarTermCalculatorTests: XCTestCase {
+class SolarTermMonthCalculatorTests: XCTestCase {
 
     static let componentsFetcher = SolarTermDateComponentsFetcher(dataLoader: MockDataLoader())
 
-    var sut: SolarTermCalculator!
+    var sut: SolarTermMonthCalculator!
 
     override func setUp() {
-        sut = SolarTermCalculator(dateComponentFetcher: SolarTermCalculatorTests.componentsFetcher)
+        sut = SolarTermMonthCalculator(dateComponentFetcher: SolarTermMonthCalculatorTests.componentsFetcher)
     }
 
     func testOutOfRange() {
@@ -241,7 +241,7 @@ class SolarTermCalculatorTests: XCTestCase {
 }
 
 // MARK: - Gan Zhi for Date
-extension SolarTermCalculatorTests {
+extension SolarTermMonthCalculatorTests {
     func testGanZhi20840319Toronto() {
         let components = SolarTerm.DateComponents(year: 2084, month: 3, day: 19)
 
@@ -276,7 +276,7 @@ extension SolarTermCalculatorTests {
 }
 
 // MARK: - Getting the right term
-extension SolarTermCalculatorTests {
+extension SolarTermMonthCalculatorTests {
     func testCanadaTime20840319Night() {
         let dateComponents = SolarTerm.DateComponents(year: 2084, month: 3, day: 19)
 
@@ -316,7 +316,7 @@ extension SolarTermCalculatorTests {
 }
 
 // MARK: - Xiao Han Tian Gan
-extension SolarTermCalculatorTests {
+extension SolarTermMonthCalculatorTests {
     func testTianGanXiaoHan2000() {
         let tianGan = sut.xiaoHanTianGan(forYear: 2000)
 
@@ -333,7 +333,7 @@ extension SolarTermCalculatorTests {
 }
 
 // MARK: - Gan Zhi For Term Date
-extension SolarTermCalculatorTests {
+extension SolarTermMonthCalculatorTests {
     func testGanZhi2084ChunFenAsia() {
         let components = SolarTerm.DateComponents(year: 2084, month: 3, day: 20)
 
