@@ -12,26 +12,26 @@ public class LiuYaoGuaXiangBuilder {
     private var liuYao: [YaoType]!
     private var dateGanZhi: DateGanZhi!
 
-    init() {}
+    public init() {}
 
-    init(from guaXiang: LiuYaoGuaXiang) {
+    public init(from guaXiang: LiuYaoGuaXiang) {
         liuYao = guaXiang.liuYao
         dateGanZhi = guaXiang.dateGanZhi
     }
 
     @discardableResult
-    func setLiuYao(_ liuYao: [YaoType]) -> LiuYaoGuaXiangBuilder {
+    public func setLiuYao(_ liuYao: [YaoType]) -> LiuYaoGuaXiangBuilder {
         self.liuYao = liuYao
         return self
     }
 
     @discardableResult
-    func withDateGanZhi(_ ganZhi: DateGanZhi?) -> LiuYaoGuaXiangBuilder {
+    public func withDateGanZhi(_ ganZhi: DateGanZhi?) -> LiuYaoGuaXiangBuilder {
         dateGanZhi = ganZhi
         return self
     }
 
-    func build() -> LiuYaoGuaXiang {
+    public func build() -> LiuYaoGuaXiang {
         return LiuYaoGuaXiang(liuYao: liuYao, dateGanZhi: dateGanZhi)
     }
 }
