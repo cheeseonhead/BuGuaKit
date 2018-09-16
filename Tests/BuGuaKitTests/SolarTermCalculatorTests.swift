@@ -240,6 +240,30 @@ class SolarTermCalculatorTests: XCTestCase {
     }
 }
 
+// MARK: - Day Gan Zhi for Date
+extension SolarTermCalculatorTests {
+    func testDayGanZhi20991231() {
+        let result = try! sut.dayGanZhi(for: SolarTerm.DateComponents(year: 2099, month: 12, day: 31))
+
+        XCTAssertEqual(result.tianGan, .ren)
+        XCTAssertEqual(result.diZhi, .yin)
+    }
+
+    func testDayGanZhi20000101() {
+        let result = try! sut.dayGanZhi(for: SolarTerm.DateComponents(year: 2000, month: 1, day: 1))
+
+        XCTAssertEqual(result.tianGan, .wu)
+        XCTAssertEqual(result.diZhi, .wu)
+    }
+
+    func testDayGanZhi24980416() {
+        let result = try! sut.dayGanZhi(for: SolarTerm.DateComponents(year: 2498, month: 4, day: 16))
+
+        XCTAssertEqual(result.tianGan, .yi)
+        XCTAssertEqual(result.diZhi, .hai)
+    }
+}
+
 // MARK: - Year Gan Zhi for Date
 extension SolarTermCalculatorTests {
     func testYearGanZhi20000101() {

@@ -44,6 +44,21 @@ public class SolarTermCalculator {
     }
 }
 
+// MARK: - Day Gan Zhi
+extension SolarTermCalculator {
+    private var referenceDateGanZhi: GanZhi { return (.wu, .wu) }
+    private var referenceDateComponents: SolarTerm.DateComponents { return SolarTerm.DateComponents(year: 2000, month: 1, day: 1) }
+
+    public func dayGanZhi(for dateComponents: SolarTerm.DateComponents) throws -> GanZhi {
+        let daysPassed = dateComponents.days(from: referenceDateComponents)
+
+        let tianGan = referenceDateGanZhi.tianGan.tianGan(after: daysPassed)
+        let diZhi  = referenceDateGanZhi.diZhi.diZhi(after: daysPassed)
+
+        return (tianGan, diZhi)
+    }
+}
+
 // MARK: - Year Gan Zhi
 extension SolarTermCalculator {
 

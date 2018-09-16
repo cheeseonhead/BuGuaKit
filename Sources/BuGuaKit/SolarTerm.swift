@@ -35,7 +35,7 @@ public enum SolarTerm: CaseIterable {
             let selfCompo = makeComponent()
             let otherCompo = otherComponents.makeComponent()
 
-            let days = Calendar.current.dateComponents([.day], from: selfCompo, to: otherCompo).day!
+            let days = Calendar.current.dateComponents([.day], from: otherCompo, to: selfCompo).day!
 
             return days
         }
