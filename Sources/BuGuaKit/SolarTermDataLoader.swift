@@ -13,7 +13,7 @@ class SolarTermDataLoader {
     let url: URL
 
     init() {
-        url = Bundle(for: SolarTermMonthCalculator.self).url(forResource: "SolarTermDateComponents", withExtension: "plist")!
+        url = Bundle(for: SolarTermCalculator.self).url(forResource: "SolarTermDateComponents", withExtension: "plist")!
     }
 
     func loadData() throws -> [[Int]] {

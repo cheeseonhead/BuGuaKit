@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class SolarTermMonthCalculator {
+public class SolarTermCalculator {
 
     public typealias GanZhi = (tianGan: TianGan, diZhi: DiZhi)
 
@@ -69,14 +69,14 @@ public class SolarTermMonthCalculator {
 }
 
 // MARK: - Gan Zhi
-extension SolarTermMonthCalculator {
+extension SolarTermCalculator {
 
     private var xiaoHan2000TianGan: TianGan { return .ding }
     private var xiaoHanReferenceYear: Int { return 2000 }
 
     func ganZhi(for termDate: SolarTerm.Date) -> GanZhi {
         let tianGan = self.tianGan(for: termDate)
-        let diZhi = SolarTermMonthCalculator.diZhi(for: termDate)
+        let diZhi = SolarTermCalculator.diZhi(for: termDate)
 
         return (tianGan, diZhi)
     }
@@ -96,7 +96,7 @@ extension SolarTermMonthCalculator {
 }
 
 // MARK: - Gan Zhi Helpers
-private extension SolarTermMonthCalculator {
+private extension SolarTermCalculator {
     static func diZhi(for term: SolarTerm.Date) -> DiZhi {
         switch term.components.month {
         case 1: return .chou
@@ -117,7 +117,7 @@ private extension SolarTermMonthCalculator {
 }
 
 // MARK: - Term Date
-private extension SolarTermMonthCalculator {
+private extension SolarTermCalculator {
 
     func terms(forYears years: [Int]) throws -> [SolarTerm.Date] {
         return try years.flatMap {
