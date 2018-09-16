@@ -38,8 +38,8 @@ public struct LiuYaoGuaXiang {
         return LiuShiSiGua(innerGua: innerGua, outerGua: outerGua)
     }
 
-    public var changedYaoZhi: [DiZhi?] {
-        return zip(liuYao, changedGua.yaoZhi).map({ (yaoType, zhi) in
+    public var changedDiZhi: [DiZhi?] {
+        return zip(liuYao, changedGua.diZhi).map({ (yaoType, zhi) in
             if !yaoType.isStable {
                 return zhi
             } else {

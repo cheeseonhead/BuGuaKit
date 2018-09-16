@@ -35,15 +35,15 @@ class LiuYaoGuaXiangTests: XCTestCase {
 
     // MARK: - 變爻爻支
 
-    func testChangedYaoZhiOne() {
+    func testChangedDiZhiOne() {
         sut = LiuYaoGuaXiang(liuYao: [.youngYin, .oldYang, .youngYin, .youngYin, .youngYang, .youngYang])
 
-        XCTAssertEqual(sut.changedYaoZhi, [nil, .si, nil, nil, nil, nil])
+        XCTAssertEqual(sut.changedDiZhi, [nil, .si, nil, nil, nil, nil])
     }
 
-    func testChangedYaoZhiTwo() {
+    func testChangedDiZhiTwo() {
         sut = LiuYaoGuaXiang(liuYao: [.youngYang, .oldYin, .youngYin, .youngYin, .oldYang, .youngYin])
 
-        XCTAssertEqual(sut.changedYaoZhi, [nil, .mao, nil, nil, .hai, nil])
+        XCTAssertEqual(sut.changedDiZhi, [nil, .mao, nil, nil, .hai, nil])
     }
 }

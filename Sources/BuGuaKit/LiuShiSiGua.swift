@@ -58,23 +58,23 @@ public struct LiuShiSiGua {
         return innerZhi + outerZhi
     }
     
-    public var yaoZhi: [DiZhi] {
+    public var diZhi: [DiZhi] {
         let innerZhi = innerGua.diZhi(forPosition: .inner)
         let outerZhi = outerGua.diZhi(forPosition: .outer)
 
         return innerZhi + outerZhi
     }
 
-    public func yaoZhi(at position: Int) -> DiZhi {
+    public func diZhi(at position: Int) -> DiZhi {
         assert(position >= 1 && position <= 6, "position \(position) out of range")
 
-        return yaoZhi[position - 1]
+        return diZhi[position - 1]
     }
 
     public var myXing: WuXing { return guaGong.wuXing }
 
     public var liuQin: [LiuQin] {
-        return yaoZhi.map { (diZhi) -> LiuQin in
+        return diZhi.map { (diZhi) -> LiuQin in
             LiuQin(from: myXing.relationShip(to: diZhi.wuXing))
         }
     }
