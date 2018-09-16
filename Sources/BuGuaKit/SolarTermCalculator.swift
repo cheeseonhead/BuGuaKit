@@ -12,6 +12,12 @@ public class SolarTermCalculator {
 
     public typealias GanZhi = (tianGan: TianGan, diZhi: DiZhi)
 
+    public struct DateGanZhi {
+        let year: GanZhi
+        let month: GanZhi
+        let day: GanZhi
+    }
+
     enum Error: LocalizedError {
         case yearOutOfRange(year: Int, Int, Int)
 
@@ -33,7 +39,13 @@ public class SolarTermCalculator {
         self.componentFetcher = dateComponentFetcher
     }
 
+    public func ganZhi(for dateComponents: SolarTerm.DateComponents) throws -> DateGanZhi {
+        let year = try yearGanZhi(for: dateComponents)
+        let month = try monthGanZhi(for: dateComponents)
+        let day = dayGanZhi(for: dateComponents)
 
+        return DateGanZhi(year: year, month: month, day: day)
+    }
 
     func termDate(for term: SolarTerm, ofYear year: Int) throws -> SolarTerm.Date {
         let dateComponents = try componentFetcher.dateComponent(for: term, year: year)
@@ -49,7 +61,7 @@ extension SolarTermCalculator {
     private var referenceDateGanZhi: GanZhi { return (.wu, .wu) }
     private var referenceDateComponents: SolarTerm.DateComponents { return SolarTerm.DateComponents(year: 2000, month: 1, day: 1) }
 
-    public func dayGanZhi(for dateComponents: SolarTerm.DateComponents) throws -> GanZhi {
+    public func dayGanZhi(for dateComponents: SolarTerm.DateComponents) -> GanZhi {
         let daysPassed = dateComponents.days(from: referenceDateComponents)
 
         let tianGan = referenceDateGanZhi.tianGan.tianGan(after: daysPassed)

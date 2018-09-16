@@ -240,24 +240,48 @@ class SolarTermCalculatorTests: XCTestCase {
     }
 }
 
+// MARK: - Date Gan Zhi
+extension SolarTermCalculatorTests {
+    func testGanZhiMinimum() {
+        let ganZhi = try! sut.ganZhi(for: .init(year: 2001, month: 1, day: 1))
+
+        assertGanZhi(ganZhi.year, .geng, .chen)
+        assertGanZhi(ganZhi.month, .wu, .zi)
+        assertGanZhi(ganZhi.day, .jia, .zi)
+    }
+
+    func testGanZhiMaximum() {
+        let ganZhi = try! sut.ganZhi(for: .init(year: 2099, month: 12, day: 31))
+
+        assertGanZhi(ganZhi.year, .ji, .wei)
+        assertGanZhi(ganZhi.month, .bing, .zi)
+        assertGanZhi(ganZhi.day, .ren, .yin)
+    }
+
+    func assertGanZhi(_ ganZhi: SolarTermCalculator.GanZhi, _ gan: TianGan, _ zhi: DiZhi, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertEqual(ganZhi.tianGan, gan, file: file, line: line)
+        XCTAssertEqual(ganZhi.diZhi, zhi, file: file, line: line)
+    }
+}
+
 // MARK: - Day Gan Zhi for Date
 extension SolarTermCalculatorTests {
     func testDayGanZhi20991231() {
-        let result = try! sut.dayGanZhi(for: SolarTerm.DateComponents(year: 2099, month: 12, day: 31))
+        let result = sut.dayGanZhi(for: SolarTerm.DateComponents(year: 2099, month: 12, day: 31))
 
         XCTAssertEqual(result.tianGan, .ren)
         XCTAssertEqual(result.diZhi, .yin)
     }
 
     func testDayGanZhi20000101() {
-        let result = try! sut.dayGanZhi(for: SolarTerm.DateComponents(year: 2000, month: 1, day: 1))
+        let result = sut.dayGanZhi(for: SolarTerm.DateComponents(year: 2000, month: 1, day: 1))
 
         XCTAssertEqual(result.tianGan, .wu)
         XCTAssertEqual(result.diZhi, .wu)
     }
 
     func testDayGanZhi24980416() {
-        let result = try! sut.dayGanZhi(for: SolarTerm.DateComponents(year: 2498, month: 4, day: 16))
+        let result = sut.dayGanZhi(for: SolarTerm.DateComponents(year: 2498, month: 4, day: 16))
 
         XCTAssertEqual(result.tianGan, .yi)
         XCTAssertEqual(result.diZhi, .hai)
