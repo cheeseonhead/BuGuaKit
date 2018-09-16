@@ -277,6 +277,13 @@ extension SolarTermCalculatorTests {
         XCTAssertEqual(ganZhi.tianGan, .wu)
         XCTAssertEqual(ganZhi.diZhi, .shen)
     }
+
+    func testYearGanZhi20260908() {
+        let ganZhi = try! sut.yearGanZhi(for: SolarTerm.DateComponents(year: 2026, month: 9, day: 8))
+
+        XCTAssertEqual(ganZhi.tianGan, .bing)
+        XCTAssertEqual(ganZhi.diZhi, .wu)
+    }
 }
 
 // MARK: - Month Gan Zhi for Date
