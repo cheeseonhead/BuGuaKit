@@ -13,7 +13,17 @@ public struct GregorianDate: Comparable {
     public let month: Int
     public let day: Int
 
-    public init(year: Int, month: Int, day: Int) {
+    private let calendar = Calendar(identifier: .gregorian)
+
+    public init(timeZone: TimeZone, date: Date) {
+        let dateComponents = calendar.dateComponents(in: timeZone, from: date)
+
+        year = dateComponents.year!
+        month = dateComponents.month!
+        day = dateComponents.day!
+    }
+
+    init(year: Int, month: Int, day: Int) {
         self.year = year
         self.month = month
         self.day = day
