@@ -11,9 +11,9 @@ import Foundation
 public enum SolarTerm: CaseIterable {
 
     public struct DateComponents: Comparable {
-        let year: Int
-        let month: Int
-        let day: Int
+        public let year: Int
+        public let month: Int
+        public let day: Int
 
         func makeComponent() -> Foundation.DateComponents {
             return Foundation.DateComponents(year: year, month: month, day: day)
