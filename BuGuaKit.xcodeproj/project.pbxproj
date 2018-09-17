@@ -39,6 +39,7 @@
 		9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1F83221345B410048B4CB /* LiuQin.swift */; };
 		9BCE885D214E07910024FEF7 /* GanZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE885C214E07910024FEF7 /* GanZhi.swift */; };
 		9BCE885F214E155A0024FEF7 /* DateGanZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE885E214E155A0024FEF7 /* DateGanZhi.swift */; };
+		9BCE8879214F40880024FEF7 /* GregorianDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE8878214F40880024FEF7 /* GregorianDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		9BA1F83221345B410048B4CB /* LiuQin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuQin.swift; sourceTree = "<group>"; };
 		9BCE885C214E07910024FEF7 /* GanZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanZhi.swift; sourceTree = "<group>"; };
 		9BCE885E214E155A0024FEF7 /* DateGanZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhi.swift; sourceTree = "<group>"; };
+		9BCE8878214F40880024FEF7 /* GregorianDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				345F40442104F3DB004714DB /* LiuShiSiGua.swift */,
 				9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */,
 				9BCE885C214E07910024FEF7 /* GanZhi.swift */,
+				9BCE8878214F40880024FEF7 /* GregorianDate.swift */,
 			);
 			name = Structs;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				9B3C163C214C68CE00DF4C6A /* SolarTermCalculator.swift in Sources */,
 				345F40432104EA7C004714DB /* FuXiBaGua.swift in Sources */,
 				9B16525721323C02001991DB /* DiZhi.swift in Sources */,
+				9BCE8879214F40880024FEF7 /* GregorianDate.swift in Sources */,
 				345F40452104F3DB004714DB /* LiuShiSiGua.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

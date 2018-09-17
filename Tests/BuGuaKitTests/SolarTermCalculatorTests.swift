@@ -234,7 +234,7 @@ class SolarTermCalculatorTests: XCTestCase {
         assertDate(holiday.components, month: 1, day: 20)
     }
 
-    func assertDate(_ dateCompo: SolarTerm.DateComponents, month: Int, day: Int) {
+    func assertDate(_ dateCompo: GregorianDate, month: Int, day: Int) {
         XCTAssertEqual(dateCompo.month, month)
         XCTAssertEqual(dateCompo.day, day)
     }
@@ -267,21 +267,21 @@ extension SolarTermCalculatorTests {
 // MARK: - Day Gan Zhi for Date
 extension SolarTermCalculatorTests {
     func testDayGanZhi20991231() {
-        let result = sut.dayGanZhi(for: SolarTerm.DateComponents(year: 2099, month: 12, day: 31))
+        let result = sut.dayGanZhi(for: GregorianDate(year: 2099, month: 12, day: 31))
 
         XCTAssertEqual(result.tianGan, .ren)
         XCTAssertEqual(result.diZhi, .yin)
     }
 
     func testDayGanZhi20000101() {
-        let result = sut.dayGanZhi(for: SolarTerm.DateComponents(year: 2000, month: 1, day: 1))
+        let result = sut.dayGanZhi(for: GregorianDate(year: 2000, month: 1, day: 1))
 
         XCTAssertEqual(result.tianGan, .wu)
         XCTAssertEqual(result.diZhi, .wu)
     }
 
     func testDayGanZhi24980416() {
-        let result = sut.dayGanZhi(for: SolarTerm.DateComponents(year: 2498, month: 4, day: 16))
+        let result = sut.dayGanZhi(for: GregorianDate(year: 2498, month: 4, day: 16))
 
         XCTAssertEqual(result.tianGan, .yi)
         XCTAssertEqual(result.diZhi, .hai)
@@ -291,43 +291,43 @@ extension SolarTermCalculatorTests {
 // MARK: - Year Gan Zhi for Date
 extension SolarTermCalculatorTests {
     func testYearGanZhi20000101() {
-        XCTAssertThrowsError(try sut.yearGanZhi(for: SolarTerm.DateComponents(year: 2000, month: 1, day: 1)))
+        XCTAssertThrowsError(try sut.yearGanZhi(for: GregorianDate(year: 2000, month: 1, day: 1)))
     }
 
     func testYearGanZhi21000604() {
-        XCTAssertThrowsError(try sut.yearGanZhi(for: SolarTerm.DateComponents(year: 2100, month: 6, day: 4)))
+        XCTAssertThrowsError(try sut.yearGanZhi(for: GregorianDate(year: 2100, month: 6, day: 4)))
     }
 
     func testYearGanZhi20010101() {
-        let ganZhi = try! sut.yearGanZhi(for: SolarTerm.DateComponents(year: 2001, month: 01, day: 1))
+        let ganZhi = try! sut.yearGanZhi(for: GregorianDate(year: 2001, month: 01, day: 1))
 
         XCTAssertEqual(ganZhi.tianGan, .geng)
         XCTAssertEqual(ganZhi.diZhi, .chen)
     }
 
     func testYearGanZhi20010204() {
-        let ganZhi = try! sut.yearGanZhi(for: SolarTerm.DateComponents(year: 2001, month: 2, day: 4))
+        let ganZhi = try! sut.yearGanZhi(for: GregorianDate(year: 2001, month: 2, day: 4))
 
         XCTAssertEqual(ganZhi.tianGan, .xin)
         XCTAssertEqual(ganZhi.diZhi, .si)
     }
 
     func testYearGanZhi20230205() {
-        let ganZhi = try! sut.yearGanZhi(for: SolarTerm.DateComponents(year: 2023, month: 2, day: 5))
+        let ganZhi = try! sut.yearGanZhi(for: GregorianDate(year: 2023, month: 2, day: 5))
 
         XCTAssertEqual(ganZhi.tianGan, .gui)
         XCTAssertEqual(ganZhi.diZhi, .mao)
     }
 
     func testYearGanZhi20280204() {
-        let ganZhi = try! sut.yearGanZhi(for: SolarTerm.DateComponents(year: 2028, month: 2, day: 4))
+        let ganZhi = try! sut.yearGanZhi(for: GregorianDate(year: 2028, month: 2, day: 4))
 
         XCTAssertEqual(ganZhi.tianGan, .wu)
         XCTAssertEqual(ganZhi.diZhi, .shen)
     }
 
     func testYearGanZhi20260908() {
-        let ganZhi = try! sut.yearGanZhi(for: SolarTerm.DateComponents(year: 2026, month: 9, day: 8))
+        let ganZhi = try! sut.yearGanZhi(for: GregorianDate(year: 2026, month: 9, day: 8))
 
         XCTAssertEqual(ganZhi.tianGan, .bing)
         XCTAssertEqual(ganZhi.diZhi, .wu)
@@ -337,7 +337,7 @@ extension SolarTermCalculatorTests {
 // MARK: - Month Gan Zhi for Date
 extension SolarTermCalculatorTests {
     func testGanZhi20840319Toronto() {
-        let components = SolarTerm.DateComponents(year: 2084, month: 3, day: 19)
+        let components = GregorianDate(year: 2084, month: 3, day: 19)
 
         let result = try! sut.monthGanZhi(for: components)
         result.tianGan.equal(.ding)
@@ -345,7 +345,7 @@ extension SolarTermCalculatorTests {
     }
 
     func testGanZhi20840318Toronto() {
-        let components = SolarTerm.DateComponents(year: 2084, month: 3, day: 18)
+        let components = GregorianDate(year: 2084, month: 3, day: 18)
 
         let result = try! sut.monthGanZhi(for: components)
         result.tianGan.equal(.ding)
@@ -353,7 +353,7 @@ extension SolarTermCalculatorTests {
     }
 
     func testGanZhi20840304Toronto() {
-        let components = SolarTerm.DateComponents(year: 2084, month: 3, day: 4)
+        let components = GregorianDate(year: 2084, month: 3, day: 4)
 
         let result = try! sut.monthGanZhi(for: components)
         result.tianGan.equal(.ding)
@@ -361,7 +361,7 @@ extension SolarTermCalculatorTests {
     }
 
     func testGanZhi20840303Toronto() {
-        let components = SolarTerm.DateComponents(year: 2084, month: 3, day: 3)
+        let components = GregorianDate(year: 2084, month: 3, day: 3)
 
         let result = try! sut.monthGanZhi(for: components)
         result.tianGan.equal(.bing)
@@ -372,7 +372,7 @@ extension SolarTermCalculatorTests {
 // MARK: - Getting the right month term
 extension SolarTermCalculatorTests {
     func testCanadaTime20840319Night() {
-        let dateComponents = SolarTerm.DateComponents(year: 2084, month: 3, day: 19)
+        let dateComponents = GregorianDate(year: 2084, month: 3, day: 19)
 
         let holiday = try! sut.sameMonthGanZhiTerm(for: dateComponents)
 
@@ -380,16 +380,16 @@ extension SolarTermCalculatorTests {
     }
 
     func testCanadaTime20840319Noon() {
-        let dateComponents = SolarTerm.DateComponents(year: 2084, month: 3, day: 19)
+        let dateComponents = GregorianDate(year: 2084, month: 3, day: 19)
 
         let holiday = try! sut.sameMonthGanZhiTerm(for: dateComponents)
 
-        XCTAssertEqual(holiday.components, SolarTerm.DateComponents(year: 2084, month: 3, day: 19))
+        XCTAssertEqual(holiday.components, GregorianDate(year: 2084, month: 3, day: 19))
         XCTAssertEqual(holiday.type, .chunFen)
     }
 
     func testCanadaTime20840319Morning() {
-        let dateComponents = SolarTerm.DateComponents(year: 2084, month: 3, day: 19)
+        let dateComponents = GregorianDate(year: 2084, month: 3, day: 19)
 
         let holiday = try! sut.sameMonthGanZhiTerm(for: dateComponents)
 
@@ -397,13 +397,13 @@ extension SolarTermCalculatorTests {
     }
 
     func testSameHoliday20000101() {
-        let dateComponents = SolarTerm.DateComponents(year: 2000, month: 1, day: 1)
+        let dateComponents = GregorianDate(year: 2000, month: 1, day: 1)
 
         XCTAssertThrowsError(try sut.sameMonthGanZhiTerm(for: dateComponents))
     }
 
     func testSameHoliday20991231() {
-        let dateComponents = SolarTerm.DateComponents(year: 2099, month: 12, day: 31)
+        let dateComponents = GregorianDate(year: 2099, month: 12, day: 31)
 
         XCTAssertEqual(try! sut.sameMonthGanZhiTerm(for: dateComponents).type, .dongZhi)
     }
@@ -429,7 +429,7 @@ extension SolarTermCalculatorTests {
 // MARK: - Month Gan Zhi For Term Date
 extension SolarTermCalculatorTests {
     func testGanZhi2084ChunFenAsia() {
-        let components = SolarTerm.DateComponents(year: 2084, month: 3, day: 20)
+        let components = GregorianDate(year: 2084, month: 3, day: 20)
 
         let result = sut.monthGanZhi(for: SolarTerm.Date(components: components, type: .chunFen))
         result.tianGan.equal(.ding)
@@ -437,7 +437,7 @@ extension SolarTermCalculatorTests {
     }
 
     func testGanZhi2084ChunFenToronto() {
-        let components = SolarTerm.DateComponents(year: 2084, month: 3, day: 19)
+        let components = GregorianDate(year: 2084, month: 3, day: 19)
 
         let result = sut.monthGanZhi(for: SolarTerm.Date(components: components, type: .chunFen))
         result.tianGan.equal(.ding)
@@ -445,7 +445,7 @@ extension SolarTermCalculatorTests {
     }
 
     func testGanZhi2084MangZhongAsia() {
-        let components = SolarTerm.DateComponents(year: 2084, month: 6, day: 5)
+        let components = GregorianDate(year: 2084, month: 6, day: 5)
 
         let result = sut.monthGanZhi(for: SolarTerm.Date(components: components, type: .mangZhong))
         result.tianGan.equal(.geng)

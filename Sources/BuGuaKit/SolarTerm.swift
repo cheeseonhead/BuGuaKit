@@ -10,39 +10,8 @@ import Foundation
 
 public enum SolarTerm: CaseIterable {
 
-    public struct DateComponents: Comparable {
-        public let year: Int
-        public let month: Int
-        public let day: Int
-
-        func makeComponent() -> Foundation.DateComponents {
-            return Foundation.DateComponents(year: year, month: month, day: day)
-        }
-
-        public static func < (lhs: SolarTerm.DateComponents, rhs: SolarTerm.DateComponents) -> Bool {
-            if lhs.year != rhs.year {
-                return lhs.year < rhs.year
-            } else if lhs.month != rhs.month {
-                return lhs.month < rhs.month
-            } else if lhs.day != rhs.day {
-                return lhs.day < rhs.day
-            }
-
-            return false
-        }
-
-        func days(from otherComponents: DateComponents) -> Int {
-            let selfCompo = makeComponent()
-            let otherCompo = otherComponents.makeComponent()
-
-            let days = Calendar.current.dateComponents([.day], from: otherCompo, to: selfCompo).day!
-
-            return days
-        }
-    }
-
     struct Date {
-        let components: DateComponents
+        let components: GregorianDate
         let type: SolarTerm
     }
 
