@@ -9,10 +9,14 @@
 import Foundation
 
 public struct GanZhi {
-    let tianGan: TianGan
-    let diZhi: DiZhi
+    public let tianGan: TianGan
+    public let diZhi: DiZhi
 
-    init(_ gan: TianGan, _ zhi: DiZhi) {
+    public var character: String {
+        return tianGan.character + diZhi.character
+    }
+
+    public init(_ gan: TianGan, _ zhi: DiZhi) {
         tianGan = gan
         diZhi = zhi
     }
