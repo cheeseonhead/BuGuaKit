@@ -93,9 +93,9 @@ public struct LiuYaoGuaXiang {
     }
 
     public var changedLiuQin: [LiuQin?] {
-        return zip(liuYao, changedGua.liuQin).map { (yaoType, liuQin) in
+        return zip(liuYao, changedGua.diZhi).map { (yaoType, diZhi) in
             if !yaoType.isStable {
-                return liuQin
+                return LiuQin(from: originalGua.myXing.relationShip(to: diZhi.wuXing))
             } else {
                 return nil
             }
