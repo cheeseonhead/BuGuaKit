@@ -47,6 +47,7 @@ public struct LiuYaoGuaXiang {
     let innerYao: [YaoType]
     let outerYao: [YaoType]
     let dateGanZhi: DateGanZhi
+    public private (set) lazy var fuShenController = FuShenController(guaXiang: self)
 
     init(liuYao: [YaoType], dateGanZhi: DateGanZhi) {
         assert(liuYao.count == 6, "Cannot create GuaXiang without exactly 6 yao")
@@ -91,6 +92,16 @@ public struct LiuYaoGuaXiang {
         }
     }
 
+    public var changedLiuQin: [LiuQin?] {
+        return zip(liuYao, changedGua.diZhi).map { (yaoType, diZhi) in
+            if !yaoType.isStable {
+                return LiuQin(from: originalGua.myXing.relationShip(to: diZhi.wuXing))
+            } else {
+                return nil
+            }
+        }
+    }
+    
     public func yao(at position: Int) -> YaoType {
         assert(position >= 1 && position <= 6, "position out of range")
 

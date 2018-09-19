@@ -55,4 +55,13 @@ class LiuYaoGuaXiangTests: XCTestCase {
 
         XCTAssertEqual(sut.changedDiZhi, [nil, .mao, nil, nil, .hai, nil])
     }
+    
+    // MARK: - 變六親
+    
+    func testChangedLiuQinOne() {
+        builder.setLiuYao([.youngYang, .youngYang, .oldYin, .youngYin, .youngYang, .youngYang])
+        sut = builder.build()
+        
+        XCTAssertEqual(sut.changedLiuQin, [nil, nil, .sibling, nil, nil, nil])
+    }
 }
