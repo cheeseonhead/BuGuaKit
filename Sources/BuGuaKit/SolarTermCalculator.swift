@@ -27,8 +27,8 @@ public class SolarTermCalculator {
     // MARK: - Private Properties
     private let componentFetcher: SolarTermDateComponentsFetcher
 
-    public static func make() -> SolarTermCalculator {
-        return SolarTermCalculator(dateComponentFetcher: SolarTermDateComponentsFetcher(dataLoader: SolarTermDataLoader()))
+    public static func make() throws -> SolarTermCalculator {
+        return SolarTermCalculator(dateComponentFetcher: try SolarTermDateComponentsFetcher(dataLoader: SolarTermDataLoader()))
     }
 
     init(dateComponentFetcher: SolarTermDateComponentsFetcher) {

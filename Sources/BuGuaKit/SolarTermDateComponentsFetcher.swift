@@ -24,10 +24,11 @@ class SolarTermDateComponentsFetcher {
     let referenceTimeZone = TimeZone.taipei
     private let minYear = 2000
     private let maxYear = 2099
-    private let dataLoader: SolarTermDataLoader
+//    private let dataLoader: SolarTermDataLoader
+    private let data: [[Int]]
 
-    init(dataLoader: SolarTermDataLoader) {
-        self.dataLoader = dataLoader
+    init(dataLoader: SolarTermDataLoader) throws {
+        data = try dataLoader.loadData()
     }
 
     func dateComponent(for term: SolarTerm, year: Int) throws -> DateComponents {
@@ -42,8 +43,8 @@ class SolarTermDateComponentsFetcher {
         let startOfYearIndex = (year - minYear) * 24
         let termIndex = startOfYearIndex + term.index
 
-        let dateData = try dataLoader.loadData()[termIndex]
-
+        let dateData = data[termIndex]
+        
         return DateComponents(timeZone: referenceTimeZone,
                               year: dateData[0],
                               month: dateData[1],

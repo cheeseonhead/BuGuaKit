@@ -15,7 +15,7 @@ class SolarTermDateComponentsFetcherTests: XCTestCase {
 
     override func setUp() {
         let fakeDataLoader = MockDataLoader()
-        sut = SolarTermDateComponentsFetcher(dataLoader: fakeDataLoader)
+        sut = try! SolarTermDateComponentsFetcher(dataLoader: fakeDataLoader)
     }
 
     func testExample() {

@@ -11,7 +11,7 @@ import XCTest
 
 class SolarTermCalculatorTests: XCTestCase {
 
-    static let componentsFetcher = SolarTermDateComponentsFetcher(dataLoader: MockDataLoader())
+    static let componentsFetcher = try! SolarTermDateComponentsFetcher(dataLoader: MockDataLoader())
 
     var sut: SolarTermCalculator!
 
