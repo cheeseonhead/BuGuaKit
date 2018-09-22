@@ -144,4 +144,11 @@ class LiuShiSiGuaTests: XCTestCase {
 
         XCTAssertEqual(sut.liuQin, [.parent, .descendant, .superior, .sibling, .wealth, .descendant])
     }
+
+    // MARK: - Character Test
+    func testCharacter() {
+        sut = LiuShiSiGua(innerGua: .dui, outerGua: .gen)
+
+        XCTAssertEqual(sut.character, "山澤損")
+    }
 }

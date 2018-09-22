@@ -17,6 +17,10 @@ public struct LiuShiSiGua {
     public let innerGua: FuXiBaGua
     public let outerGua: FuXiBaGua
 
+    public var character: String {
+        return NSLocalizedString("liushisigua\(self.outerGua)\(self.innerGua)", tableName: nil, bundle: Bundle(identifier: "com.cheeseonhead.BuGuaKit")!, value: "", comment: "")
+    }
+
     init(innerGua: FuXiBaGua, outerGua: FuXiBaGua) {
         self.innerGua = innerGua
         self.outerGua = outerGua
