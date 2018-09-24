@@ -212,12 +212,12 @@
 		9B16525D21323FEB001991DB /* Structs */ = {
 			isa = PBXGroup;
 			children = (
-				345F40442104F3DB004714DB /* LiuShiSiGua.swift */,
-				9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */,
+				9B9F56DF2159A0650079A6AB /* BuGuaEntry.swift */,
 				9BCE885C214E07910024FEF7 /* GanZhi.swift */,
 				9BCE8878214F40880024FEF7 /* GregorianDate.swift */,
 				9B9F56E12159A1CA0079A6AB /* GregorianTime.swift */,
-				9B9F56DF2159A0650079A6AB /* BuGuaEntry.swift */,
+				345F40442104F3DB004714DB /* LiuShiSiGua.swift */,
+				9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */,
 			);
 			name = Structs;
 			sourceTree = "<group>";
