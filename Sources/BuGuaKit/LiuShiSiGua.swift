@@ -61,11 +61,23 @@ public struct LiuShiSiGua {
         }
     }
 
+    public func ganZhi(at position: Int) -> GanZhi {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+
+        return ganZhi[position - 1]
+    }
+
     public var tianGan: [TianGan] {
         let innerZhi = Array(repeating: innerGua.tianGan(forPosition: .inner), count: 3)
         let outerZhi = Array(repeating: outerGua.tianGan(forPosition: .outer), count: 3)
         
         return innerZhi + outerZhi
+    }
+
+    public func tianGan(at position: Int) -> TianGan {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+
+        return tianGan[position - 1]
     }
     
     public var diZhi: [DiZhi] {

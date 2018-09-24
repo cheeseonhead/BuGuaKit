@@ -47,7 +47,7 @@ public struct LiuYaoGuaXiang {
     let innerYao: [YaoType]
     let outerYao: [YaoType]
     let dateGanZhi: DateGanZhi
-    public private (set) lazy var fuShenController = FuShenController(guaXiang: self)
+    public var fuShenController: FuShenController { return FuShenController(guaXiang: self) }
 
     init(liuYao: [YaoType], dateGanZhi: DateGanZhi) {
         assert(liuYao.count == 6, "Cannot create GuaXiang without exactly 6 yao")
@@ -56,6 +56,12 @@ public struct LiuYaoGuaXiang {
         self.dateGanZhi = dateGanZhi
         innerYao = Array(liuYao.prefix(3))
         outerYao = Array(liuYao.suffix(3))
+    }
+
+    public func yao(at position: Int) -> YaoType {
+        assert(position >= 1 && position <= 6, "position out of range")
+
+        return liuYao[position - 1]
     }
 
     public var originalGua: LiuShiSiGua {
@@ -82,6 +88,12 @@ public struct LiuYaoGuaXiang {
         }
     }
 
+    public func changedTianGan(at position: Int) -> TianGan? {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+
+        return changedTianGan[position - 1]
+    }
+
     public var changedDiZhi: [DiZhi?] {
         return zip(liuYao, changedGua.diZhi).map { (yaoType, zhi) in
             if !yaoType.isStable {
@@ -90,6 +102,26 @@ public struct LiuYaoGuaXiang {
                 return nil
             }
         }
+    }
+
+    public var changedGanZhi: [GanZhi?] {
+        return zip(changedTianGan, changedDiZhi).map {
+            guard let gan = $0.0, let zhi = $0.1 else { return nil }
+
+            return GanZhi(gan, zhi)
+        }
+    }
+
+    public func changedGanZhi(at position: Int) -> GanZhi? {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+
+        return changedGanZhi[position - 1]
+    }
+
+    public func changedDiZhi(at position: Int) -> DiZhi? {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+
+        return changedDiZhi[position - 1]
     }
 
     public var changedLiuQin: [LiuQin?] {
@@ -101,11 +133,11 @@ public struct LiuYaoGuaXiang {
             }
         }
     }
-    
-    public func yao(at position: Int) -> YaoType {
-        assert(position >= 1 && position <= 6, "position out of range")
 
-        return liuYao[position - 1]
+    public func changedLiuQin(at position: Int) -> LiuQin? {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+
+        return changedLiuQin[position - 1]
     }
 }
 

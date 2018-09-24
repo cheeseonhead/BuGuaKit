@@ -19,27 +19,59 @@ public class FuShenController {
         self.guaXiang = guaXiang
     }
     
-    public func fuShen() -> [LiuQin?] {
+    public var fuShen: [LiuQin?] {
         let originalLiuQin = guaXiang.originalGua.liuQin
         let pure = pureLiuQin()
         
         return pure.map { originalLiuQin.contains($0) ? nil : $0 }
     }
-    
-    public func hiddenTianGan() -> [TianGan?] {
+
+    public func fuShen(at position: Int) -> LiuQin? {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+
+        return fuShen[position - 1]
+    }
+
+    public var hiddenTianGan: [TianGan?] {
         let pureTianGan = pureLiuShiSiGua.tianGan
         
-        return zip(fuShen(), pureTianGan).map { shen, gan in
+        return zip(fuShen, pureTianGan).map { shen, gan in
             return shen != nil ? gan : nil
         }
     }
+
+    public func hiddenTianGan(at position: Int) -> TianGan? {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+
+        return hiddenTianGan[position - 1]
+    }
     
-    public func hiddenDiZhi() -> [DiZhi?] {
+    public var hiddenDiZhi: [DiZhi?] {
         let pureDiZhi = pureLiuShiSiGua.diZhi
         
-        return zip(fuShen(), pureDiZhi).map { shen, zhi in
+        return zip(fuShen, pureDiZhi).map { shen, zhi in
             return shen != nil ? zhi : nil
         }
+    }
+
+    public func hiddenDiZhi(at position: Int) -> DiZhi? {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+
+        return hiddenDiZhi[position - 1]
+    }
+
+    public var hiddenGanZhi: [GanZhi?] {
+        return zip(hiddenTianGan, hiddenDiZhi).map {
+            guard let gan = $0.0, let zhi = $0.1 else { return nil }
+
+            return GanZhi(gan, zhi)
+        }
+    }
+
+    public func hiddenGanZhi(at position: Int) -> GanZhi? {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+
+        return hiddenGanZhi[position - 1]
     }
 }
 
