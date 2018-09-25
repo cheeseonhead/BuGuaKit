@@ -9,30 +9,45 @@
 import Foundation
 
 public class BuGuaEntryBuilder {
-    var name: String!
-    var question: String!
+    var name = ""
+    var question = ""
     var date: GregorianDate!
     var time: GregorianTime!
-    var notes: String!
+    var notes = ""
+    var guaXiang: LiuYaoGuaXiang!
 
-    func name(_ value: String) {
-
+    public func setName(_ value: String) -> BuGuaEntryBuilder {
+        name = value
+        return self
     }
 
-    func question(_ value: String) {
-
+    public func setQuestion(_ value: String) -> BuGuaEntryBuilder {
+        question = value
+        return self
     }
 
-    func date(_ value: GregorianDate) {
-
+    public func setDate(_ value: GregorianDate) -> BuGuaEntryBuilder {
+        date = value
+        return self
     }
 
-    func time(_ value: GregorianTime) {
-
+    public func setTime(_ value: GregorianTime) -> BuGuaEntryBuilder {
+        time = value
+        return self
     }
 
-    func notes(_ value: String) {
-
+    public func setNotes(_ value: String) -> BuGuaEntryBuilder {
+        notes = value
+        return self
+    }
+    
+    public func setGuaXiang(_ value: LiuYaoGuaXiang) -> BuGuaEntryBuilder {
+        guaXiang = value
+        return self
+    }
+    
+    public func build() -> BuGuaEntry {
+        return BuGuaEntry(name: name, question: question, date: date, time: time, notes: notes, guaXiang: guaXiang)
     }
 }
 
@@ -42,4 +57,5 @@ public struct BuGuaEntry {
     let date: GregorianDate
     let time: GregorianTime
     let notes: String
+    let guaXiang: LiuYaoGuaXiang
 }
