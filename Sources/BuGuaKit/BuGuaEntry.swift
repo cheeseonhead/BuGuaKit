@@ -52,10 +52,10 @@ public class BuGuaEntryBuilder {
 }
 
 public struct BuGuaEntry {
-    let name: String
-    let question: String
-    let date: GregorianDate
-    let time: GregorianTime
-    let notes: String
-    let guaXiang: LiuYaoGuaXiang
+    public let name: String
+    public let question: String
+    public let date: GregorianDate
+    public let time: GregorianTime
+    public let notes: String
+    public let guaXiang: LiuYaoGuaXiang
 }
