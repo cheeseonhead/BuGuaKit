@@ -16,6 +16,8 @@ public class BuGuaEntryBuilder {
     var notes = ""
     var guaXiang: LiuYaoGuaXiang!
 
+    public init() {}
+    
     public func setName(_ value: String) -> BuGuaEntryBuilder {
         name = value
         return self
