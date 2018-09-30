@@ -36,6 +36,8 @@
 		9B3C164B214DBCDA00DF4C6A /* SolarTermDateComponents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C164A214DBCDA00DF4C6A /* SolarTermDateComponents.plist */; };
 		9B3C164D214DC1FF00DF4C6A /* SolarTermDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C164C214DC1FF00DF4C6A /* SolarTermDataLoader.swift */; };
 		9B3C1651214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1650214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift */; };
+		9B9F56E02159A0650079A6AB /* BuGuaEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F56DF2159A0650079A6AB /* BuGuaEntry.swift */; };
+		9B9F56E22159A1CA0079A6AB /* GregorianTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F56E12159A1CA0079A6AB /* GregorianTime.swift */; };
 		9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1F83221345B410048B4CB /* LiuQin.swift */; };
 		9BCE885D214E07910024FEF7 /* GanZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE885C214E07910024FEF7 /* GanZhi.swift */; };
 		9BCE885F214E155A0024FEF7 /* DateGanZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE885E214E155A0024FEF7 /* DateGanZhi.swift */; };
@@ -87,6 +89,8 @@
 		9B3C164A214DBCDA00DF4C6A /* SolarTermDateComponents.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SolarTermDateComponents.plist; sourceTree = "<group>"; };
 		9B3C164C214DC1FF00DF4C6A /* SolarTermDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermDataLoader.swift; sourceTree = "<group>"; };
 		9B3C1650214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermDateComponentsFetcherTests.swift; sourceTree = "<group>"; };
+		9B9F56DF2159A0650079A6AB /* BuGuaEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntry.swift; sourceTree = "<group>"; };
+		9B9F56E12159A1CA0079A6AB /* GregorianTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianTime.swift; sourceTree = "<group>"; };
 		9BA1F83221345B410048B4CB /* LiuQin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuQin.swift; sourceTree = "<group>"; };
 		9BCE885C214E07910024FEF7 /* GanZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanZhi.swift; sourceTree = "<group>"; };
 		9BCE885E214E155A0024FEF7 /* DateGanZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGanZhi.swift; sourceTree = "<group>"; };
@@ -208,10 +212,12 @@
 		9B16525D21323FEB001991DB /* Structs */ = {
 			isa = PBXGroup;
 			children = (
-				345F40442104F3DB004714DB /* LiuShiSiGua.swift */,
-				9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */,
+				9B9F56DF2159A0650079A6AB /* BuGuaEntry.swift */,
 				9BCE885C214E07910024FEF7 /* GanZhi.swift */,
 				9BCE8878214F40880024FEF7 /* GregorianDate.swift */,
+				9B9F56E12159A1CA0079A6AB /* GregorianTime.swift */,
+				345F40442104F3DB004714DB /* LiuShiSiGua.swift */,
+				9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */,
 			);
 			name = Structs;
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 				9BCE885D214E07910024FEF7 /* GanZhi.swift in Sources */,
 				346334512148C2EB001D462B /* TianGan.swift in Sources */,
 				342096BA21053EA70093C9A2 /* WuXing.swift in Sources */,
+				9B9F56E02159A0650079A6AB /* BuGuaEntry.swift in Sources */,
 				9B16525921323F9B001991DB /* LiangYi.swift in Sources */,
 				9BCE885F214E155A0024FEF7 /* DateGanZhi.swift in Sources */,
 				9B3C163C214C68CE00DF4C6A /* SolarTermCalculator.swift in Sources */,
@@ -391,6 +398,7 @@
 				9B16525721323C02001991DB /* DiZhi.swift in Sources */,
 				9BCE8879214F40880024FEF7 /* GregorianDate.swift in Sources */,
 				345F40452104F3DB004714DB /* LiuShiSiGua.swift in Sources */,
+				9B9F56E22159A1CA0079A6AB /* GregorianTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
