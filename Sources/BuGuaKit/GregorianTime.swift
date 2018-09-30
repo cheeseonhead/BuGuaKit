@@ -23,8 +23,12 @@ public struct GregorianTime {
         minute = dateComponents.minute!
     }
 
-    private init(hour: Int, minute: Int) {
+    init(hour: Int, minute: Int) {
         self.hour = hour
         self.minute = minute
+    }
+
+    public var components: DateComponents {
+        return DateComponents(hour: hour, minute: minute, second: 0)
     }
 }
