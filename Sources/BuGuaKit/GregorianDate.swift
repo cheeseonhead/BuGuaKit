@@ -32,8 +32,8 @@ public struct GregorianDate: Comparable {
         self.day = day
     }
 
-    func makeComponent() -> Foundation.DateComponents {
-        return Foundation.DateComponents(year: year, month: month, day: day)
+    public var components: DateComponents {
+        return DateComponents(year: year, month: month, day: day)
     }
 
     public static func < (lhs: GregorianDate, rhs: GregorianDate) -> Bool {
@@ -49,8 +49,8 @@ public struct GregorianDate: Comparable {
     }
 
     func days(from otherComponents: GregorianDate) -> Int {
-        let selfCompo = makeComponent()
-        let otherCompo = otherComponents.makeComponent()
+        let selfCompo = components
+        let otherCompo = otherComponents.components
 
         let days = Calendar.current.dateComponents([.day], from: otherCompo, to: selfCompo).day!
 
