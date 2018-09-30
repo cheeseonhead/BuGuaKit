@@ -9,17 +9,30 @@
 import Foundation
 
 public struct GregorianFormatter {
-    let style: DateComponentsFormatter.UnitsStyle
+    private let calendar: Calendar
+    private let formatter: DateFormatter
 
-    public init(style: DateComponentsFormatter.UnitsStyle) {
-        self.style = style
+    /// Pass in the calendar that it should be using to format the Gregorian Date and Time. This formatter will respect
+    /// the locale set on the calendar object.
+    public init(calendar: Calendar, dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style) {
+        self.calendar = calendar
+
+        formatter = DateFormatter()
+        formatter.calendar = calendar
+        formatter.dateStyle = dateStyle
+        formatter.timeStyle = timeStyle
+        formatter.locale = calendar.locale
     }
 
     public func formatGregorianDate(_ date: GregorianDate, time: GregorianTime) -> String {
-        var dateCompo = DateComponents(year: date.year, month: date.month, day: date.day)
-        dateCompo.hour = time.hour
-        dateCompo.minute = time.minute
+        var dateCompo = date.components
+        let timeCompo = time.components
+        dateCompo.hour = timeCompo.hour
+        dateCompo.minute = timeCompo.minute
+        dateCompo.second = timeCompo.second
 
-        return DateComponentsFormatter.localizedString(from: dateCompo, unitsStyle: style)!
+        let date = calendar.date(from: dateCompo)!
+
+        return formatter.string(from: date)
     }
 }
