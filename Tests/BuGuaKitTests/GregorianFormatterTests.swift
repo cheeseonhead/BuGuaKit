@@ -7,27 +7,40 @@
 //
 
 import XCTest
+@testable import BuGuaKit
 
 class GregorianFormatterTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var sut: GregorianFormatter!
+    var calendar: Calendar!
+
+    func testGregorianZHTWMediumShort() {
+        calendar = Calendar(identifier: .gregorian)
+        calendar.locale = Locale(identifier: "zh_Hant_TW")
+
+        sut = GregorianFormatter(calendar: calendar, dateStyle: .medium, timeStyle: .short)
+        let result = sut.formatGregorianDate(.zero, time: .zero)
+
+        XCTAssertEqual(result, "1年1月1日 上午12:00")
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testGregorianZHTWMediumMedium() {
+        calendar = Calendar(identifier: .gregorian)
+        calendar.locale = Locale(identifier: "zh_Hant_TW")
+
+        sut = GregorianFormatter(calendar: calendar, dateStyle: .medium, timeStyle: .medium)
+        let result = sut.formatGregorianDate(.zero, time: .zero)
+
+        XCTAssertEqual(result, "1年1月1日 上午12:00:00")
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func testGregorianENMediumMedium() {
+        calendar = Calendar(identifier: .gregorian)
+        calendar.locale = Locale(identifier: "en_us")
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+        sut = GregorianFormatter(calendar: calendar, dateStyle: .medium, timeStyle: .medium)
+        let result = sut.formatGregorianDate(.zero, time: .zero)
 
+        XCTAssertEqual(result, "Jan 1, 1 at 12:00:00 AM")
+    }
 }
