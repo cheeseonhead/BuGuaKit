@@ -17,32 +17,38 @@ public class BuGuaEntryBuilder {
     var guaXiang: LiuYaoGuaXiang!
 
     public init() {}
-    
+
+    @discardableResult
     public func setName(_ value: String) -> BuGuaEntryBuilder {
         name = value
         return self
     }
 
+    @discardableResult
     public func setQuestion(_ value: String) -> BuGuaEntryBuilder {
         question = value
         return self
     }
 
+    @discardableResult
     public func setDate(_ value: GregorianDate) -> BuGuaEntryBuilder {
         date = value
         return self
     }
 
+    @discardableResult
     public func setTime(_ value: GregorianTime) -> BuGuaEntryBuilder {
         time = value
         return self
     }
 
+    @discardableResult
     public func setNotes(_ value: String) -> BuGuaEntryBuilder {
         notes = value
         return self
     }
-    
+
+    @discardableResult
     public func setGuaXiang(_ value: LiuYaoGuaXiang) -> BuGuaEntryBuilder {
         guaXiang = value
         return self
