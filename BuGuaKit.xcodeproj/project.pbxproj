@@ -22,6 +22,8 @@
 		345F40452104F3DB004714DB /* LiuShiSiGua.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F40442104F3DB004714DB /* LiuShiSiGua.swift */; };
 		346334512148C2EB001D462B /* TianGan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346334502148C2EB001D462B /* TianGan.swift */; };
 		34F14EC7214A034E00274F90 /* FuShenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F14EC6214A034E00274F90 /* FuShenController.swift */; };
+		9B0757CB2160932B0086AFA0 /* GregorianFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0757CA2160932B0086AFA0 /* GregorianFormatter.swift */; };
+		9B0757D02160945B0086AFA0 /* GregorianFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0757CF2160945B0086AFA0 /* GregorianFormatterTests.swift */; };
 		9B16525721323C02001991DB /* DiZhi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16525621323C02001991DB /* DiZhi.swift */; };
 		9B16525921323F9B001991DB /* LiangYi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16525821323F9B001991DB /* LiangYi.swift */; };
 		9B16525F21324C31001991DB /* LiuYaoGuaXiang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */; };
@@ -75,6 +77,8 @@
 		345F40442104F3DB004714DB /* LiuShiSiGua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuShiSiGua.swift; sourceTree = "<group>"; };
 		346334502148C2EB001D462B /* TianGan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TianGan.swift; sourceTree = "<group>"; };
 		34F14EC6214A034E00274F90 /* FuShenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuShenController.swift; sourceTree = "<group>"; };
+		9B0757CA2160932B0086AFA0 /* GregorianFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianFormatter.swift; sourceTree = "<group>"; };
+		9B0757CF2160945B0086AFA0 /* GregorianFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianFormatterTests.swift; sourceTree = "<group>"; };
 		9B16525621323C02001991DB /* DiZhi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiZhi.swift; sourceTree = "<group>"; };
 		9B16525821323F9B001991DB /* LiangYi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiangYi.swift; sourceTree = "<group>"; };
 		9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuYaoGuaXiang.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 				9B3C1642214C755300DF4C6A /* SolarTermCalculatorTests.swift */,
 				9B3C1644214D908000DF4C6A /* TianGanTests.swift */,
 				9B3C1650214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift */,
+				9B0757CF2160945B0086AFA0 /* GregorianFormatterTests.swift */,
 			);
 			name = BuGuaKitTests;
 			path = Tests/BuGuaKitTests;
@@ -218,6 +223,7 @@
 				9B9F56E12159A1CA0079A6AB /* GregorianTime.swift */,
 				345F40442104F3DB004714DB /* LiuShiSiGua.swift */,
 				9B16525E21324C31001991DB /* LiuYaoGuaXiang.swift */,
+				9B0757CA2160932B0086AFA0 /* GregorianFormatter.swift */,
 			);
 			name = Structs;
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 				9B9F56E02159A0650079A6AB /* BuGuaEntry.swift in Sources */,
 				9B16525921323F9B001991DB /* LiangYi.swift in Sources */,
 				9BCE885F214E155A0024FEF7 /* DateGanZhi.swift in Sources */,
+				9B0757CB2160932B0086AFA0 /* GregorianFormatter.swift in Sources */,
 				9B3C163C214C68CE00DF4C6A /* SolarTermCalculator.swift in Sources */,
 				345F40432104EA7C004714DB /* FuXiBaGua.swift in Sources */,
 				9B16525721323C02001991DB /* DiZhi.swift in Sources */,
@@ -411,6 +418,7 @@
 				343992AF21052B7500C64474 /* FuXiBaGuaTests.swift in Sources */,
 				9B3C1645214D908000DF4C6A /* TianGanTests.swift in Sources */,
 				9B3C1643214C755300DF4C6A /* SolarTermCalculatorTests.swift in Sources */,
+				9B0757D02160945B0086AFA0 /* GregorianFormatterTests.swift in Sources */,
 				343992A8210521E000C64474 /* LiuShiSiGuaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
