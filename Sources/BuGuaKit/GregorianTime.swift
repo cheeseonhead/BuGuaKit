@@ -11,8 +11,8 @@ import Foundation
 public struct GregorianTime {
     public static let zero = GregorianTime(hour: 0, minute: 0)
 
-    let hour: Int
-    let minute: Int
+    public let hour: Int
+    public let minute: Int
 
     private let calendar = Calendar(identifier: .gregorian)
 

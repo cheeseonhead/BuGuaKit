@@ -10,7 +10,7 @@ import Foundation
 
 public struct GregorianDate: Comparable {
 
-    public static let zero = GregorianDate(year: 0, month: 0, day: 0)
+    public static let zero = GregorianDate(year: 1, month: 1, day: 1)
 
     public let year: Int
     public let month: Int
