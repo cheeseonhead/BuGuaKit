@@ -11,6 +11,7 @@ import Foundation
 public class LiuYaoGuaXiangBuilder {
     private var liuYao: [YaoType]!
     private var dateGanZhi: DateGanZhi!
+    private var timeDiZhi: DiZhi!
 
     public init(from guaXiang: LiuYaoGuaXiang) {
         liuYao = guaXiang.liuYao
@@ -33,27 +34,35 @@ public class LiuYaoGuaXiangBuilder {
         return self
     }
 
+    @discardableResult
+    public func setTimeDiZhi(_ diZhi: DiZhi) -> LiuYaoGuaXiangBuilder {
+        timeDiZhi = diZhi
+        return self
+    }
+
     public func build() -> LiuYaoGuaXiang {
-        return LiuYaoGuaXiang(liuYao: liuYao, dateGanZhi: dateGanZhi)
+        return LiuYaoGuaXiang(liuYao: liuYao, dateGanZhi: dateGanZhi, timeDiZhi: timeDiZhi)
     }
 }
 
 public struct LiuYaoGuaXiang {
 
     public static let `default` = LiuYaoGuaXiang(liuYao: [.youngYang, .youngYang, .youngYang, .youngYang, .youngYang, .youngYang],
-                                                 dateGanZhi: .default)
+                                                 dateGanZhi: .default, timeDiZhi: .zi)
 
     let liuYao: [YaoType]
     let innerYao: [YaoType]
     let outerYao: [YaoType]
     let dateGanZhi: DateGanZhi
+    let timeDiZhi: DiZhi
     public var fuShenController: FuShenController { return FuShenController(guaXiang: self) }
 
-    init(liuYao: [YaoType], dateGanZhi: DateGanZhi) {
+    init(liuYao: [YaoType], dateGanZhi: DateGanZhi, timeDiZhi: DiZhi) {
         assert(liuYao.count == 6, "Cannot create GuaXiang without exactly 6 yao")
 
         self.liuYao = liuYao
         self.dateGanZhi = dateGanZhi
+        self.timeDiZhi = timeDiZhi
         innerYao = Array(liuYao.prefix(3))
         outerYao = Array(liuYao.suffix(3))
     }
