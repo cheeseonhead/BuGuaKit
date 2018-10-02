@@ -9,20 +9,16 @@
 import Foundation
 
 public struct KongWang: Equatable {
-    let year: Bool
-    let month: Bool
-    let day: Bool
-    let time: Bool
-
-    public class Builder {
-        var year: Bool!
-        var month: Bool!
-        var day: Bool!
-        var time: Bool!
-
-        func build() -> KongWang {
-            return KongWang(year: year, month: month, day: day, time: time)
-        }
+    public let diZhis: [DiZhi]
+    
+    public var character: String {
+        return diZhis[0].character + diZhis[1].character
+    }
+    
+    init(diZhis: [DiZhi]) {
+        precondition(diZhis.count == 2, "There can only ever be two di zhi in a kong wang.")
+        
+        self.diZhis = diZhis
     }
 }
 
@@ -43,16 +39,9 @@ public class KongWangController {
     }
 
     public var kongWang: KongWang {
-        let builder = KongWang.Builder()
-
-        let allDiZhis = allKongWangDiZhi(guaXiang)
-
-        builder.year = allDiZhis.contains(guaXiang.dateGanZhi.year.diZhi)
-        builder.month = allDiZhis.contains(guaXiang.dateGanZhi.month.diZhi)
-        builder.day = allDiZhis.contains(guaXiang.dateGanZhi.day.diZhi)
-        builder.time = allDiZhis.contains(guaXiang.timeDiZhi)
-
-        return builder.build()
+        let diZhis = allKongWangDiZhi(guaXiang)
+        
+        return KongWang(diZhis: diZhis)
     }
 }
 
@@ -66,9 +55,6 @@ private extension KongWangController {
 
     func allKongWangDiZhi(_ guaXiang: LiuYaoGuaXiang) -> [DiZhi] {
         var kongWangDiZhis = [DiZhi]()
-
-        let yearGanZhi = guaXiang.dateGanZhi.year
-        kongWangDiZhis.append(contentsOf: jiaXunKongWang[jiaXunDiZhi(yearGanZhi)]!)
 
         let dayGanZhi = guaXiang.dateGanZhi.day
         kongWangDiZhis.append(contentsOf: jiaXunKongWang[jiaXunDiZhi(dayGanZhi)]!)
