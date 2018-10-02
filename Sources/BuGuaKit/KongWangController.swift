@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct KongWang {
+struct KongWang: Equatable {
     let year: Bool
     let month: Bool
     let day: Bool

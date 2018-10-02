@@ -29,7 +29,7 @@ public class LiuYaoGuaXiangBuilder {
     }
 
     @discardableResult
-    public func withDateGanZhi(_ ganZhi: DateGanZhi?) -> LiuYaoGuaXiangBuilder {
+    public func setDateGanZhi(_ ganZhi: DateGanZhi?) -> LiuYaoGuaXiangBuilder {
         dateGanZhi = ganZhi
         return self
     }
