@@ -53,8 +53,8 @@ public struct LiuYaoGuaXiang {
     let liuYao: [YaoType]
     let innerYao: [YaoType]
     let outerYao: [YaoType]
-    let dateGanZhi: DateGanZhi
-    let timeDiZhi: DiZhi
+    public let dateGanZhi: DateGanZhi
+    public let timeDiZhi: DiZhi
     public var fuShenController: FuShenController { return FuShenController(guaXiang: self) }
 
     init(liuYao: [YaoType], dateGanZhi: DateGanZhi, timeDiZhi: DiZhi) {
