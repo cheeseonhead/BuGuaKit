@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct KongWang: Equatable {
+public struct KongWang: Equatable {
     let year: Bool
     let month: Bool
     let day: Bool
     let time: Bool
 
-    class Builder {
+    public class Builder {
         var year: Bool!
         var month: Bool!
         var day: Bool!
@@ -26,7 +26,7 @@ struct KongWang: Equatable {
     }
 }
 
-class KongWangController {
+public class KongWangController {
 
     private let guaXiang: LiuYaoGuaXiang
     private let jiaXunKongWang: [DiZhi: [DiZhi]] = [
@@ -42,7 +42,7 @@ class KongWangController {
         self.guaXiang = guaXiang
     }
 
-    var kongWang: KongWang {
+    public var kongWang: KongWang {
         let builder = KongWang.Builder()
 
         let allDiZhis = allKongWangDiZhi(guaXiang)
