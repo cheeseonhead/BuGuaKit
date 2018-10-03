@@ -29,7 +29,7 @@ public class LiuYaoGuaXiangBuilder {
     }
 
     @discardableResult
-    public func withDateGanZhi(_ ganZhi: DateGanZhi?) -> LiuYaoGuaXiangBuilder {
+    public func setDateGanZhi(_ ganZhi: DateGanZhi?) -> LiuYaoGuaXiangBuilder {
         dateGanZhi = ganZhi
         return self
     }
@@ -53,9 +53,10 @@ public struct LiuYaoGuaXiang {
     let liuYao: [YaoType]
     let innerYao: [YaoType]
     let outerYao: [YaoType]
-    let dateGanZhi: DateGanZhi
-    let timeDiZhi: DiZhi
+    public let dateGanZhi: DateGanZhi
+    public let timeDiZhi: DiZhi
     public var fuShenController: FuShenController { return FuShenController(guaXiang: self) }
+    public var kongWangController: KongWangController {return KongWangController(guaXiang: self) }
 
     init(liuYao: [YaoType], dateGanZhi: DateGanZhi, timeDiZhi: DiZhi) {
         assert(liuYao.count == 6, "Cannot create GuaXiang without exactly 6 yao")

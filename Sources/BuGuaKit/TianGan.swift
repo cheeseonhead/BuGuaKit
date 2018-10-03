@@ -25,6 +25,10 @@ public enum TianGan: CaseIterable {
 
         return TianGan.allCases[positiveRemainder]
     }
+
+    func distanceTo(_ other: TianGan) -> Int {
+        return other.index() - index()
+    }
 }
 
 private extension TianGan {

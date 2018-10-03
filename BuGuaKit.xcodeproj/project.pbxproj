@@ -38,6 +38,8 @@
 		9B3C164B214DBCDA00DF4C6A /* SolarTermDateComponents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C164A214DBCDA00DF4C6A /* SolarTermDateComponents.plist */; };
 		9B3C164D214DC1FF00DF4C6A /* SolarTermDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C164C214DC1FF00DF4C6A /* SolarTermDataLoader.swift */; };
 		9B3C1651214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C1650214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift */; };
+		9B5E95C721630CBA00789DFD /* KongWangController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E95C621630CBA00789DFD /* KongWangController.swift */; };
+		9B5E95C921631BE800789DFD /* KongWangControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E95C821631BE800789DFD /* KongWangControllerTests.swift */; };
 		9B9F56E02159A0650079A6AB /* BuGuaEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F56DF2159A0650079A6AB /* BuGuaEntry.swift */; };
 		9B9F56E22159A1CA0079A6AB /* GregorianTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F56E12159A1CA0079A6AB /* GregorianTime.swift */; };
 		9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1F83221345B410048B4CB /* LiuQin.swift */; };
@@ -93,6 +95,8 @@
 		9B3C164A214DBCDA00DF4C6A /* SolarTermDateComponents.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SolarTermDateComponents.plist; sourceTree = "<group>"; };
 		9B3C164C214DC1FF00DF4C6A /* SolarTermDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermDataLoader.swift; sourceTree = "<group>"; };
 		9B3C1650214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarTermDateComponentsFetcherTests.swift; sourceTree = "<group>"; };
+		9B5E95C621630CBA00789DFD /* KongWangController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KongWangController.swift; sourceTree = "<group>"; };
+		9B5E95C821631BE800789DFD /* KongWangControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KongWangControllerTests.swift; sourceTree = "<group>"; };
 		9B9F56DF2159A0650079A6AB /* BuGuaEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuGuaEntry.swift; sourceTree = "<group>"; };
 		9B9F56E12159A1CA0079A6AB /* GregorianTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GregorianTime.swift; sourceTree = "<group>"; };
 		9BA1F83221345B410048B4CB /* LiuQin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuQin.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 				9B3C1644214D908000DF4C6A /* TianGanTests.swift */,
 				9B3C1650214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift */,
 				9B0757CF2160945B0086AFA0 /* GregorianFormatterTests.swift */,
+				9B5E95C821631BE800789DFD /* KongWangControllerTests.swift */,
 			);
 			name = BuGuaKitTests;
 			path = Tests/BuGuaKitTests;
@@ -196,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				34F14EC6214A034E00274F90 /* FuShenController.swift */,
+				9B5E95C621630CBA00789DFD /* KongWangController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -386,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B3C163F214C696900DF4C6A /* SolarTerm.swift in Sources */,
+				9B5E95C721630CBA00789DFD /* KongWangController.swift in Sources */,
 				9B3C1647214DBA0E00DF4C6A /* SolarTermDateComponentsFetcher.swift in Sources */,
 				34F14EC7214A034E00274F90 /* FuShenController.swift in Sources */,
 				9B16525F21324C31001991DB /* LiuYaoGuaXiang.swift in Sources */,
@@ -416,6 +423,7 @@
 				9B165263213253B3001991DB /* LiuYaoGuaXiangTests.swift in Sources */,
 				9B3C1651214DC37B00DF4C6A /* SolarTermDateComponentsFetcherTests.swift in Sources */,
 				343992AF21052B7500C64474 /* FuXiBaGuaTests.swift in Sources */,
+				9B5E95C921631BE800789DFD /* KongWangControllerTests.swift in Sources */,
 				9B3C1645214D908000DF4C6A /* TianGanTests.swift in Sources */,
 				9B3C1643214C755300DF4C6A /* SolarTermCalculatorTests.swift in Sources */,
 				9B0757D02160945B0086AFA0 /* GregorianFormatterTests.swift in Sources */,
