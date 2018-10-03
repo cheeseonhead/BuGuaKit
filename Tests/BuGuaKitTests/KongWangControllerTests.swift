@@ -22,7 +22,7 @@ class KongWangControllerTests: XCTestCase {
 
         sut = KongWangController(guaXiang: builder.build())
 
-        XCTAssertEqual(sut.kongWang, KongWang(year: false, month: false, day: false, time: true))
+        XCTAssertEqual(sut.kongWang, KongWang(diZhis: [.shen, .you]))
     }
 
     func testBasicKongWang2() {
@@ -34,6 +34,6 @@ class KongWangControllerTests: XCTestCase {
 
         sut = KongWangController(guaXiang: builder.build())
 
-        XCTAssertEqual(sut.kongWang, KongWang(year: false, month: true, day: false, time: true))
+        XCTAssertEqual(sut.kongWang, KongWang(diZhis: [.shen, .you]))
     }
 }

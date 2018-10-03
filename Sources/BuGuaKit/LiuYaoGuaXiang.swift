@@ -16,6 +16,7 @@ public class LiuYaoGuaXiangBuilder {
     public init(from guaXiang: LiuYaoGuaXiang) {
         liuYao = guaXiang.liuYao
         dateGanZhi = guaXiang.dateGanZhi
+        timeDiZhi = guaXiang.timeDiZhi
     }
 
     convenience public init() {
