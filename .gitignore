@@ -2,4 +2,4 @@
 /.build
 /Packages
 BuGuaKit.framework
-/ios-scripts
+/ios-scripts/*
