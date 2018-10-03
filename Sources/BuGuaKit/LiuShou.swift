@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum LiuShou {
+public enum LiuShou: CaseIterable {
     case dragon, bird, hook, snake, tiger, tortoise
     
     public var character: String {
