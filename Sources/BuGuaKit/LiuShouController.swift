@@ -15,8 +15,14 @@ public class LiuShouController {
         self.guaXiang = guaXiang
     }
     
-    public var liuShou: [LiuShou] {
+    var liuShou: [LiuShou] {
         return liuShou(for: guaXiang.dateGanZhi.day.tianGan)
+    }
+    
+    public func liuShou(at position: Int) -> LiuShou {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+        
+        return liuShou[position - 1]
     }
 }
 
