@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LiuShouController {
+public class LiuShouController {
     private let guaXiang: LiuYaoGuaXiang
     
     init(guaXiang: LiuYaoGuaXiang) {
