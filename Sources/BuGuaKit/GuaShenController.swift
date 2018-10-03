@@ -15,10 +15,24 @@ public class GuaShenController {
         self.guaXiang = guaXiang
     }
     
-    public var guaShen: DiZhi {
+    public var guaShen: [DiZhi?] {
         let shi = guaXiang.originalGua.shi
         
-        return startZhi(for: guaXiang.yao(at: shi).originalYi).diZhi(after: shi - 1)
+        let guaShenDiZhi = startZhi(for: guaXiang.yao(at: shi).originalYi).diZhi(after: shi - 1)
+        
+        return guaXiang.originalGua.ganZhi.map {
+            if guaShenDiZhi == $0.diZhi {
+                return $0.diZhi
+            } else {
+                return nil
+            }
+        }
+    }
+    
+    public func guaShen(at position: Int) -> DiZhi? {
+        assert(position >= 1 && position <= 6, "position \(position) out of range")
+        
+        return guaShen[position - 1]
     }
 }
 

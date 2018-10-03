@@ -19,7 +19,7 @@ class GuaShenControllerTests: XCTestCase {
         
         sut = GuaShenController(guaXiang: builder.build())
         
-        XCTAssertEqual(sut.guaShen, .shen)
+        XCTAssertEqual(sut.guaShen, [nil, nil, nil, nil, .shen, nil])
     }
     
     func testBasic2() {
@@ -28,6 +28,6 @@ class GuaShenControllerTests: XCTestCase {
         
         sut = GuaShenController(guaXiang: builder.build())
         
-        XCTAssertEqual(sut.guaShen, .si)
+        XCTAssertEqual(sut.guaShen, [nil, nil, nil, nil, nil, .si])
     }
 }
