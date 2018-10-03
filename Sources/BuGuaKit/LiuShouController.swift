@@ -16,28 +16,28 @@ class LiuShouController {
     }
     
     public var liuShou: [LiuShou] {
-        return liuShou(for: guaXiang.dateGanZhi.day.diZhi)
+        return liuShou(for: guaXiang.dateGanZhi.day.tianGan)
     }
 }
 
 private extension LiuShouController {
-    func liuShou(for dayZhi: DiZhi) -> [LiuShou] {
+    func liuShou(for dayGan: TianGan) -> [LiuShou] {
         let fullRounds = LiuShou.allCases + LiuShou.allCases
         
-        let start = startingIndex(for: dayZhi)
-        let finalRange = start...(start+6)
+        let start = startingIndex(for: dayGan)
+        let finalRange = start...(start+5)
         
         return Array(fullRounds[finalRange])
     }
     
-    func startingIndex(for dayZhi: DiZhi) -> Int {
-        switch dayZhi {
-        case .zi, .chou: return 0
-        case .yin, .mao: return 1
-        case .chen, .si: return 2
-        case .wu, .wei: return 3
-        case .shen, .you: return 4
-        case .xu, .hai: return 5
+    func startingIndex(for dayGan: TianGan) -> Int {
+        switch dayGan {
+        case .jia, .yi: return 0
+        case .bing, .ding: return 1
+        case .wu: return 2
+        case .ji: return 3
+        case .geng, .xin: return 4
+        case .ren, .gui: return 5
         }
     }
 }
