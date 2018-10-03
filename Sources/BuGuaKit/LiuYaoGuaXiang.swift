@@ -57,7 +57,8 @@ public struct LiuYaoGuaXiang {
     public let dateGanZhi: DateGanZhi
     public let timeDiZhi: DiZhi
     public var fuShenController: FuShenController { return FuShenController(guaXiang: self) }
-    public var kongWangController: KongWangController {return KongWangController(guaXiang: self) }
+    public var kongWangController: KongWangController { return KongWangController(guaXiang: self) }
+    public var guaShenController: GuaShenController { return GuaShenController(guaXiang: self) }
 
     init(liuYao: [YaoType], dateGanZhi: DateGanZhi, timeDiZhi: DiZhi) {
         assert(liuYao.count == 6, "Cannot create GuaXiang without exactly 6 yao")
