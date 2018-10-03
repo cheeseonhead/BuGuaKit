@@ -10,6 +10,8 @@
 		342096BA21053EA70093C9A2 /* WuXing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342096B921053EA70093C9A2 /* WuXing.swift */; };
 		34285AE6216449CF007F61B3 /* GuaShenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34285AE5216449CF007F61B3 /* GuaShenController.swift */; };
 		34285AE821644BB6007F61B3 /* GuaShenControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34285AE721644BB6007F61B3 /* GuaShenControllerTests.swift */; };
+		34285AEA216451D0007F61B3 /* LiuShouController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34285AE9216451D0007F61B3 /* LiuShouController.swift */; };
+		34285AEC21645202007F61B3 /* LiuShou.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34285AEB21645202007F61B3 /* LiuShou.swift */; };
 		343992A8210521E000C64474 /* LiuShiSiGuaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343992A7210521E000C64474 /* LiuShiSiGuaTests.swift */; };
 		343992AB21052A4700C64474 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 343992AD21052A4700C64474 /* Localizable.strings */; };
 		343992AF21052B7500C64474 /* FuXiBaGuaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343992AE21052B7500C64474 /* FuXiBaGuaTests.swift */; };
@@ -64,6 +66,8 @@
 		342096B921053EA70093C9A2 /* WuXing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WuXing.swift; sourceTree = "<group>"; };
 		34285AE5216449CF007F61B3 /* GuaShenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaShenController.swift; sourceTree = "<group>"; };
 		34285AE721644BB6007F61B3 /* GuaShenControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaShenControllerTests.swift; sourceTree = "<group>"; };
+		34285AE9216451D0007F61B3 /* LiuShouController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuShouController.swift; sourceTree = "<group>"; };
+		34285AEB21645202007F61B3 /* LiuShou.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuShou.swift; sourceTree = "<group>"; };
 		343992A7210521E000C64474 /* LiuShiSiGuaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuShiSiGuaTests.swift; sourceTree = "<group>"; };
 		343992AC21052A4700C64474 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		343992AE21052B7500C64474 /* FuXiBaGuaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuXiBaGuaTests.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				34F14EC6214A034E00274F90 /* FuShenController.swift */,
 				9B5E95C621630CBA00789DFD /* KongWangController.swift */,
 				34285AE5216449CF007F61B3 /* GuaShenController.swift */,
+				34285AE9216451D0007F61B3 /* LiuShouController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				9B16526421325519001991DB /* YaoType.swift */,
 				9BA1F83221345B410048B4CB /* LiuQin.swift */,
 				346334502148C2EB001D462B /* TianGan.swift */,
+				34285AEB21645202007F61B3 /* LiuShou.swift */,
 			);
 			name = Enums;
 			sourceTree = "<group>";
@@ -404,6 +410,7 @@
 				34F14EC7214A034E00274F90 /* FuShenController.swift in Sources */,
 				9B16525F21324C31001991DB /* LiuYaoGuaXiang.swift in Sources */,
 				9BA1F83321345B410048B4CB /* LiuQin.swift in Sources */,
+				34285AEA216451D0007F61B3 /* LiuShouController.swift in Sources */,
 				9B16526521325519001991DB /* YaoType.swift in Sources */,
 				9B3C164D214DC1FF00DF4C6A /* SolarTermDataLoader.swift in Sources */,
 				9B3C1649214DBADC00DF4C6A /* TimeZone+AppZones.swift in Sources */,
@@ -415,6 +422,7 @@
 				9BCE885F214E155A0024FEF7 /* DateGanZhi.swift in Sources */,
 				9B0757CB2160932B0086AFA0 /* GregorianFormatter.swift in Sources */,
 				9B3C163C214C68CE00DF4C6A /* SolarTermCalculator.swift in Sources */,
+				34285AEC21645202007F61B3 /* LiuShou.swift in Sources */,
 				345F40432104EA7C004714DB /* FuXiBaGua.swift in Sources */,
 				9B16525721323C02001991DB /* DiZhi.swift in Sources */,
 				9BCE8879214F40880024FEF7 /* GregorianDate.swift in Sources */,
