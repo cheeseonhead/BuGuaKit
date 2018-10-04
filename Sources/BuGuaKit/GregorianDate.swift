@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct GregorianDate: Comparable {
+public struct GregorianDate: Comparable, Equatable {
 
     public static let zero = GregorianDate(year: 1, month: 1, day: 1)
 

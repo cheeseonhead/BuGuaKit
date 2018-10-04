@@ -46,7 +46,7 @@ public class LiuYaoGuaXiangBuilder {
     }
 }
 
-public struct LiuYaoGuaXiang {
+public struct LiuYaoGuaXiang: Equatable {
 
     public static let `default` = LiuYaoGuaXiang(liuYao: [.youngYang, .youngYang, .youngYang, .youngYang, .youngYang, .youngYang],
                                                  dateGanZhi: .default, timeDiZhi: .zi)

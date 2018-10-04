@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum YaoType: CaseIterable {
+public enum YaoType: CaseIterable, Equatable {
     case oldYang, oldYin, youngYang, youngYin
 
     public var originalYi: LiangYi {

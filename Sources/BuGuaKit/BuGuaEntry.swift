@@ -59,7 +59,7 @@ public class BuGuaEntryBuilder {
     }
 }
 
-public struct BuGuaEntry {
+public struct BuGuaEntry: Equatable {
     public let name: String
     public let question: String
     public let date: GregorianDate

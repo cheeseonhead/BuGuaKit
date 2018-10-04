@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct GanZhi {
+public struct GanZhi: Equatable {
     public let tianGan: TianGan
     public let diZhi: DiZhi
 

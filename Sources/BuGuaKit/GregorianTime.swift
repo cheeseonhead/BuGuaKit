@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct GregorianTime {
+public struct GregorianTime: Equatable {
     public static let zero = GregorianTime(hour: 0, minute: 0)
 
     public let hour: Int

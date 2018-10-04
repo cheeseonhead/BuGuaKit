@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct DateGanZhi {
+public struct DateGanZhi: Equatable {
     public let year: GanZhi
     public let month: GanZhi
     public let day: GanZhi
