@@ -9,12 +9,12 @@
 import Foundation
 
 public class BuGuaEntryBuilder {
-    var name = ""
-    var question = ""
-    var date: GregorianDate!
-    var time: GregorianTime!
-    var notes = ""
-    var guaXiang: LiuYaoGuaXiang!
+    var name = "姓名"
+    var question = "想問"
+    var date: GregorianDate = .zero
+    var time: GregorianTime = .zero
+    var notes = "沒有筆記"
+    var guaXiang: LiuYaoGuaXiang = .default
 
     public init() {}
 
@@ -66,4 +66,6 @@ public struct BuGuaEntry: Equatable {
     public let time: GregorianTime
     public let notes: String
     public let guaXiang: LiuYaoGuaXiang
+
+    static let `default` = BuGuaEntryBuilder().build()
 }
