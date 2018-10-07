@@ -67,5 +67,5 @@ public struct BuGuaEntry: Equatable {
     public let notes: String
     public let guaXiang: LiuYaoGuaXiang
 
-    static let `default` = BuGuaEntryBuilder().build()
+    public static let `default` = BuGuaEntryBuilder().build()
 }
